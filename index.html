@@ -198,6 +198,45 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
 </style>
 </head>
 <body>
+<style>
+#pw-overlay{position:fixed;inset:0;background:#1D3425;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem}
+#pw-overlay.hidden{display:none}
+#pw-logo{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:500;color:#F7F4EF;letter-spacing:.02em}
+#pw-logo span{color:#A8874A;font-weight:300}
+#pw-box{display:flex;flex-direction:column;align-items:center;gap:1rem}
+#pw-label{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,248,243,.35);font-family:'Outfit',sans-serif}
+#pw-input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#F7F4EF;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:300;padding:.85rem 1.5rem;width:280px;outline:none;text-align:center;letter-spacing:.08em;border-radius:2px}
+#pw-input:focus{border-color:rgba(168,135,74,.6)}
+#pw-input::placeholder{color:rgba(250,248,243,.2)}
+#pw-error{font-size:.72rem;color:#c0392b;font-family:'Outfit',sans-serif;opacity:0;transition:opacity .3s}
+#pw-btn{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:white;border:none;padding:.8rem 2rem;cursor:pointer;border-radius:2px;font-family:'Outfit',sans-serif;transition:opacity .2s;width:280px}
+#pw-btn:hover{opacity:.85}
+</style>
+<div id="pw-overlay">
+  <p id="pw-logo">Lex <span>Prima</span></p>
+  <div id="pw-box">
+    <p id="pw-label">Passwort eingeben</p>
+    <input id="pw-input" type="password" placeholder="••••••••••••" autocomplete="off">
+    <p id="pw-error">Falsches Passwort</p>
+    <button id="pw-btn" onclick="checkPw()">Zugang</button>
+  </div>
+</div>
+<script>
+function checkPw(){
+  var v=document.getElementById('pw-input').value;
+  var e=document.getElementById('pw-error');
+  if(v==='victorchris1'){
+    document.getElementById('pw-overlay').classList.add('hidden');
+    sessionStorage.setItem('lp_auth','1');
+  } else {
+    e.style.opacity='1';
+    setTimeout(function(){e.style.opacity='0'},2000);
+  }
+}
+document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')checkPw()});
+if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay').classList.add('hidden')}
+</script>
+
 
 <!-- NAV -->
 <nav>
