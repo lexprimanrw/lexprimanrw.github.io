@@ -154,7 +154,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .pricing-note{text-align:center;margin-top:1.5rem;font-size:.75rem;color:var(--muted)}
 
 /* ── FAQ ── */
-.faq-list{margin-top:3.5rem;display:flex;flex-direction:column;gap:1rem;max-width:760px}
+.faq-list{margin-top:3.5rem;display:flex;flex-direction:column;gap:1rem;max-width:760px;margin-left:auto;margin-right:auto}
 .faq-item{background:var(--paper);border-radius:8px;overflow:hidden}
 .faq-q{font-size:1rem;font-weight:400;color:var(--ink);padding:1.5rem 2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
 .faq-q:hover{background:var(--bg)}
@@ -238,6 +238,33 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
     <div class="hero-price">
       <span class="price-num">89€</span>
       <span class="price-label">Einmalig<br>inkl. MwSt.</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- TRUST BANNER -->
+<div style="background:var(--green);padding:1.75rem 3rem">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:1rem">
+      <div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">§</div>
+      <div>
+        <p style="font-size:.92rem;color:rgba(250,248,243,.9);font-family:var(--sans);font-weight:400">Erstellt von zwei Juristen</p>
+        <p style="font-size:.72rem;color:rgba(250,248,243,.42);font-family:var(--sans);letter-spacing:.04em">die mit genau diesen Seiten ihr Examen geschrieben haben</p>
+      </div>
+    </div>
+    <div style="width:1px;height:36px;background:rgba(255,255,255,.12);flex-shrink:0"></div>
+    <div style="text-align:center">
+      <p style="font-family:var(--sans);font-size:1.6rem;font-weight:200;color:var(--paper);letter-spacing:-.02em;line-height:1">Vollbefriedigend</p>
+      <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem">Erstes Juristisches Examen · NRW</p>
+    </div>
+    <div style="width:1px;height:36px;background:rgba(255,255,255,.12);flex-shrink:0"></div>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">§</div>
+      <div>
+        <p style="font-size:.92rem;color:rgba(250,248,243,.9);font-family:var(--sans);font-weight:400">Beide Autoren</p>
+        <p style="font-size:.72rem;color:rgba(250,248,243,.42);font-family:var(--sans);letter-spacing:.04em">haben dasselbe System genutzt</p>
+      </div>
     </div>
   </div>
 </div>
@@ -371,34 +398,26 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
     <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 05</span><div class="eyebrow-line"></div><span class="eyebrow-text">Preis</span></div>
     <h2 class="section-title reveal">Einmal kaufen.<br><span class="accent">Für immer nutzen.</span></h2>
   </div>
-  <div class="pricing-cards">
-    <div class="pc reveal d1">
-      <span class="pc-tier">Basis</span>
-      <div class="pc-price">49€</div>
-      <p class="pc-note">einmalig · inkl. MwSt.</p>
+  <div style="max-width:480px;margin:3.5rem auto 0">
+    <div class="pc hi reveal d1">
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem">
+        <span class="pc-badge" style="margin-bottom:0">Die einzige Version</span>
+      </div>
+      <span class="pc-tier">Lex Prima</span>
+      <div class="pc-price">99€</div>
+      <p class="pc-note">einmalig · inkl. MwSt. · kein Abo</p>
       <div class="pc-divider"></div>
       <ul class="pc-list">
         <li>Alle 5 Notion-Wissensdatenbanken</li>
-        <li>BGB, ÖR, VerwR NRW, StR, ProzessR</li>
-        <li>NRW-Pflichtfachstoff vollständig</li>
+        <li>BGB, ÖR, Verwaltungsrecht NRW, Strafrecht, Prozessrecht</li>
+        <li>NRW-Pflichtfachstoff vollständig abgedeckt</li>
+        <li>Klausur-Checkliste NRW als PDF</li>
+        <li>Prüfungsschemata-Übersicht als PDF</li>
         <li>Sofortiger Zugang per Notion-Link</li>
         <li>Vollständig editierbar</li>
+        <li>Support per E-Mail</li>
       </ul>
-      <a href="https://gumroad.com" class="btn-buy-outline">Basis kaufen</a>
-    </div>
-    <div class="pc hi reveal d2">
-      <span class="pc-badge">Empfohlen</span>
-      <span class="pc-tier">Premium</span>
-      <div class="pc-price">89€</div>
-      <p class="pc-note">einmalig · inkl. MwSt.</p>
-      <div class="pc-divider"></div>
-      <ul class="pc-list">
-        <li>Alles aus Basis</li>
-        <li>Bonus: Klausur-Checkliste NRW als PDF</li>
-        <li>Bonus: Prüfungsschemata-Übersicht</li>
-        <li>Prioritäts-Support per E-Mail</li>
-      </ul>
-      <a href="https://gumroad.com" class="btn-buy">Premium kaufen</a>
+      <a href="https://gumroad.com" class="btn-buy" style="font-size:.8rem;padding:1.1rem">Jetzt kaufen — 99€ →</a>
     </div>
   </div>
   <p class="pricing-note reveal">Kein Abo. Keine versteckten Kosten. Sofortiger Zugang nach Kauf.</p>
@@ -406,8 +425,10 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
 
 <!-- FAQ -->
 <section class="section" style="background:var(--bg)" id="faq">
-  <div class="eyebrow reveal"><span class="eyebrow-num">§ 06</span><div class="eyebrow-line"></div><span class="eyebrow-text">Häufige Fragen</span></div>
+  <div style="text-align:center">
+  <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 06</span><div class="eyebrow-line"></div><span class="eyebrow-text">Häufige Fragen</span></div>
   <h2 class="section-title reveal">Alles <span class="accent">geklärt.</span></h2>
+  </div>
   <div class="faq-list">
     <div class="faq-item reveal">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Brauche ich ein Notion-Konto?</div>
