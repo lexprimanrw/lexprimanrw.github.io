@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lex Prima — Das System für dein Erstes Juristisches Examen in NRW</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#F7F4EF;--bg2:#F0EDE6;--ink:#131210;
   --green:#1D3425;--green2:#162B1D;
   --gold:#A8874A;--muted:#7A7468;--rule:#DDD9D0;--paper:#FAF8F3;
-  --serif:'Bodoni Moda','Book Antiqua',Georgia,serif;
-  --sans:'Jost','Helvetica Neue',sans-serif;
+  
+  --serif:'Outfit',sans-serif;--sans:'Outfit',sans-serif;
   --ease:cubic-bezier(0.22,1,0.36,1);
 }
 html{scroll-behavior:smooth;cursor:none}
@@ -45,13 +45,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .hero-tag{display:inline-flex;align-items:center;gap:.75rem;margin-bottom:2.75rem;opacity:0;animation:rev .8s var(--ease) .2s forwards}
 .hero-tag-ln{width:2.5rem;height:1px;background:var(--gold)}
 .hero-tag-tx{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-.hero-h{font-family:var(--serif);font-optical-sizing:auto;font-size:clamp(3.8rem,7vw,6.5rem);font-weight:300;line-height:1.0;letter-spacing:-.02em;margin-bottom:2.5rem}
+.hero-h{font-family:var(--serif);font-size:clamp(3.8rem,7vw,6.5rem);font-weight:300;line-height:1.0;letter-spacing:-.03em;margin-bottom:2.5rem}
 .hero-h .ln{display:block;overflow:hidden}
 .hero-h .wd{display:inline-block;opacity:0;transform:translateY(110%);animation:wdrev .9s var(--ease) forwards}
 .hero-h .ln:nth-child(1) .wd{animation-delay:.3s}
 .hero-h .ln:nth-child(2) .wd{animation-delay:.45s}
 .hero-h .ln:nth-child(3) .wd{animation-delay:.6s}
-.hero-h em{font-style:italic;color:var(--gold)}
+.hero-h em{color:var(--gold);font-weight:500}
 .hero-p{font-size:.93rem;color:var(--muted);max-width:40ch;line-height:1.8;margin-bottom:3rem;opacity:0;animation:rev .8s var(--ease) .85s forwards}
 .hero-acts{display:flex;align-items:center;gap:2rem;opacity:0;animation:rev .8s var(--ease) 1s forwards}
 .btn-m{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2.25rem;background:var(--green);color:var(--paper);font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:none;transition:background .25s,gap .3s var(--ease)}
@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .scroll-ln::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--gold);animation:sscroll 2s ease 1.6s infinite}
 
 /* HERO RIGHT */
-.hr{background:var(--green);display:flex;flex-direction:column;justify-content:space-between;padding:5rem 3rem;position:relative;overflow:hidden}
+.hr{background:linear-gradient(rgba(29,52,37,0.88),rgba(22,43,29,0.92)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format.hr{background:var(--green);display:flexfit=crop.hr{background:var(--green);display:flexw=900.hr{background:var(--green);display:flexq=80') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between;padding:5rem 3rem;position:relative;overflow:hidden}
 .hr::before{content:'§';position:absolute;bottom:-3rem;right:-1rem;font-family:var(--serif);font-size:22rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.04);pointer-events:none;line-height:1}
 .hr-lbl{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,248,243,.35);margin-bottom:2.5rem;opacity:0;animation:rev .8s var(--ease) .5s forwards}
 .toc{list-style:none;flex:1;display:flex;flex-direction:column;justify-content:center;gap:0;opacity:0;animation:rev .8s var(--ease) .65s forwards}
@@ -96,8 +96,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .eyb-t{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .eyb-l{width:2rem;height:1px;background:var(--rule)}
 
-.stitle{font-family:var(--serif);font-optical-sizing:auto;font-size:clamp(2.5rem,4.5vw,4rem);font-weight:300;line-height:1.05;letter-spacing:-.015em}
-.stitle em{font-style:italic;color:var(--gold)}
+.stitle{font-family:var(--serif);font-size:clamp(2.5rem,4.5vw,4rem);font-weight:300;line-height:1.05;letter-spacing:-.015em}
+.stitle em{color:var(--gold);font-weight:500}
 
 /* PROBLEM */
 .prob{border-top:1px solid var(--rule);display:grid;grid-template-columns:5fr 4fr}
@@ -134,7 +134,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .feat{padding:2.5rem 1.75rem;border-right:1px solid rgba(255,255,255,.08);transition:background .25s}
 .feat:last-child{border-right:none}
 .feat:hover{background:rgba(255,255,255,.04)}
-.feat-ic{font-family:var(--serif);font-size:1.4rem;font-style:italic;color:var(--gold);margin-bottom:1.25rem;display:block}
+.feat-ic{font-family:var(--serif);font-size:1.4rem;color:var(--gold);font-weight:500;margin-bottom:1.25rem;display:block}
 .feat-t{font-family:var(--serif);font-size:.92rem;font-weight:400;color:rgba(250,248,243,.9);margin-bottom:.4rem;line-height:1.3}
 .feat-d{font-size:.76rem;color:rgba(250,248,243,.38);line-height:1.7}
 
@@ -190,7 +190,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 /* FOOTER */
 footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between}
 .f-logo{font-family:var(--serif);font-size:.98rem;font-weight:400;color:var(--ink)}
-.f-logo em{font-style:italic;color:var(--gold)}
+.f-logo em{color:var(--gold);font-weight:500}
 .f-links{display:flex;gap:2rem}
 .f-a{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .f-a:hover{color:var(--ink)}
@@ -301,6 +301,11 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
   </div>
 </section>
 
+<!-- IMAGE STRIP -->
+<div style="height:380px;background:url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;position:relative;">
+  <div style="position:absolute;inset:0;background:rgba(29,52,37,0.15)"></div>
+</div>
+
 <!-- CONTENTS -->
 <section class="s" id="inhalt" style="border-top:1px solid var(--rule)">
   <div class="eyb f"><span class="eyb-n">§ 02</span><div class="eyb-l"></div><span class="eyb-t">Was enthalten ist</span></div>
@@ -338,6 +343,17 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
     <div class="testi f d3"><p class="testi-b">„Der Lernplan und Fortschritts-Tracker sind meine täglichen Begleiter. Ich weiß jetzt genau, wo ich stehe — das hat meine Vorbereitung grundlegend verändert."</p><p class="testi-w">Kandidatin · Universität Düsseldorf</p></div>
   </div>
 </section>
+
+<!-- IMAGE STRIP 2 -->
+<div style="height:320px;background:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=80') center 40%/cover no-repeat;position:relative;">
+  <div style="position:absolute;inset:0;background:rgba(247,244,239,0.12)"></div>
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+    <div style="text-align:center;padding:2rem 3rem;background:rgba(247,244,239,0.92);">
+      <p style="font-family:Outfit,sans-serif;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#A8874A;margin-bottom:0.75rem">Lex Prima</p>
+      <p style="font-family:Outfit,sans-serif;font-size:1.6rem;font-weight:300;color:#1D3425;letter-spacing:-0.02em">Dein System. Dein Examen.</p>
+    </div>
+  </div>
+</div>
 
 <!-- PRICING -->
 <section class="s pricing" id="preis">
