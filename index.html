@@ -203,6 +203,12 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
+  /* 5-box layout: both rows go single column */
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(2,1fr)"]{
+    grid-template-columns:1fr !important;
+    max-width:100% !important;
+  }
   nav{padding:0 1.25rem}.nav-links{display:none}
   .hero{grid-template-columns:1fr}.hero-r{display:none}
   .hero-l{padding:4rem 1.25rem 3rem}
@@ -264,7 +270,12 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">Lex <span>Prima</span></a>
+  <a href="#" class="logo" style="display:flex;align-items:center;gap:0">
+  <svg viewBox="0 0 280 56" height="32" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="8,32 24,48 56,10" fill="none" stroke="#A8874A" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="70" y="37" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="24" font-weight="700" fill="#1A1816" letter-spacing="-0.3">LEX PRIMA</text>
+  </svg>
+</a>
   <div class="nav-links">
     <a href="#inhalt" class="nav-a">Inhalt</a>
     <a href="#warum" class="nav-a">Warum</a>
@@ -344,107 +355,44 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
   <div class="modules-intro reveal">
     <div class="eyebrow"><span class="eyebrow-num">§ 02</span><div class="eyebrow-line"></div><span class="eyebrow-text">Was enthalten ist</span></div>
     <h2 class="section-title">Fünf Gebiete.<br><span class="accent">Ein System.</span></h2>
-    <p class="section-intro">Eine Notion-Page mit Subpages — aufgeteilt in Zivilrecht, Öffentliches Recht, Strafrecht, Prozessrecht und Nebengebiete. Strukturiert, verlinkbar und sofort in deinem Workspace.</p>
+    <p class="section-intro">Eine Notion-Page mit Subpages — aufgeteilt in alle Pflichtfachgebiete des NRW-Staatsexamens. Strukturiert, verlinkbar und sofort in deinem Workspace.</p>
   </div>
 
-  <div class="modules-groups">
-    <!-- ZIVILRECHT -->
-    <div>
-      <p class="module-group-title reveal">Zivilrecht</p>
-      <div class="modules-grid">
-        <div class="module reveal d1">
-          <span class="mod-num">Allgemeines Zivilrecht</span>
-          <p class="mod-title">BGB, Schuldrecht & Sachenrecht</p>
-          <p class="mod-desc">Allgemeiner Teil, Schuldrecht AT und BT, Sachenrecht — alle examensrelevanten Schwerpunkte mit Prüfungsschemata und Querverweisen.</p>
-          <div class="mod-tags"><span class="tag">BGB AT</span><span class="tag">SchuldR</span><span class="tag">SachenR</span></div>
-        </div>
-        <div class="module reveal d2">
-          <span class="mod-num">Familien- & Erbrecht</span>
-          <p class="mod-title">FamilienR & ErbR</p>
-          <p class="mod-desc">Familienrecht und Erbrecht mit den klausurrelevanten Konstellationen und Prüfungsaufbauten für das NRW-Examen.</p>
-          <div class="mod-tags"><span class="tag">FamilienR</span><span class="tag">ErbR</span></div>
-        </div>
-        <div class="module reveal d3">
-          <span class="mod-num">Internationales Privatrecht</span>
-          <p class="mod-title">IPR</p>
-          <p class="mod-desc">Kollisionsrecht, Rom I & II, EGBGB — systematisch aufbereitet für die Anforderungen des NRW-Pflichtfachstoffs.</p>
-          <div class="mod-tags"><span class="tag">IPR</span><span class="tag">EGBGB</span><span class="tag">Rom I & II</span></div>
-        </div>
-        <div class="module reveal d1">
-          <span class="mod-num">Handels- & Gesellschaftsrecht</span>
-          <p class="mod-title">HandelsR & GesR</p>
-          <p class="mod-desc">HGB, Kaufmannsbegriff, Handelsgeschäfte sowie GbR, OHG, KG, GmbH und AG — examensrelevant und praxisnah strukturiert.</p>
-          <div class="mod-tags"><span class="tag">HGB</span><span class="tag">GmbH</span><span class="tag">AG</span><span class="tag">PersonengesR</span></div>
-        </div>
-      </div>
+  <!-- Row 1: 3 boxes -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.25rem">
+    <div class="module reveal d1">
+      <span class="mod-num">§ I · Zivilrecht</span>
+      <p class="mod-title">Zivilrecht</p>
+      <p class="mod-desc">BGB AT, Schuldrecht AT & BT, Deliktsrecht, Bereicherungsrecht, Sachenrecht und Kreditsicherungsrecht — vollständig und examensrelevant aufbereitet.</p>
+      <div class="mod-tags"><span class="tag">BGB AT</span><span class="tag">SchuldR</span><span class="tag">SachenR</span><span class="tag">DeliktsR</span><span class="tag">KreditsicherungsR</span></div>
     </div>
-
-    <!-- ÖFFENTLICHES RECHT -->
-    <div>
-      <p class="module-group-title reveal">Öffentliches Recht</p>
-      <div class="modules-grid">
-        <div class="module reveal d1">
-          <span class="mod-num">Verwaltungsrecht AT</span>
-          <p class="mod-title">VerwR Allgemeiner Teil</p>
-          <p class="mod-desc">Verwaltungsakt, öffentlich-rechtlicher Vertrag, Ermessen, Verhältnismäßigkeit — vollständig für die verwaltungsrechtliche Klausur.</p>
-          <div class="mod-tags"><span class="tag">VA</span><span class="tag">Ermessen</span><span class="tag">VwVfG</span></div>
-        </div>
-        <div class="module reveal d2">
-          <span class="mod-num">Verwaltungsprozessrecht</span>
-          <p class="mod-title">VwGO</p>
-          <p class="mod-desc">Alle Klagearten, einstweiliger Rechtsschutz, Zulässigkeit und Begründetheit — strukturiert nach Klausurpfaden.</p>
-          <div class="mod-tags"><span class="tag">VwGO</span><span class="tag">Anfechtungsklage</span><span class="tag">§ 123</span></div>
-        </div>
-        <div class="module reveal d3">
-          <span class="mod-num">Besonderes Verwaltungsrecht</span>
-          <p class="mod-title">BauR, PolizeiR & mehr</p>
-          <p class="mod-desc">Polizei- und Ordnungsrecht nach POLG NRW und OBG NRW, Baurecht, Kommunalrecht — NRW-spezifisch und examensrelevant.</p>
-          <div class="mod-tags"><span class="tag">POLG NRW</span><span class="tag">OBG NRW</span><span class="tag">BauR</span></div>
-        </div>
-        <div class="module reveal d1">
-          <span class="mod-num">Grundrechte & Staatsorganisation</span>
-          <p class="mod-title">GG & Verfassungsprozessrecht</p>
-          <p class="mod-desc">Grundrechtsprüfung, Staatsorganisationsrecht und Verfassungsprozessrecht mit BVerfGG — vollständig mit Klausurschemata.</p>
-          <div class="mod-tags"><span class="tag">GG</span><span class="tag">Grundrechte</span><span class="tag">BVerfGG</span></div>
-        </div>
-        <div class="module reveal d2">
-          <span class="mod-num">Staatshaftung & Europarecht</span>
-          <p class="mod-title">StaatshaftungsR & EuropaR</p>
-          <p class="mod-desc">Amtshaftung, Folgenbeseitigungsanspruch sowie EU-Grundfreiheiten, Richtlinien und Staatshaftung nach Unionsrecht.</p>
-          <div class="mod-tags"><span class="tag">§ 839 BGB</span><span class="tag">Art. 34 GG</span><span class="tag">EuropaR</span></div>
-        </div>
-      </div>
+    <div class="module reveal d2">
+      <span class="mod-num">§ II · Öffentliches Recht</span>
+      <p class="mod-title">Öffentliches Recht</p>
+      <p class="mod-desc">Verwaltungsrecht AT, Besonderes Verwaltungsrecht, Grundrechte & Staatsorganisationsrecht sowie Staatshaftung & Europarecht — NRW-spezifisch.</p>
+      <div class="mod-tags"><span class="tag">VerwR AT</span><span class="tag">Grundrechte</span><span class="tag">StaatsorgR</span><span class="tag">Staatshaftung</span></div>
     </div>
+    <div class="module reveal d3">
+      <span class="mod-num">§ III · Strafrecht</span>
+      <p class="mod-title">Strafrecht</p>
+      <p class="mod-desc">Allgemeiner Teil, Besonderer Teil 1–3 — alle examensrelevanten Delikte, Konkurrenzen und Problemschwerpunkte strukturiert und klausurfertig.</p>
+      <div class="mod-tags"><span class="tag">AT</span><span class="tag">BT 1</span><span class="tag">BT 2</span><span class="tag">BT 3</span></div>
+    </div>
+  </div>
 
-    <!-- STRAFRECHT -->
-    <div>
-      <p class="module-group-title reveal">Strafrecht & Nebengebiete</p>
-      <div class="modules-grid">
-        <div class="module reveal d1">
-          <span class="mod-num">Strafrecht</span>
-          <p class="mod-title">StGB AT & BT</p>
-          <p class="mod-desc">Allgemeiner und Besonderer Teil mit allen klausurrelevanten Delikten, Konkurrenzen und Problemschwerpunkten vollständig aufbereitet.</p>
-          <div class="mod-tags"><span class="tag">AT</span><span class="tag">BT</span><span class="tag">Delikte</span><span class="tag">Konkurrenzen</span></div>
-        </div>
-        <div class="module reveal d2">
-          <span class="mod-num">Strafprozessrecht</span>
-          <p class="mod-title">StPO</p>
-          <p class="mod-desc">Strafprozessuale Grundbegriffe, Ermittlungsverfahren, Hauptverfahren und Rechtsmittel — mit den examensrelevanten Problemkonstellationen.</p>
-          <div class="mod-tags"><span class="tag">StPO</span><span class="tag">Beweisverwertung</span><span class="tag">Rechtsmittel</span></div>
-        </div>
-        <div class="module reveal d3">
-          <span class="mod-num">Zivilprozessrecht</span>
-          <p class="mod-title">ZPO</p>
-          <p class="mod-desc">Erkenntnisverfahren, Zwangsvollstreckung und einstweiliger Rechtsschutz — strukturiert nach den Klausurschwerpunkten im NRW-Examen.</p>
-          <div class="mod-tags"><span class="tag">ZPO</span><span class="tag">Vollstreckung</span><span class="tag">§ 935</span></div>
-        </div>
-        <div class="module reveal d1">
-          <span class="mod-num">Arbeitsrecht</span>
-          <p class="mod-title">ArbR</p>
-          <p class="mod-desc">Individuelles und kollektives Arbeitsrecht — Kündigungsschutz, Betriebsverfassung und Tarifrecht examensgerecht aufbereitet.</p>
-          <div class="mod-tags"><span class="tag">KSchG</span><span class="tag">BetrVG</span><span class="tag">Tarifrecht</span></div>
-        </div>
-      </div>
+  <!-- Row 2: 2 boxes, centered and offset -->
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;max-width:calc(66.67% - 0.42rem);margin:0 auto">
+    <div class="module reveal d1">
+      <span class="mod-num">§ IV · Prozessrecht</span>
+      <p class="mod-title">Prozessrecht</p>
+      <p class="mod-desc">VwGO, StPO und ZPO — alle Klagearten, Zulässigkeit, Begründetheit und einstweiliger Rechtsschutz nach Klausurpfaden strukturiert.</p>
+      <div class="mod-tags"><span class="tag">VwGO</span><span class="tag">StPO</span><span class="tag">ZPO</span></div>
+    </div>
+    <div class="module reveal d2">
+      <span class="mod-num">§ V · Nebengebiete</span>
+      <p class="mod-title">Nebengebiete</p>
+      <p class="mod-desc">Familien- und Erbrecht, Internationales Privatrecht, Handels- und Gesellschaftsrecht sowie Arbeitsrecht — alle examensrelevanten Themen.</p>
+      <div class="mod-tags"><span class="tag">FamilienR</span><span class="tag">ErbR</span><span class="tag">IPR</span><span class="tag">HandelsR</span><span class="tag">ArbR</span></div>
     </div>
   </div>
 </section>
