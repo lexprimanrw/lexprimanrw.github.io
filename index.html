@@ -17,51 +17,52 @@
   --muted:#8A8278;
   --rule:#E4E0D8;
   --paper:#FDFCF9;
-  --card:#FFFFFF;
   --sans:'Outfit','Helvetica Neue',sans-serif;
   --ease:cubic-bezier(0.22,1,0.36,1);
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px;background:rgba(247,244,239,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule)}
-.logo{font-family:var(--sans);font-size:1rem;font-weight:500;color:var(--green);text-decoration:none;letter-spacing:.02em}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px;background:rgba(247,244,239,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule)}
+.logo{font-size:1rem;font-weight:500;color:var(--green);text-decoration:none;letter-spacing:.02em}
 .logo span{color:var(--gold);font-weight:300}
 .nav-links{display:flex;gap:2.5rem}
 .nav-a{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .nav-a:hover{color:var(--ink)}
-.nav-btn{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:var(--green);padding:.7rem 1.75rem;text-decoration:none;border-radius:2px;transition:background .25s}
+.nav-btn{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:var(--green);padding:.7rem 1.75rem;text-decoration:none;border-radius:2px;transition:background .25s;white-space:nowrap}
 .nav-btn:hover{background:var(--green2)}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:68px}
-.hero-l{display:flex;flex-direction:column;justify-content:center;padding:7rem 4rem 6rem 3rem}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 6rem 3rem}
 .hero-tag{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;display:flex;align-items:center;gap:.75rem;opacity:0;animation:fadeUp .8s var(--ease) .2s forwards}
-.hero-tag::before{content:'';display:block;width:2rem;height:1px;background:var(--gold)}
-.hero-h{font-size:clamp(3.5rem,6.5vw,6rem);font-weight:200;line-height:1.0;letter-spacing:-.03em;margin-bottom:2rem}
-.hero-h .line{display:block;overflow:hidden}
+.hero-tag::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);flex-shrink:0}
+
+/* FIX #9: no overflow:hidden on lines, generous padding-bottom */
+.hero-h{font-size:clamp(3.2rem,5.5vw,5.5rem);font-weight:200;line-height:1.08;letter-spacing:-.03em;margin-bottom:2rem;padding-bottom:.15em}
+.hero-h .line{display:block}
 .hero-h .word{display:inline-block;opacity:0;transform:translateY(110%);animation:wordUp .9s var(--ease) forwards}
 .hero-h .line:nth-child(1) .word{animation-delay:.3s}
 .hero-h .line:nth-child(2) .word{animation-delay:.45s}
 .hero-h .line:nth-child(3) .word{animation-delay:.6s}
-.hero-h .accent{color:var(--gold);font-weight:300}
-.hero-p{font-size:1.05rem;color:var(--muted);max-width:42ch;line-height:1.8;margin-bottom:3rem;font-weight:300;opacity:0;animation:fadeUp .8s var(--ease) .85s forwards}
+.hero-h .accent{color:var(--gold)}
+
+.hero-p{font-size:1rem;color:var(--muted);max-width:42ch;line-height:1.8;margin-bottom:3rem;font-weight:300;opacity:0;animation:fadeUp .8s var(--ease) .85s forwards}
 .hero-actions{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s var(--ease) 1s forwards}
 .btn-main{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2.25rem;background:var(--green);color:var(--paper);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .25s,gap .3s var(--ease)}
 .btn-main:hover{background:var(--green2);gap:1.25rem}
 .hero-note{font-size:.75rem;color:var(--muted)}
 
-/* Hero right: image with overlay */
-.hero-r{position:relative;overflow:hidden;background:linear-gradient(rgba(29,52,37,.85),rgba(22,43,29,.92)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between;padding:5rem 3rem}
+.hero-r{position:relative;overflow:hidden;background:linear-gradient(rgba(29,52,37,.88),rgba(22,43,29,.94)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between;padding:5rem 3rem}
 .hero-r-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,248,243,.35);margin-bottom:2.5rem;opacity:0;animation:fadeUp .8s var(--ease) .5s forwards}
 .toc{list-style:none;flex:1;display:flex;flex-direction:column;justify-content:center;opacity:0;animation:fadeUp .8s var(--ease) .65s forwards}
-.toc-item{display:flex;align-items:flex-start;gap:1.25rem;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:padding-left .3s var(--ease)}
+.toc-item{display:flex;align-items:flex-start;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:padding-left .3s var(--ease)}
 .toc-item:first-child{border-top:1px solid rgba(255,255,255,.07)}
 .toc-item:hover{padding-left:.5rem}
 .toc-n{font-size:.68rem;color:var(--gold);flex-shrink:0;margin-top:.15rem;font-weight:400}
-.toc-t{font-size:.95rem;color:rgba(250,248,243,.88);font-weight:400;display:block;margin-bottom:.1rem}
-.toc-s{font-size:.7rem;color:rgba(250,248,243,.32)}
+.toc-t{font-size:.92rem;color:rgba(250,248,243,.88);font-weight:400;display:block;margin-bottom:.1rem}
+.toc-s{font-size:.68rem;color:rgba(250,248,243,.32)}
 .hero-price{display:flex;align-items:center;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);margin-top:2rem;opacity:0;animation:fadeUp .8s var(--ease) .9s forwards}
 .price-num{font-size:2.2rem;font-weight:200;color:var(--paper);letter-spacing:-.02em}
 .price-label{font-size:.62rem;color:rgba(250,248,243,.35);letter-spacing:.08em;text-transform:uppercase;line-height:1.5}
@@ -75,97 +76,116 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 
 /* ── SECTIONS ── */
 .section{padding:8rem 3rem}
-.section.slim{padding:5rem 3rem}
 .eyebrow{display:inline-flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
 .eyebrow-num{font-size:.68rem;color:var(--gold);font-weight:400}
 .eyebrow-text{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .eyebrow-line{width:1.5rem;height:1px;background:var(--rule)}
 .section-title{font-size:clamp(2.2rem,4vw,3.8rem);font-weight:200;line-height:1.05;letter-spacing:-.025em;margin-bottom:1.5rem}
 .section-title .accent{color:var(--gold)}
-.section-intro{font-size:1.05rem;color:var(--muted);max-width:52ch;line-height:1.8}
+.section-intro{font-size:1rem;color:var(--muted);max-width:52ch;line-height:1.8}
+
+/* ── TRUST BANNER ── */
+.trust{background:var(--green);padding:4.5rem 3rem;text-align:center}
+.trust-eyebrow{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.trust-headline{font-size:clamp(2.5rem,5vw,4rem);font-weight:200;color:var(--paper);letter-spacing:-.03em;line-height:1;margin-bottom:1.25rem}
+.trust-sub{font-size:1rem;color:rgba(250,248,243,.45);max-width:52ch;margin:0 auto;line-height:1.8;font-weight:300}
+.trust-names{display:flex;align-items:center;justify-content:center;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+.trust-name{font-size:.78rem;color:rgba(250,248,243,.55);display:flex;align-items:center;gap:.5rem}
+.trust-name::before{content:'§';color:var(--gold);font-size:.7rem}
 
 /* ── PROBLEM ── */
-.problem-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
-.problem-items{margin-top:3rem;display:flex;flex-direction:column;gap:1.5rem}
+.problem-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.problem-items{margin-top:3rem;display:flex;flex-direction:column;gap:1.25rem}
 .p-item{display:flex;gap:1.5rem;padding:1.5rem;background:var(--paper);border-radius:8px;transition:box-shadow .3s}
 .p-item:hover{box-shadow:0 4px 24px rgba(0,0,0,.07)}
 .p-num{font-size:.75rem;color:var(--gold);flex-shrink:0;font-weight:500;margin-top:.1rem}
-.p-text{font-size:.95rem;color:var(--muted);line-height:1.7}
+.p-text{font-size:.93rem;color:var(--muted);line-height:1.7}
 .p-text strong{color:var(--ink);font-weight:400}
 .problem-quote{background:var(--green);padding:3.5rem;border-radius:8px;position:relative;overflow:hidden}
-.problem-quote::before{content:'❝';font-size:8rem;color:rgba(255,255,255,.05);position:absolute;top:-1rem;left:1rem;line-height:1;font-family:Georgia,serif}
-.pq-text{font-size:1.25rem;font-weight:300;color:rgba(250,248,243,.9);line-height:1.65;position:relative;z-index:1;margin-bottom:1.5rem}
+.problem-quote::before{content:'❝';font-size:8rem;color:rgba(255,255,255,.05);position:absolute;top:-1rem;left:1rem;line-height:1}
+.pq-text{font-size:1.2rem;font-weight:300;color:rgba(250,248,243,.9);line-height:1.65;position:relative;z-index:1;margin-bottom:1.5rem}
 .pq-source{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 
 /* ── IMAGE STRIP ── */
-.img-strip{height:420px;position:relative;overflow:hidden}
+.img-strip{height:460px;position:relative;overflow:hidden}
 .img-strip img{width:100%;height:100%;object-fit:cover;object-position:center}
-.img-strip-overlay{position:absolute;inset:0;background:rgba(247,244,239,.08)}
+.img-strip-overlay{position:absolute;inset:0}
 
 /* ── MODULES ── */
-.modules-intro{max-width:600px;margin-bottom:4rem}
-.modules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.module{background:var(--paper);padding:2.25rem;border-radius:8px;transition:box-shadow .3s,transform .3s}
+/* FIX #8: all grid areas use 1 column on mobile */
+.modules-intro{max-width:620px;margin-bottom:4rem}
+
+/* Three groups layout */
+.modules-groups{display:flex;flex-direction:column;gap:4rem}
+.module-group-title{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.module-group-title::after{content:'';flex:1;height:1px;background:var(--rule)}
+.modules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+
+/* FIX #7: unified card layout with flex so tags always at bottom */
+.module{background:var(--paper);padding:2rem;border-radius:8px;transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column}
 .module:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-2px)}
+.module.green{background:var(--green)}
 .mod-num{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;display:block;font-weight:500}
-.mod-title{font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:.5rem;line-height:1.3}
-.mod-desc{font-size:.875rem;color:var(--muted);line-height:1.7}
-.mod-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1.25rem}
+.mod-title{font-size:1rem;font-weight:500;color:var(--ink);margin-bottom:.5rem;line-height:1.3}
+.module.green .mod-title{color:rgba(250,248,243,.9)}
+.mod-desc{font-size:.875rem;color:var(--muted);line-height:1.7;flex:1}
+.module.green .mod-desc{color:rgba(250,248,243,.5)}
+/* FIX #7: margin-top:auto pushes tags to bottom consistently */
+.mod-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:1.25rem}
 .tag{font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg);padding:.25rem .6rem;border-radius:20px}
+.module.green .tag{background:rgba(255,255,255,.1);color:rgba(250,248,243,.55)}
 
 /* ── WHY ── */
 .why{background:var(--green)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
-.why-card{background:rgba(255,255,255,.05);padding:2.25rem;border-radius:8px;transition:background .25s}
-.why-card:hover{background:rgba(255,255,255,.08)}
-.why-icon{font-size:1.5rem;margin-bottom:1.25rem;display:block}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:4rem}
+.why-card{background:rgba(255,255,255,.06);padding:2.25rem;border-radius:8px;transition:background .25s}
+.why-card:hover{background:rgba(255,255,255,.1)}
+/* FIX #3: icons and text in white */
+.why-icon{font-size:1.4rem;margin-bottom:1.25rem;display:block;color:rgba(250,248,243,.9)}
 .why-title{font-size:1rem;font-weight:500;color:rgba(250,248,243,.9);margin-bottom:.5rem}
 .why-desc{font-size:.875rem;color:rgba(250,248,243,.42);line-height:1.7}
+/* FIX #3: eyebrow and title on green */
+.why .eyebrow-text{color:rgba(250,248,243,.4)}
+.why .eyebrow-line{background:rgba(255,255,255,.12)}
+.why .section-title{color:rgba(250,248,243,.95)}
 
 /* ── TESTIMONIALS ── */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
 .testi{background:var(--paper);padding:2.25rem;border-radius:8px}
 .testi-stars{color:var(--gold);font-size:.75rem;letter-spacing:.1em;margin-bottom:1.25rem;display:block}
 .testi-text{font-size:.95rem;font-style:italic;line-height:1.7;color:var(--ink);margin-bottom:1.5rem;font-weight:300}
 .testi-who{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
 /* ── PRICING ── */
-.pricing-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:820px;margin:3.5rem auto 0}
-.pc{background:var(--paper);padding:3rem;border-radius:8px;transition:box-shadow .3s}
-.pc:hover{box-shadow:0 8px 32px rgba(0,0,0,.08)}
-.pc.hi{background:var(--ink);color:var(--paper)}
+.pricing-wrap{max-width:460px;margin:3.5rem auto 0}
+.pc{background:var(--ink);padding:3rem;border-radius:8px;color:var(--paper)}
 .pc-badge{display:inline-block;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:white;padding:.25rem .75rem;border-radius:20px;margin-bottom:1.5rem}
-.pc-tier{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.4rem}
-.pc.hi .pc-tier{color:rgba(250,248,243,.35)}
-.pc-price{font-size:4rem;font-weight:200;line-height:1;letter-spacing:-.03em;margin-bottom:.25rem}
-.pc-note{font-size:.72rem;color:var(--muted);margin-bottom:2.5rem}
-.pc.hi .pc-note{color:rgba(250,248,243,.3)}
-.pc-divider{height:1px;background:var(--rule);margin-bottom:2rem}
-.pc.hi .pc-divider{background:rgba(255,255,255,.1)}
+.pc-tier{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,248,243,.35);display:block;margin-bottom:.4rem}
+.pc-price{font-size:4.5rem;font-weight:200;line-height:1;letter-spacing:-.03em;margin-bottom:.25rem}
+.pc-note{font-size:.72rem;color:rgba(250,248,243,.3);margin-bottom:2.5rem}
+.pc-divider{height:1px;background:rgba(255,255,255,.1);margin-bottom:2rem}
 .pc-list{list-style:none;margin-bottom:2.5rem}
-.pc-list li{font-size:.9rem;color:var(--muted);padding:.5rem 0;display:flex;align-items:flex-start;gap:.75rem;border-bottom:1px solid rgba(0,0,0,.04)}
+.pc-list li{font-size:.9rem;color:rgba(250,248,243,.55);padding:.5rem 0;display:flex;align-items:flex-start;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.06)}
 .pc-list li:last-child{border-bottom:none}
-.pc.hi .pc-list li{color:rgba(250,248,243,.55);border-color:rgba(255,255,255,.06)}
 .pc-list li::before{content:'→';color:var(--gold);font-size:.7rem;margin-top:.25rem;flex-shrink:0}
-.btn-buy{display:block;width:100%;text-align:center;padding:1rem;background:var(--green);color:var(--paper);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .25s}
-.btn-buy:hover{background:var(--green2)}
-.btn-buy-outline{display:block;width:100%;text-align:center;padding:1rem;background:transparent;color:var(--ink);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--rule);border-radius:2px;transition:border-color .2s}
-.btn-buy-outline:hover{border-color:var(--ink)}
-.pricing-note{text-align:center;margin-top:1.5rem;font-size:.75rem;color:var(--muted)}
+.btn-buy{display:block;width:100%;text-align:center;padding:1.1rem;background:var(--gold);color:white;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:opacity .2s,letter-spacing .3s var(--ease)}
+.btn-buy:hover{opacity:.9;letter-spacing:.12em}
+.pricing-note{text-align:center;margin-top:1.25rem;font-size:.75rem;color:var(--muted)}
 
 /* ── FAQ ── */
-.faq-list{margin-top:3.5rem;display:flex;flex-direction:column;gap:1rem;max-width:760px;margin-left:auto;margin-right:auto}
-.faq-item{background:var(--paper);border-radius:8px;overflow:hidden}
-.faq-q{font-size:1rem;font-weight:400;color:var(--ink);padding:1.5rem 2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
-.faq-q:hover{background:var(--bg)}
-.faq-q::after{content:'+';color:var(--gold);font-size:1.2rem;flex-shrink:0}
-.faq-a{font-size:.9rem;color:var(--muted);line-height:1.75;padding:0 2rem 1.5rem;display:none}
-.faq-item.open .faq-q::after{content:'−'}
+.faq-list{margin-top:3.5rem;display:flex;flex-direction:column;gap:.75rem;max-width:720px;margin-left:auto;margin-right:auto}
+.faq-item{background:var(--paper);border-radius:8px;overflow:hidden;transition:box-shadow .25s}
+/* FIX #5: hover shows white box shadow instead of same-tone bg */
+.faq-item:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.faq-q{font-size:.98rem;font-weight:400;color:var(--ink);padding:1.4rem 1.75rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none}
+.faq-q::after{content:'+';color:var(--gold);font-size:1.2rem;flex-shrink:0;transition:transform .3s var(--ease)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:.9rem;color:var(--muted);line-height:1.75;padding:0 1.75rem 1.4rem;display:none}
 .faq-item.open .faq-a{display:block}
 
 /* ── CTA BAND ── */
 .cta{background:var(--ink);padding:9rem 3rem;text-align:center;position:relative;overflow:hidden}
-.cta::before{content:'§';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:40vw;font-weight:200;color:rgba(255,255,255,.025);pointer-events:none;line-height:1;font-family:Georgia,serif}
+.cta::before{content:'§';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:40vw;font-weight:200;color:rgba(255,255,255,.025);pointer-events:none;line-height:1}
 .cta .section-title{color:var(--paper);position:relative;z-index:1}
 .cta .section-title .accent{color:var(--gold)}
 .cta-sub{font-size:.95rem;color:rgba(250,248,243,.38);margin:1.25rem auto 3.5rem;max-width:44ch;line-height:1.8;position:relative;z-index:1}
@@ -173,53 +193,58 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .btn-cta:hover{opacity:.9;gap:1.25rem}
 
 /* ── FOOTER ── */
-footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between}
+footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .f-logo{font-size:.95rem;font-weight:500;color:var(--green)}
 .f-logo span{color:var(--gold);font-weight:300}
-.f-links{display:flex;gap:2rem}
+.f-links{display:flex;gap:2rem;flex-wrap:wrap}
 .f-a{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .f-a:hover{color:var(--ink)}
 .f-copy{font-size:.7rem;color:var(--muted)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
-  nav{padding:0 1.5rem}.nav-links{display:none}
+  nav{padding:0 1.25rem}.nav-links{display:none}
   .hero{grid-template-columns:1fr}.hero-r{display:none}
-  .hero-l{padding:5rem 1.5rem 4rem}
-  .problem-layout{grid-template-columns:1fr;gap:3rem}
-  .modules-grid{grid-template-columns:1fr 1fr}
-  .why-grid{grid-template-columns:1fr 1fr}
+  .hero-l{padding:4rem 1.25rem 3rem}
+  /* FIX #8: all grids to single column on mobile */
+  .problem-layout{grid-template-columns:1fr;gap:2.5rem}
+  .modules-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
   .testi-grid{grid-template-columns:1fr}
-  .pricing-cards{grid-template-columns:1fr;max-width:420px}
-  .section{padding:5rem 1.5rem}
-  footer{flex-direction:column;gap:1.5rem;text-align:center}
-  .f-links{flex-wrap:wrap;justify-content:center}
+  .section{padding:4.5rem 1.25rem}
+  .trust{padding:3rem 1.25rem}
+  footer{flex-direction:column;text-align:center}
+  .f-links{justify-content:center}
+  /* prevent any horizontal scroll */
+  .img-strip{height:260px}
+}
+@media(max-width:600px){
+  .hero-h{font-size:2.8rem}
 }
 </style>
 </head>
 <body>
+
+<!-- PASSWORD -->
 <style>
 #pw-overlay{position:fixed;inset:0;background:#1D3425;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem}
 #pw-overlay.hidden{display:none}
-#pw-logo{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:500;color:#F7F4EF;letter-spacing:.02em}
+#pw-logo{font-size:1.1rem;font-weight:500;color:#F7F4EF;font-family:'Outfit',sans-serif}
 #pw-logo span{color:#A8874A;font-weight:300}
-#pw-box{display:flex;flex-direction:column;align-items:center;gap:1rem}
 #pw-label{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,248,243,.35);font-family:'Outfit',sans-serif}
 #pw-input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#F7F4EF;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:300;padding:.85rem 1.5rem;width:280px;outline:none;text-align:center;letter-spacing:.08em;border-radius:2px}
 #pw-input:focus{border-color:rgba(168,135,74,.6)}
 #pw-input::placeholder{color:rgba(250,248,243,.2)}
-#pw-error{font-size:.72rem;color:#c0392b;font-family:'Outfit',sans-serif;opacity:0;transition:opacity .3s}
-#pw-btn{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:white;border:none;padding:.8rem 2rem;cursor:pointer;border-radius:2px;font-family:'Outfit',sans-serif;transition:opacity .2s;width:280px}
+#pw-error{font-size:.72rem;color:#e74c3c;font-family:'Outfit',sans-serif;opacity:0;transition:opacity .3s;min-height:1.2rem}
+#pw-btn{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:#A8874A;color:white;border:none;padding:.8rem 2rem;cursor:pointer;border-radius:2px;font-family:'Outfit',sans-serif;transition:opacity .2s;width:280px}
 #pw-btn:hover{opacity:.85}
 </style>
 <div id="pw-overlay">
   <p id="pw-logo">Lex <span>Prima</span></p>
-  <div id="pw-box">
-    <p id="pw-label">Passwort eingeben</p>
-    <input id="pw-input" type="password" placeholder="••••••••••••" autocomplete="off">
-    <p id="pw-error">Falsches Passwort</p>
-    <button id="pw-btn" onclick="checkPw()">Zugang</button>
-  </div>
+  <p id="pw-label">Passwort eingeben</p>
+  <input id="pw-input" type="password" placeholder="••••••••••••" autocomplete="off">
+  <p id="pw-error">Falsches Passwort</p>
+  <button id="pw-btn" onclick="checkPw()">Zugang</button>
 </div>
 <script>
 function checkPw(){
@@ -237,7 +262,6 @@ document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.
 if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay').classList.add('hidden')}
 </script>
 
-
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">Lex <span>Prima</span></a>
@@ -247,7 +271,7 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
     <a href="#preis" class="nav-a">Preis</a>
     <a href="#faq" class="nav-a">FAQ</a>
   </div>
-  <a href="https://gumroad.com" class="nav-btn">Jetzt kaufen — 89€</a>
+  <a href="https://gumroad.com" class="nav-btn">Jetzt kaufen — 99€</a>
 </nav>
 
 <!-- HERO -->
@@ -268,29 +292,33 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
   <div class="hero-r">
     <p class="hero-r-label">Inhalt · Lex Prima</p>
     <ul class="toc">
-      <li class="toc-item"><span class="toc-n">§ I</span><div><span class="toc-t">BGB — Vollständig</span><span class="toc-s">AT · Schuldrecht · Sachenrecht · Familien- und Erbrecht</span></div></li>
-      <li class="toc-item"><span class="toc-n">§ II</span><div><span class="toc-t">Verfassungsrecht</span><span class="toc-s">GG · Grundrechte · Staatsorganisation · Verfassungsprozessrecht</span></div></li>
-      <li class="toc-item"><span class="toc-n">§ III</span><div><span class="toc-t">Verwaltungsrecht NRW</span><span class="toc-s">AT & BT · Polizeirecht · OBG NRW · POLG NRW</span></div></li>
-      <li class="toc-item"><span class="toc-n">§ IV</span><div><span class="toc-t">Strafrecht</span><span class="toc-s">AT & BT · Delikte · Prüfungsschemata</span></div></li>
-      <li class="toc-item"><span class="toc-n">§ V</span><div><span class="toc-t">Prozessrecht</span><span class="toc-s">ZPO · StPO · VwGO</span></div></li>
+      <li class="toc-item"><span class="toc-n">I</span><div><span class="toc-t">Zivilrecht</span><span class="toc-s">BGB · SchuldR · SachenR · FamilienR · ErbR · IPR · HandelsR · GesR</span></div></li>
+      <li class="toc-item"><span class="toc-n">II</span><div><span class="toc-t">Öffentliches Recht</span><span class="toc-s">VerwR AT & BT · VerwProzessR · Grundrechte · StaatsorgR · Staatshaftung · EuropaR</span></div></li>
+      <li class="toc-item"><span class="toc-n">III</span><div><span class="toc-t">Strafrecht & Nebengebiete</span><span class="toc-s">StGB · StPO · ZPO · ArbR</span></div></li>
     </ul>
     <div class="hero-price">
-      <span class="price-num">89€</span>
+      <span class="price-num">99€</span>
       <span class="price-label">Einmalig<br>inkl. MwSt.</span>
     </div>
   </div>
 </div>
 
-
 <!-- TRUST BANNER -->
-<div style="background:var(--green);padding:4rem 3rem;text-align:center">
-  <p style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;font-family:var(--sans)">Von Examenskandidaten für Examenskandidaten</p>
-  <p style="font-family:var(--sans);font-size:clamp(2.5rem,5vw,4rem);font-weight:200;color:var(--paper);letter-spacing:-.03em;line-height:1;margin-bottom:1.25rem">Vollbefriedigend.</p>
-  <p style="font-size:1rem;color:rgba(250,248,243,.5);max-width:48ch;margin:0 auto;line-height:1.75;font-family:var(--sans);font-weight:300">Beide Ersteller haben das Erste Juristische Examen in NRW mit Vollbefriedigend bestanden — mit genau diesen Notion-Seiten.</p>
+<div class="trust reveal">
+  <p class="trust-eyebrow">Von Examenskandidaten für Examenskandidaten</p>
+  <p class="trust-headline">Vollbefriedigend.</p>
+  <p class="trust-sub">Beide Ersteller haben das Erste Juristische Examen in NRW mit Vollbefriedigend bestanden — mit genau diesen Notion-Seiten.</p>
+  <div class="trust-names">
+    <span class="trust-name">Victor (Köln)</span>
+    <span style="color:rgba(250,248,243,.15);font-size:.8rem">·</span>
+    <span class="trust-name">Chris (Köln)</span>
+    <span style="color:rgba(250,248,243,.15);font-size:.8rem">·</span>
+    <span class="trust-name">Jasmin (Bonn)</span>
+  </div>
 </div>
 
 <!-- PROBLEM -->
-<section class="section" style="background:var(--bg)">
+<section class="section">
   <div class="problem-layout">
     <div>
       <div class="eyebrow reveal"><span class="eyebrow-num">§ 01</span><div class="eyebrow-line"></div><span class="eyebrow-text">Das Problem</span></div>
@@ -298,8 +326,8 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
       <div class="problem-items">
         <div class="p-item reveal d1"><span class="p-num">01</span><p class="p-text">Du weißt nicht, <strong>wo du anfangen</strong> sollst — der Stoff wirkt grenzenlos und jeder Tag ohne System ist ein verlorener Tag.</p></div>
         <div class="p-item reveal d2"><span class="p-num">02</span><p class="p-text">Mitschriften, PDFs, Heftnotizen — <strong>alles verstreut</strong>. Du suchst mehr als du lernst.</p></div>
-        <div class="p-item reveal d3"><span class="p-num">03</span><p class="p-text">Repetitorien kosten <strong>2.000 bis 4.000 Euro</strong> und sind trotzdem nicht auf den NRW-Pflichtfachstoff zugeschnitten.</p></div>
-        <div class="p-item reveal d4"><span class="p-num">04</span><p class="p-text">Du hast <strong>keinen Überblick</strong> über deinen Lernstand und weißt nicht, was wirklich examensrelevant ist.</p></div>
+        <div class="p-item reveal d3"><span class="p-num">03</span><p class="p-text">Repetitorien kosten <strong>2.000 bis 4.000 Euro</strong> und sind trotzdem nicht spezifisch auf den NRW-Pflichtfachstoff zugeschnitten.</p></div>
+        <div class="p-item reveal d4"><span class="p-num">04</span><p class="p-text">Du hast <strong>keinen Überblick</strong> — und weißt nicht, was wirklich examensrelevant ist.</p></div>
       </div>
     </div>
     <div class="problem-quote reveal d2">
@@ -309,58 +337,117 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
   </div>
 </section>
 
-<!-- IMAGE STRIP -->
+<!-- IMAGE STRIP #2: modern, clean, abstract/library -->
 <div class="img-strip">
-  <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1600&q=80" alt="Schreibtisch mit Büchern">
-  <div class="img-strip-overlay"></div>
+  <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=80" alt="Bibliothek">
+  <div class="img-strip-overlay" style="background:linear-gradient(to right, rgba(247,244,239,.15), rgba(29,52,37,.2))"></div>
 </div>
 
 <!-- INHALT -->
 <section class="section" id="inhalt">
   <div class="modules-intro reveal">
     <div class="eyebrow"><span class="eyebrow-num">§ 02</span><div class="eyebrow-line"></div><span class="eyebrow-text">Was enthalten ist</span></div>
-    <h2 class="section-title">Deine Notion-Pages.<br><span class="accent">Alle Pflichtfächer.</span></h2>
-    <p class="section-intro">Keine Templates, keine Lernpläne — nur das, was zählt: deine ausführlichen Notion-Seiten zu allen Pflichtfachgebieten des NRW-Staatsexamens. Strukturiert, verlinkbar, sofort in deinem Notion.</p>
+    <h2 class="section-title">Drei Gebiete.<br><span class="accent">Ein System.</span></h2>
+    <p class="section-intro">Eine Notion-Page mit Subpages — aufgeteilt in alle Pflichtfachgebiete des NRW-Staatsexamens. Strukturiert, verlinkbar und sofort in deinem Workspace.</p>
   </div>
-  <div class="modules-grid">
-    <div class="module reveal d1">
-      <span class="mod-num">§ I · Zivilrecht</span>
-      <p class="mod-title">BGB — Vollständig</p>
-      <p class="mod-desc">AT, Schuldrecht, Sachenrecht sowie Familien- und Erbrecht. Alle examensrelevanten Schwerpunkte mit Prüfungsschemata und Querverweisen.</p>
-      <div class="mod-tags"><span class="tag">AT</span><span class="tag">SchuldR</span><span class="tag">SachenR</span><span class="tag">FamilienR</span><span class="tag">ErbR</span></div>
+
+  <div class="modules-groups">
+    <!-- ZIVILRECHT -->
+    <div>
+      <p class="module-group-title reveal">Zivilrecht</p>
+      <div class="modules-grid">
+        <div class="module reveal d1">
+          <span class="mod-num">Allgemeines Zivilrecht</span>
+          <p class="mod-title">BGB, Schuldrecht & Sachenrecht</p>
+          <p class="mod-desc">Allgemeiner Teil, Schuldrecht AT und BT, Sachenrecht — alle examensrelevanten Schwerpunkte mit Prüfungsschemata und Querverweisen.</p>
+          <div class="mod-tags"><span class="tag">BGB AT</span><span class="tag">SchuldR</span><span class="tag">SachenR</span></div>
+        </div>
+        <div class="module reveal d2">
+          <span class="mod-num">Familien- & Erbrecht</span>
+          <p class="mod-title">FamilienR & ErbR</p>
+          <p class="mod-desc">Familienrecht und Erbrecht mit den klausurrelevanten Konstellationen und Prüfungsaufbauten für das NRW-Examen.</p>
+          <div class="mod-tags"><span class="tag">FamilienR</span><span class="tag">ErbR</span></div>
+        </div>
+        <div class="module reveal d3">
+          <span class="mod-num">Internationales Privatrecht</span>
+          <p class="mod-title">IPR</p>
+          <p class="mod-desc">Kollisionsrecht, Rom I & II, EGBGB — systematisch aufbereitet für die Anforderungen des NRW-Pflichtfachstoffs.</p>
+          <div class="mod-tags"><span class="tag">IPR</span><span class="tag">EGBGB</span><span class="tag">Rom I & II</span></div>
+        </div>
+        <div class="module reveal d1">
+          <span class="mod-num">Handels- & Gesellschaftsrecht</span>
+          <p class="mod-title">HandelsR & GesR</p>
+          <p class="mod-desc">HGB, Kaufmannsbegriff, Handelsgeschäfte sowie GbR, OHG, KG, GmbH und AG — examensrelevant und praxisnah strukturiert.</p>
+          <div class="mod-tags"><span class="tag">HGB</span><span class="tag">GmbH</span><span class="tag">AG</span><span class="tag">PersonengesR</span></div>
+        </div>
+      </div>
     </div>
-    <div class="module reveal d2">
-      <span class="mod-num">§ II · Öffentliches Recht</span>
-      <p class="mod-title">Verfassungsrecht</p>
-      <p class="mod-desc">Grundrechte, Staatsorganisation und Verfassungsprozessrecht mit Klausurschemata und Verweisen auf die Rechtsprechung des BVerfG.</p>
-      <div class="mod-tags"><span class="tag">GG</span><span class="tag">Grundrechte</span><span class="tag">BVerfGG</span></div>
+
+    <!-- ÖFFENTLICHES RECHT -->
+    <div>
+      <p class="module-group-title reveal">Öffentliches Recht</p>
+      <div class="modules-grid">
+        <div class="module reveal d1">
+          <span class="mod-num">Verwaltungsrecht AT</span>
+          <p class="mod-title">VerwR Allgemeiner Teil</p>
+          <p class="mod-desc">Verwaltungsakt, öffentlich-rechtlicher Vertrag, Ermessen, Verhältnismäßigkeit — vollständig für die verwaltungsrechtliche Klausur.</p>
+          <div class="mod-tags"><span class="tag">VA</span><span class="tag">Ermessen</span><span class="tag">VwVfG</span></div>
+        </div>
+        <div class="module reveal d2">
+          <span class="mod-num">Verwaltungsprozessrecht</span>
+          <p class="mod-title">VwGO</p>
+          <p class="mod-desc">Alle Klagearten, einstweiliger Rechtsschutz, Zulässigkeit und Begründetheit — strukturiert nach Klausurpfaden.</p>
+          <div class="mod-tags"><span class="tag">VwGO</span><span class="tag">Anfechtungsklage</span><span class="tag">§ 123</span></div>
+        </div>
+        <div class="module reveal d3">
+          <span class="mod-num">Besonderes Verwaltungsrecht</span>
+          <p class="mod-title">BauR, PolizeiR & mehr</p>
+          <p class="mod-desc">Polizei- und Ordnungsrecht nach POLG NRW und OBG NRW, Baurecht, Kommunalrecht — NRW-spezifisch und examensrelevant.</p>
+          <div class="mod-tags"><span class="tag">POLG NRW</span><span class="tag">OBG NRW</span><span class="tag">BauR</span></div>
+        </div>
+        <div class="module reveal d1">
+          <span class="mod-num">Grundrechte & Staatsorganisation</span>
+          <p class="mod-title">GG & Verfassungsprozessrecht</p>
+          <p class="mod-desc">Grundrechtsprüfung, Staatsorganisationsrecht und Verfassungsprozessrecht mit BVerfGG — vollständig mit Klausurschemata.</p>
+          <div class="mod-tags"><span class="tag">GG</span><span class="tag">Grundrechte</span><span class="tag">BVerfGG</span></div>
+        </div>
+        <div class="module reveal d2">
+          <span class="mod-num">Staatshaftung & Europarecht</span>
+          <p class="mod-title">StaatshaftungsR & EuropaR</p>
+          <p class="mod-desc">Amtshaftung, Folgenbeseitigungsanspruch sowie EU-Grundfreiheiten, Richtlinien und Staatshaftung nach Unionsrecht.</p>
+          <div class="mod-tags"><span class="tag">§ 839 BGB</span><span class="tag">Art. 34 GG</span><span class="tag">EuropaR</span></div>
+        </div>
+      </div>
     </div>
-    <div class="module reveal d3">
-      <span class="mod-num">§ III · ÖR NRW</span>
-      <p class="mod-title">Verwaltungsrecht NRW</p>
-      <p class="mod-desc">AT und BT mit NRW-spezifischen Besonderheiten. Polizei- und Ordnungsrecht nach POLG NRW und OBG NRW.</p>
-      <div class="mod-tags"><span class="tag">VwGO</span><span class="tag">POLG NRW</span><span class="tag">OBG NRW</span></div>
-    </div>
-    <div class="module reveal d1">
-      <span class="mod-num">§ IV · Strafrecht</span>
-      <p class="mod-title">StGB AT & BT</p>
-      <p class="mod-desc">Allgemeiner und Besonderer Teil mit allen klausurrelevanten Delikten, Konkurrenzen und Problemschwerpunkten.</p>
-      <div class="mod-tags"><span class="tag">AT</span><span class="tag">BT</span><span class="tag">Delikte</span></div>
-    </div>
-    <div class="module reveal d2">
-      <span class="mod-num">§ V · Prozessrecht</span>
-      <p class="mod-title">ZPO · StPO · VwGO</p>
-      <p class="mod-desc">Die wichtigsten Klausurpfade im Prozessrecht mit Verweisen ins materielle Recht und strukturierten Prüfungsaufbauten.</p>
-      <div class="mod-tags"><span class="tag">ZPO</span><span class="tag">StPO</span><span class="tag">VwGO</span></div>
-    </div>
-    <div class="module reveal d3" style="background:var(--green);color:var(--paper)">
-      <span class="mod-num" style="color:var(--gold)">Notion-Format</span>
-      <p class="mod-title" style="color:var(--paper)">Sofort in deinem Workspace</p>
-      <p class="mod-desc" style="color:rgba(250,248,243,.55)">Ein Klick — und alle Seiten sind in deinem Notion. Vollständig editierbar, verlinkbar und auf allen Geräten verfügbar.</p>
-      <div class="mod-tags" style="margin-top:auto">
-        <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(250,248,243,.6)">iPhone</span>
-        <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(250,248,243,.6)">Mac</span>
-        <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(250,248,243,.6)">Windows</span>
+
+    <!-- STRAFRECHT -->
+    <div>
+      <p class="module-group-title reveal">Strafrecht & Nebengebiete</p>
+      <div class="modules-grid">
+        <div class="module reveal d1">
+          <span class="mod-num">Strafrecht</span>
+          <p class="mod-title">StGB AT & BT</p>
+          <p class="mod-desc">Allgemeiner und Besonderer Teil mit allen klausurrelevanten Delikten, Konkurrenzen und Problemschwerpunkten vollständig aufbereitet.</p>
+          <div class="mod-tags"><span class="tag">AT</span><span class="tag">BT</span><span class="tag">Delikte</span><span class="tag">Konkurrenzen</span></div>
+        </div>
+        <div class="module reveal d2">
+          <span class="mod-num">Strafprozessrecht</span>
+          <p class="mod-title">StPO</p>
+          <p class="mod-desc">Strafprozessuale Grundbegriffe, Ermittlungsverfahren, Hauptverfahren und Rechtsmittel — mit den examensrelevanten Problemkonstellationen.</p>
+          <div class="mod-tags"><span class="tag">StPO</span><span class="tag">Beweisverwertung</span><span class="tag">Rechtsmittel</span></div>
+        </div>
+        <div class="module reveal d3">
+          <span class="mod-num">Zivilprozessrecht</span>
+          <p class="mod-title">ZPO</p>
+          <p class="mod-desc">Erkenntnisverfahren, Zwangsvollstreckung und einstweiliger Rechtsschutz — strukturiert nach den Klausurschwerpunkten im NRW-Examen.</p>
+          <div class="mod-tags"><span class="tag">ZPO</span><span class="tag">Vollstreckung</span><span class="tag">§ 935</span></div>
+        </div>
+        <div class="module green reveal d1">
+          <span class="mod-num">Arbeitsrecht</span>
+          <p class="mod-title">ArbR</p>
+          <p class="mod-desc">Individuelles und kollektives Arbeitsrecht — Kündigungsschutz, Betriebsverfassung und Tarifrecht examensgerecht aufbereitet.</p>
+          <div class="mod-tags"><span class="tag">KSchG</span><span class="tag">BetrVG</span><span class="tag">Tarifrecht</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -368,20 +455,20 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
 
 <!-- WHY -->
 <section class="section why" id="warum">
-  <div class="eyebrow reveal"><span class="eyebrow-num" style="color:var(--gold)">§ 03</span><div class="eyebrow-line" style="background:rgba(255,255,255,.12)"></div><span class="eyebrow-text" style="color:rgba(250,248,243,.35)">Warum Lex Prima</span></div>
-  <h2 class="section-title reveal" style="color:var(--paper)">Kein generisches<br><span class="accent">Lernprodukt.</span></h2>
+  <div class="eyebrow reveal"><span class="eyebrow-num">§ 03</span><div class="eyebrow-line"></div><span class="eyebrow-text">Warum Lex Prima</span></div>
+  <h2 class="section-title reveal">Kein generisches<br><span class="accent">Lernprodukt.</span></h2>
   <div class="why-grid">
-    <div class="why-card reveal d1"><span class="why-icon">§</span><p class="why-title">NRW-spezifisch</p><p class="why-desc">Gezielt auf den Pflichtfachstoff des NRW-Staatsexamens ausgerichtet. Keine generischen Bundesinhalte ohne Kontext.</p></div>
+    <div class="why-card reveal d1"><span class="why-icon">§</span><p class="why-title">NRW-spezifisch</p><p class="why-desc">Gezielt auf den Pflichtfachstoff des NRW-Staatsexamens ausgerichtet — inklusive aller landesrechtlichen Besonderheiten.</p></div>
     <div class="why-card reveal d2"><span class="why-icon">⊞</span><p class="why-title">Sofort einsetzbar</p><p class="why-desc">Ein Klick und alle Seiten sind in deinem Notion-Workspace. Kein Aufbau, keine Konfiguration.</p></div>
     <div class="why-card reveal d3"><span class="why-icon">✎</span><p class="why-title">Vollständig editierbar</p><p class="why-desc">Die Seiten gehören dir. Ergänze, markiere, verlinke — das System passt sich deiner Lernweise an.</p></div>
     <div class="why-card reveal d1"><span class="why-icon">◎</span><p class="why-title">Alle Geräte</p><p class="why-desc">Notion läuft auf Mac, Windows, iPhone und Android. Lerne überall — auch offline.</p></div>
-    <div class="why-card reveal d2"><span class="why-icon">↗</span><p class="why-title">Bruchteil eines Repetitoriums</p><p class="why-desc">Repetitorien kosten 2.000–4.000€. Lex Prima gibt dir die Struktur — einmalig, kein Abo.</p></div>
-    <div class="why-card reveal d3"><span class="why-icon">✓</span><p class="why-title">Aus echter Vorbereitung</p><p class="why-desc">Entstanden aus monatelanger realer Examensvorbereitung in NRW — nicht aus der Theorie.</p></div>
+    <div class="why-card reveal d2"><span class="why-icon">✓</span><p class="why-title">Aus echter Vorbereitung</p><p class="why-desc">Entstanden aus monatelanger realer Examensvorbereitung — nicht aus der Theorie.</p></div>
+    <div class="why-card reveal d3"><span class="why-icon">↗</span><p class="why-title">Bruchteil eines Repetitoriums</p><p class="why-desc">Repetitorien kosten 2.000–4.000€. Lex Prima gibt dir die Struktur — einmalig, kein Abo.</p></div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section" style="background:var(--bg)">
+<section class="section">
   <div class="eyebrow reveal"><span class="eyebrow-num">§ 04</span><div class="eyebrow-line"></div><span class="eyebrow-text">Stimmen</span></div>
   <h2 class="section-title reveal">Was andere <span class="accent">sagen.</span></h2>
   <div class="testi-grid">
@@ -392,7 +479,7 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
     </div>
     <div class="testi reveal d2">
       <span class="testi-stars">★★★★★</span>
-      <p class="testi-text">„Sofort einsetzbar, übersichtlich aufgebaut und genau auf NRW zugeschnitten. Endlich alles an einem Ort."</p>
+      <p class="testi-text">„Sofort einsetzbar, übersichtlich aufgebaut und genau auf NRW zugeschnitten. Endlich alles an einem Ort — auf dem iPhone genauso wie am Laptop."</p>
       <p class="testi-who">Kandidat · Universität Münster</p>
     </div>
     <div class="testi reveal d3">
@@ -403,80 +490,73 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
   </div>
 </section>
 
-<!-- IMAGE STRIP 2 -->
-<div style="height:320px;background:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=80') center 40%/cover no-repeat;position:relative;display:flex;align-items:center;justify-content:center;">
-  <div style="position:absolute;inset:0;background:rgba(247,244,239,.15)"></div>
-  <div style="text-align:center;padding:2rem 3rem;background:rgba(247,244,239,.93);border-radius:4px;position:relative;z-index:1">
-    <p style="font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-family:var(--sans)">Lex Prima</p>
-    <p style="font-size:1.5rem;font-weight:200;color:var(--green);letter-spacing:-.02em;font-family:var(--sans)">Dein System. Dein Examen.</p>
-  </div>
-</div>
-
 <!-- PRICING -->
-<section class="section" id="preis">
+<section class="section" id="preis" style="background:var(--paper)">
   <div style="text-align:center">
     <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 05</span><div class="eyebrow-line"></div><span class="eyebrow-text">Preis</span></div>
     <h2 class="section-title reveal">Einmal kaufen.<br><span class="accent">Für immer nutzen.</span></h2>
   </div>
-  <div style="max-width:480px;margin:3.5rem auto 0">
-    <div class="pc hi reveal d1">
-      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem">
-        <span class="pc-badge" style="margin-bottom:0">Die einzige Version</span>
-      </div>
+  <div class="pricing-wrap">
+    <div class="pc reveal">
+      <span class="pc-badge">Vollständiges System</span>
       <span class="pc-tier">Lex Prima</span>
       <div class="pc-price">99€</div>
       <p class="pc-note">einmalig · inkl. MwSt. · kein Abo</p>
       <div class="pc-divider"></div>
       <ul class="pc-list">
-        <li>Alle 5 Notion-Wissensdatenbanken</li>
-        <li>BGB, ÖR, Verwaltungsrecht NRW, Strafrecht, Prozessrecht</li>
+        <li>Notion-Page mit allen Subpages</li>
+        <li>Zivilrecht — 4 Gebiete vollständig</li>
+        <li>Öffentliches Recht — 5 Gebiete vollständig</li>
+        <li>Strafrecht & Nebengebiete — 4 Gebiete</li>
         <li>NRW-Pflichtfachstoff vollständig abgedeckt</li>
         <li>Klausur-Checkliste NRW als PDF</li>
-        <li>Prüfungsschemata-Übersicht als PDF</li>
         <li>Sofortiger Zugang per Notion-Link</li>
-        <li>Vollständig editierbar</li>
         <li>Support per E-Mail</li>
       </ul>
-      <a href="https://gumroad.com" class="btn-buy" style="font-size:.8rem;padding:1.1rem">Jetzt kaufen — 99€ →</a>
+      <a href="https://gumroad.com" class="btn-buy">Jetzt kaufen — 99€ →</a>
     </div>
   </div>
   <p class="pricing-note reveal">Kein Abo. Keine versteckten Kosten. Sofortiger Zugang nach Kauf.</p>
 </section>
 
 <!-- FAQ -->
-<section class="section" style="background:var(--bg)" id="faq">
+<section class="section" id="faq">
   <div style="text-align:center">
-  <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 06</span><div class="eyebrow-line"></div><span class="eyebrow-text">Häufige Fragen</span></div>
-  <h2 class="section-title reveal">Alles <span class="accent">geklärt.</span></h2>
+    <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 06</span><div class="eyebrow-line"></div><span class="eyebrow-text">Häufige Fragen</span></div>
+    <h2 class="section-title reveal">Alles <span class="accent">geklärt.</span></h2>
   </div>
   <div class="faq-list">
     <div class="faq-item reveal">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Brauche ich ein Notion-Konto?</div>
-      <div class="faq-a">Ja — aber Notion ist kostenlos. Das Free-Konto reicht vollständig aus. Keine Kreditkarte, keine Abonnements.</div>
+      <div class="faq-a">Ja — aber Notion ist kostenlos. Das Free-Konto reicht vollständig aus. Keine Kreditkarte, keine Abonnements nötig.</div>
     </div>
     <div class="faq-item reveal">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Ist der Inhalt nur für NRW geeignet?</div>
-      <div class="faq-a">Lex Prima ist gezielt auf den NRW-Pflichtfachstoff ausgerichtet. Der Großteil gilt bundesweit — NRW-Besonderheiten wie POLG NRW und OBG NRW sind klar gekennzeichnet.</div>
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Ist der Inhalt wirklich NRW-spezifisch?</div>
+      <div class="faq-a">Ja. Lex Prima ist gezielt auf den NRW-Pflichtfachstoff ausgerichtet — inklusive aller landesrechtlichen Besonderheiten wie POLG NRW, OBG NRW und NRW-spezifischen Schwerpunkten.</div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Wie erhalte ich Zugang nach dem Kauf?</div>
-      <div class="faq-a">Sofort nach dem Kauf erhältst du per E-Mail einen Notion-Link. Ein Klick — und alle Seiten sind in deinem eigenen Notion-Workspace.</div>
+      <div class="faq-a">Sofort nach dem Kauf erhältst du per E-Mail einen Notion-Link. Ein Klick — und alle Seiten sind in deinem eigenen Notion-Workspace, vollständig editierbar.</div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Kann ich die Seiten anpassen?</div>
-      <div class="faq-a">Absolut. Die Seiten gehören dir und sind vollständig editierbar. Ergänze, markiere, verlinke — ganz wie du magst.</div>
+      <div class="faq-a">Absolut. Die Seiten gehören dir und sind vollständig editierbar. Ergänze, markiere, verlinke — ganz wie es zu deiner Lernweise passt.</div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Gibt es ein Rückgaberecht?</div>
-      <div class="faq-a">Da es sich um ein digitales Produkt handelt, ist eine Rückgabe nach Zugang nicht möglich. Bei technischen Problemen helfe ich dir selbstverständlich weiter.</div>
+      <div class="faq-a">Da es sich um ein digitales Produkt handelt, ist eine Rückgabe nach Zugang nicht möglich. Bei technischen Problemen helfen wir dir selbstverständlich weiter.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Für welches Semester ist Lex Prima geeignet?</div>
+      <div class="faq-a">Lex Prima ist für Examenskandidaten konzipiert — also für alle, die sich aktiv auf das Erste Juristische Examen in NRW vorbereiten. Je früher du startest, desto mehr profitierst du.</div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA — FIX #6: stronger, more personal -->
 <div class="cta">
-  <h2 class="section-title reveal">Bereit für<br><span class="accent">dein Examen?</span></h2>
-  <p class="cta-sub reveal">Hör auf, Zeit mit Suchen zu verlieren. Fang heute mit dem System an, das funktioniert.</p>
+  <h2 class="section-title reveal">Weniger suchen.<br><span class="accent">Mehr verstehen.</span></h2>
+  <p class="cta-sub reveal">Das System, mit dem Victor, Chris und Jasmin Vollbefriedigend geschrieben haben — jetzt in deinem Notion.</p>
   <a href="https://gumroad.com" class="btn-cta reveal">Lex Prima jetzt holen <span>→</span></a>
 </div>
 
@@ -497,7 +577,7 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
   });
-}, {threshold: 0.1});
+}, {threshold: 0.08});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>
