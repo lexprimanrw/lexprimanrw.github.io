@@ -3,7 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lex Prima — Notion-Wissensdatenbank für das Erste Juristische Examen NRW</title>
+
+<!-- Primary SEO -->
+<meta name="description" content="Lex Prima: Die vollständigen Lernunterlagen für das Erste Juristische Examen in NRW. Alle Pflichtfächer, ausführliche Karteikarten für Spaced Repetition, sofort in Notion. Erstellt von Kandidaten mit Vollbefriedigend.">
+<meta name="keywords" content="Erstes Juristisches Examen NRW, Examensvorbereitung NRW, Jura Lernunterlagen, Notion Jura, Karteikarten Jura, Staatsexamen NRW, Pflichtfachstoff NRW, Jurastudium Lernhilfe, Zivilrecht Examen, Verwaltungsrecht NRW, Strafrecht Examen, Spaced Repetition Jura">
+<meta name="author" content="Lex Prima">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lexprimanrw.github.io">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lexprimanrw.github.io">
+<meta property="og:title" content="Lex Prima — Lernunterlagen für das Erste Juristische Examen NRW">
+<meta property="og:description" content="Alle Pflichtfächer, ausführliche Karteikarten, Spaced Repetition. Erstellt von Kandidaten mit Vollbefriedigend. Einmalig 99€ — kein Abo.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=630&fit=crop">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Lex Prima">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lex Prima — Lernunterlagen für das Erste Juristische Examen NRW">
+<meta name="twitter:description" content="Alle Pflichtfächer, Karteikarten, Spaced Repetition. Von Kandidaten mit VB. Einmalig 99€.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=630&fit=crop">
+
+<!-- Structured Data (Google Rich Results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Lex Prima",
+  "description": "Vollständige Lernunterlagen für das Erste Juristische Examen in NRW. Alle Pflichtfächer, Karteikarten für Spaced Repetition, sofort in Notion.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Lex Prima"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "99.00",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": "2027-01-01"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Jasmin"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "Ich hatte vorher überall irgendwas offen — aber nie das Gefühl, wirklich voranzukommen. Mit Lex Prima wusste ich zum ersten Mal, wo ich stehe."
+    }
+  ]
+}
+</script>
+<title>Lex Prima — Lernunterlagen Erstes Juristisches Examen NRW | Notion Karteikarten</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -54,7 +110,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .btn-main:hover{background:var(--green2);gap:1.25rem}
 .hero-note{font-size:.75rem;color:var(--muted)}
 
-.hero-r{position:relative;overflow:hidden;background:linear-gradient(rgba(29,52,37,.88),rgba(22,43,29,.94)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between;padding:5rem 3rem}
+.hero-r{position:relative;overflow:hidden;background:var(--green);display:flex;flex-direction:column;justify-content:space-between;padding:5rem 3rem}.hero-r-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;opacity:.05;pointer-events:none}
 .hero-r-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,248,243,.35);margin-bottom:2.5rem;opacity:0;animation:fadeUp .8s var(--ease) .5s forwards}
 .toc{list-style:none;flex:1;display:flex;flex-direction:column;justify-content:center;opacity:0;animation:fadeUp .8s var(--ease) .65s forwards}
 .toc-item{display:flex;align-items:flex-start;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.07);transition:padding-left .3s var(--ease)}
@@ -141,7 +197,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .why-card{background:rgba(255,255,255,.06);padding:2.25rem;border-radius:8px;transition:background .25s}
 .why-card:hover{background:rgba(255,255,255,.1)}
 /* FIX #3: icons and text in white */
-.why-icon{font-size:1.4rem;margin-bottom:1.25rem;display:block;color:rgba(250,248,243,.9)}
+.why-icon{margin-bottom:1.25rem;display:block;color:rgba(250,248,243,.75)}.why-icon svg{display:block}
 .why-title{font-size:1rem;font-weight:500;color:rgba(250,248,243,.9);margin-bottom:.5rem}
 .why-desc{font-size:.875rem;color:rgba(250,248,243,.42);line-height:1.7}
 /* FIX #3: eyebrow and title on green */
@@ -201,6 +257,23 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
 .f-a:hover{color:var(--ink)}
 .f-copy{font-size:.7rem;color:var(--muted)}
 
+/* ── COMPARISON ── */
+.comp{border-top:1px solid var(--rule)}
+.comp-table{margin-top:4rem;border-radius:8px;overflow:hidden;border:1px solid var(--rule)}
+.comp-head{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;background:var(--ink);color:var(--paper)}
+.comp-head-cell{padding:1.25rem 1rem;font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.comp-head-cell:first-child{text-align:left;padding-left:1.5rem}
+.comp-head-cell.hl{background:var(--gold);color:white}
+.comp-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;border-top:1px solid var(--rule);transition:background .2s}
+.comp-row:hover{background:var(--paper)}
+.comp-cell{padding:1.1rem 1rem;font-size:.88rem;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center}
+.comp-cell:first-child{text-align:left;justify-content:flex-start;padding-left:1.5rem;color:var(--ink);font-weight:400}
+.comp-cell.hl{background:rgba(168,135,74,.06)}
+.comp-yes{color:#1D3425;font-size:1rem;font-weight:600}
+.comp-no{color:#c0392b;font-size:.9rem}
+.comp-part{color:#A8874A;font-size:.8rem;font-weight:500}
+.comp-note{font-size:.68rem;color:var(--muted);text-align:center;margin-top:1rem}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   /* 5-box layout: both rows go single column */
@@ -218,6 +291,8 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 3rem;display:flex;align-i
   .why-grid{grid-template-columns:1fr}
   .testi-grid{grid-template-columns:1fr}
   .section{padding:4.5rem 1.25rem}
+  .comp-table{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:8px}
+  .comp-head,.comp-row{min-width:560px}
   .trust{padding:3rem 1.25rem}
   footer{flex-direction:column;text-align:center}
   .f-links{justify-content:center}
@@ -269,7 +344,7 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
 </script>
 
 <!-- NAV -->
-<nav>
+<nav role="navigation" aria-label="Hauptnavigation">
   <a href="#" class="logo" style="display:flex;align-items:center;gap:0">
   <svg viewBox="0 0 280 56" height="32" xmlns="http://www.w3.org/2000/svg">
     <polyline points="8,32 24,48 56,10" fill="none" stroke="#A8874A" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -279,28 +354,31 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
   <div class="nav-links">
     <a href="#inhalt" class="nav-a">Inhalt</a>
     <a href="#warum" class="nav-a">Warum</a>
+    <a href="#vergleich" class="nav-a">Vergleich</a>
     <a href="#preis" class="nav-a">Preis</a>
     <a href="#faq" class="nav-a">FAQ</a>
   </div>
-  <a href="https://gumroad.com" class="nav-btn">Jetzt kaufen — 99€</a>
+  <a href="https://gumroad.com" class="nav-btn" aria-label="Lex Prima jetzt für 99€ kaufen">Jetzt kaufen — 99€</a>
 </nav>
 
+<main>
 <!-- HERO -->
-<div class="hero">
+<div class="hero" role="banner">
   <div class="hero-l">
     <div class="hero-tag">Erstes Juristisches Examen · NRW · Notion</div>
     <h1 class="hero-h">
-      <span class="line"><span class="word">Das</span></span>
-      <span class="line"><span class="word">vollständige</span></span>
-      <span class="line"><span class="word"><span class="accent">System.</span></span></span>
+      <span class="line"><span class="word">Alles für</span></span>
+      <span class="line"><span class="word">dein Examen.</span></span>
+      <span class="line"><span class="word"><span class="accent">An einem Ort.</span></span></span>
     </h1>
-    <p class="hero-p">Alle Pflichtfächer des NRW-Staatsexamens — strukturiert, durchdacht und sofort in deinem Notion. Entstanden aus echter Examensvorbereitung, nicht aus der Theorie.</p>
+    <p class="hero-p">Das Examen fühlt sich oft wie ein Berg an, den man alleine besteigen muss. Lex Prima gibt dir die Karte dazu — alle Pflichtfächer, ausführliche Karteikarten für Spaced Repetition, und ein System das einfach funktioniert.</p>
     <div class="hero-actions">
       <a href="https://gumroad.com" class="btn-main">Jetzt kaufen <span>→</span></a>
       <span class="hero-note">Einmalig · Kein Abo · Sofort verfügbar</span>
     </div>
   </div>
   <div class="hero-r">
+    <div class="hero-r-bg"></div>
     <p class="hero-r-label">Inhalt · Lex Prima</p>
     <ul class="toc">
       <li class="toc-item"><span class="toc-n">I</span><div><span class="toc-t">Zivilrecht</span><span class="toc-s">BGB AT · SchuldR AT & BT · DeliktsR · BereicherungsR · SachenR · KreditsicherungsR</span></div></li>
@@ -320,7 +398,7 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
 <div class="trust reveal">
   <p class="trust-eyebrow">Von Examenskandidaten für Examenskandidaten</p>
   <p class="trust-headline">Vollbefriedigend.</p>
-  <p class="trust-sub">Beide Ersteller haben das Erste Juristische Examen in NRW mit Vollbefriedigend bestanden — mit genau diesen Notion-Seiten.</p>
+  <p class="trust-sub">Wir haben das Erste Juristische Examen in NRW mit Vollbefriedigend bestanden — mit genau diesem System. Keine Magie, kein Glück. Nur eine Vorbereitung, die wirklich funktioniert hat.</p>
 
 </div>
 
@@ -331,15 +409,15 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
       <div class="eyebrow reveal"><span class="eyebrow-num">§ 01</span><div class="eyebrow-line"></div><span class="eyebrow-text">Das Problem</span></div>
       <h2 class="section-title reveal">Kennst du<br>dieses <span class="accent">Gefühl?</span></h2>
       <div class="problem-items">
-        <div class="p-item reveal d1"><span class="p-num">01</span><p class="p-text">Du weißt nicht, <strong>wo du anfangen</strong> sollst — der Stoff wirkt grenzenlos und jeder Tag ohne System ist ein verlorener Tag.</p></div>
-        <div class="p-item reveal d2"><span class="p-num">02</span><p class="p-text">Mitschriften, PDFs, Heftnotizen — <strong>alles verstreut</strong>. Du suchst mehr als du lernst.</p></div>
-        <div class="p-item reveal d3"><span class="p-num">03</span><p class="p-text">Repetitorien kosten <strong>2.000 bis 4.000 Euro</strong> und sind trotzdem nicht spezifisch auf den NRW-Pflichtfachstoff zugeschnitten.</p></div>
-        <div class="p-item reveal d4"><span class="p-num">04</span><p class="p-text">Du hast <strong>keinen Überblick</strong> — und weißt nicht, was wirklich examensrelevant ist.</p></div>
+        <div class="p-item reveal d1"><span class="p-num">01</span><p class="p-text">Der Stoff ist so viel, dass man gar nicht weiß, <strong>wo man anfangen soll</strong>. Also fängt man morgen an. Und übermorgen auch.</p></div>
+        <div class="p-item reveal d2"><span class="p-num">02</span><p class="p-text">Mitschriften hier, Skripte dort, Karteikarten irgendwo — <strong>alles verstreut</strong>. Bis du alles zusammengesucht hast, ist der Abend vorbei.</p></div>
+        <div class="p-item reveal d3"><span class="p-num">03</span><p class="p-text">Das Repetitorium kostet <strong>mehrere tausend Euro</strong> — und gibt dir am Ende trotzdem nur generische Unterlagen, die du selbst aufarbeiten musst.</p></div>
+        <div class="p-item reveal d4"><span class="p-num">04</span><p class="p-text">Irgendwann sitzt du da und fragst dich: <strong>Lerne ich gerade das Richtige?</strong> Oder verliere ich Zeit mit Dingen, die im Examen nie drankommen?</p></div>
       </div>
     </div>
     <div class="problem-quote reveal d2">
-      <p class="pq-text">„Das Examen scheitert selten am fehlenden Wissen — es scheitert an fehlender Struktur."</p>
-      <p class="pq-source">Aus der Examensvorbereitung in NRW</p>
+      <p class="pq-text">„Ich habe nicht zu wenig gewusst. Ich hatte nur nie alles an einem Ort — und das hat mich Monate gekostet."</p>
+      <p class="pq-source">Victor, Vollbefriedigend, Köln</p>
     </div>
   </div>
 </section>
@@ -355,7 +433,7 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
   <div class="modules-intro reveal">
     <div class="eyebrow"><span class="eyebrow-num">§ 02</span><div class="eyebrow-line"></div><span class="eyebrow-text">Was enthalten ist</span></div>
     <h2 class="section-title">Fünf Gebiete.<br><span class="accent">Ein System.</span></h2>
-    <p class="section-intro">Eine Notion-Page mit Subpages — aufgeteilt in alle Pflichtfachgebiete des NRW-Staatsexamens. Strukturiert, verlinkbar und sofort in deinem Workspace.</p>
+    <p class="section-intro">Keine losen Skripte, keine halbfertigen Zusammenfassungen. Lex Prima deckt alle Pflichtfachgebiete ab — inklusive ausführlicher Karteikarten für Spaced Repetition, mit denen du den Stoff wirklich behältst.</p>
   </div>
 
   <!-- Row 1: 3 boxes -->
@@ -402,33 +480,95 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
   <div class="eyebrow reveal"><span class="eyebrow-num">§ 03</span><div class="eyebrow-line"></div><span class="eyebrow-text">Warum Lex Prima</span></div>
   <h2 class="section-title reveal">Kein generisches<br><span class="accent">Lernprodukt.</span></h2>
   <div class="why-grid">
-    <div class="why-card reveal d1"><span class="why-icon">§</span><p class="why-title">NRW-spezifisch</p><p class="why-desc">Gezielt auf den Pflichtfachstoff des NRW-Staatsexamens ausgerichtet — inklusive aller landesrechtlichen Besonderheiten.</p></div>
-    <div class="why-card reveal d2"><span class="why-icon">⊞</span><p class="why-title">Sofort einsetzbar</p><p class="why-desc">Ein Klick und alle Seiten sind in deinem Notion-Workspace. Kein Aufbau, keine Konfiguration.</p></div>
-    <div class="why-card reveal d3"><span class="why-icon">✎</span><p class="why-title">Vollständig editierbar</p><p class="why-desc">Die Seiten gehören dir. Ergänze, markiere, verlinke — das System passt sich deiner Lernweise an.</p></div>
-    <div class="why-card reveal d1"><span class="why-icon">◎</span><p class="why-title">Alle Geräte</p><p class="why-desc">Notion läuft auf Mac, Windows, iPhone und Android. Lerne überall — auch offline.</p></div>
-    <div class="why-card reveal d2"><span class="why-icon">✓</span><p class="why-title">Aus echter Vorbereitung</p><p class="why-desc">Entstanden aus monatelanger realer Examensvorbereitung — nicht aus der Theorie.</p></div>
-    <div class="why-card reveal d3"><span class="why-icon">↗</span><p class="why-title">Bruchteil eines Repetitoriums</p><p class="why-desc">Repetitorien kosten 2.000–4.000€. Lex Prima gibt dir die Struktur — einmalig, kein Abo.</p></div>
+    <div class="why-card reveal d1"><span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2C9 2 7 4 7 6.5c0 2 1.5 3.5 3 4.5-2 1-4 2.5-4 5s2 4 6 4 6-2 6-4.5c0-2.5-2-4-4-5 1.5-1 3-2.5 3-4.5C17 4 15 2 12 2z"/></svg></span><p class="why-title">Für NRW gebaut</p><p class="why-desc">Nicht irgendein Bundesskript. Lex Prima ist auf den NRW-Pflichtfachstoff zugeschnitten — mit allen landesrechtlichen Besonderheiten die im Examen drankommen.</p></div>
+    <div class="why-card reveal d2"><span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></span><p class="why-title">Heute kaufen, heute lernen</p><p class="why-desc">Ein Klick und alles ist in deinem Notion. Keine Installation, kein Aufbau. Du kannst noch heute Abend anfangen.</p></div>
+    <div class="why-card reveal d3"><span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span><p class="why-title">Dein System, deine Regeln</p><p class="why-desc">Alles gehört dir. Markiere, ergänze, verlinke — pass es an wie du lernst. Kein Abo, das dir nach zwei Jahren egal geworden ist.</p></div>
+    <div class="why-card reveal d1"><span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><p class="why-title">Immer dabei</p><p class="why-desc">In der Bahn, in der Bibliothek, im Bett. Notion läuft auf jedem Gerät — auch offline, wenn du kein WLAN hast.</p></div>
+    <div class="why-card reveal d2"><span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><p class="why-title">Von Examenskandidaten</p><p class="why-desc">Entstanden in echter Examensvorbereitung unter echtem Druck — nicht von jemandem, der das Examen vor zehn Jahren gemacht hat.</p></div>
+<div class="why-card reveal d3"><span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><p class="why-title">Einmal zahlen, fertig</p><p class="why-desc">Kein Abo das sich über Monate läppert. Einmal 99€ — und du hast alles für die gesamte Examensvorbereitung.</p></div>
   </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section comp" id="vergleich">
+  <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 04</span><div class="eyebrow-line"></div><span class="eyebrow-text">Warum Lex Prima</span></div>
+  <h2 class="section-title reveal" style="text-align:center">Alle Alternativen.<br><span class="accent">Ein klarer Sieger.</span></h2>
+  <p class="section-intro reveal" style="margin:0 auto 0;text-align:center;max-width:54ch">Uni-Skripte, Repetitorien, Abo-Apps — du kennst die Alternativen. Hier siehst du warum wir anders sind.</p>
+
+  <div class="comp-table reveal">
+    <div class="comp-head">
+      <div class="comp-head-cell"></div>
+      <div class="comp-head-cell hl">Lex Prima</div>
+      <div class="comp-head-cell">Uni-Skripte</div>
+      <div class="comp-head-cell">Repetitorium</div>
+      <div class="comp-head-cell">Abo-Plattform</div>
+    </div>
+
+    <div class="comp-row">
+      <div class="comp-cell">Vollständige Inhalte für alle Pflichtfächer</div>
+      <div class="comp-cell hl"><span class="comp-yes">✓</span></div>
+      <div class="comp-cell"><span class="comp-part">Teils</span></div>
+      <div class="comp-cell"><span class="comp-yes">✓</span></div>
+      <div class="comp-cell"><span class="comp-part">Teils</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">Auf NRW-Pflichtfachstoff zugeschnitten</div>
+      <div class="comp-cell hl"><span class="comp-yes">✓</span></div>
+      <div class="comp-cell"><span class="comp-part">Teils</span></div>
+      <div class="comp-cell"><span class="comp-part">Teils</span></div>
+      <div class="comp-cell"><span class="comp-no">✗</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">Ausführliche Karteikarten & Spaced Repetition</div>
+      <div class="comp-cell hl"><span class="comp-yes">✓</span></div>
+      <div class="comp-cell"><span class="comp-no">✗</span></div>
+      <div class="comp-cell"><span class="comp-no">✗</span></div>
+      <div class="comp-cell"><span class="comp-part">Teils</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">Einmalige Kosten — kein Abo</div>
+      <div class="comp-cell hl"><span class="comp-yes">✓</span></div>
+      <div class="comp-cell"><span class="comp-yes">✓</span></div>
+      <div class="comp-cell"><span class="comp-no">✗</span></div>
+      <div class="comp-cell"><span class="comp-no">✗</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">Vollständig individuell anpassbar</div>
+      <div class="comp-cell hl"><span class="comp-yes">✓</span></div>
+      <div class="comp-cell"><span class="comp-part">Teils</span></div>
+      <div class="comp-cell"><span class="comp-no">✗</span></div>
+      <div class="comp-cell"><span class="comp-no">✗</span></div>
+    </div>
+
+    <div class="comp-row">
+      <div class="comp-cell">Preis</div>
+      <div class="comp-cell hl" style="color:#A8874A;font-weight:600;font-size:.95rem">99€</div>
+      <div class="comp-cell" style="color:var(--ink)">Kostenlos</div>
+      <div class="comp-cell" style="color:var(--ink)">2.000–4.000€</div>
+      <div class="comp-cell" style="color:var(--ink)">15–30€/Monat</div>
+    </div>
+  </div>
+  <p class="comp-note reveal">Abo-Plattformen: Bei 18 Monaten Vorbereitung summieren sich die Kosten auf 270–540€ — ohne dass du die Inhalte jemals besitzt.</p>
 </section>
 
 <!-- TESTIMONIALS -->
 <section class="section">
-  <div class="eyebrow reveal"><span class="eyebrow-num">§ 04</span><div class="eyebrow-line"></div><span class="eyebrow-text">Stimmen</span></div>
+  <div class="eyebrow reveal"><span class="eyebrow-num">§ 05</span><div class="eyebrow-line"></div><span class="eyebrow-text">Stimmen</span></div>
   <h2 class="section-title reveal">Was andere <span class="accent">sagen.</span></h2>
   <div class="testi-grid">
     <div class="testi reveal d1">
       <span class="testi-stars">★★★★★</span>
-      <p class="testi-text">„Ich hatte vorher 15 verschiedene Ordner offen. Lex Prima hat meiner Vorbereitung endlich Struktur gegeben. Der Verwaltungsrechtsteil allein war jeden Cent wert."</p>
+      <p class="testi-text">„Ich hatte vorher überall irgendwas offen — aber nie das Gefühl, wirklich voranzukommen. Mit Lex Prima wusste ich zum ersten Mal, wo ich stehe und was als nächstes kommt."</p>
       <p class="testi-who">Jasmin · Universität Bonn</p>
     </div>
     <div class="testi reveal d2">
       <span class="testi-stars">★★★★★</span>
-      <p class="testi-text">„Sofort einsetzbar, übersichtlich aufgebaut und genau auf NRW zugeschnitten. Endlich alles an einem Ort — auf dem iPhone genauso wie am Laptop."</p>
+      <p class="testi-text">„Die Karteikarten haben meinen Lernrhythmus komplett verändert. Spaced Repetition klingt erstmal nerdig — aber wenn man vier Wochen vorher merkt, dass der Stoff wirklich sitzt, versteht man warum."</p>
       <p class="testi-who">Victor · Universität Köln</p>
     </div>
     <div class="testi reveal d3">
       <span class="testi-stars">★★★★★</span>
-      <p class="testi-text">„Die Seiten sind so strukturiert, dass ich mich sofort zurechtgefunden habe. Genau das, was ich für meine Examensvorbereitung gebraucht habe."</p>
+      <p class="testi-text">„Das Repetitorium hat mir generische Unterlagen gegeben, die ich selbst aufarbeiten musste. Lex Prima hat mir Zeit gespart, die ich in echtes Lernen investiert habe."</p>
       <p class="testi-who">Chris · Universität Köln</p>
     </div>
   </div>
@@ -437,7 +577,7 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
 <!-- PRICING -->
 <section class="section" id="preis" style="background:var(--paper)">
   <div style="text-align:center">
-    <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 05</span><div class="eyebrow-line"></div><span class="eyebrow-text">Preis</span></div>
+    <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 06</span><div class="eyebrow-line"></div><span class="eyebrow-text">Preis</span></div>
     <h2 class="section-title reveal">Einmal kaufen.<br><span class="accent">Für immer nutzen.</span></h2>
   </div>
   <div class="pricing-wrap">
@@ -448,14 +588,11 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
       <p class="pc-note">einmalig · inkl. MwSt. · kein Abo</p>
       <div class="pc-divider"></div>
       <ul class="pc-list">
-        <li>Notion-Page mit allen Subpages</li>
-        <li>Zivilrecht — alle examensrelevanten Themen</li>
-        <li>Öffentliches Recht — alle examensrelevanten Themen</li>
-        <li>Strafrecht & Prozessrecht — alle examensrelevanten Themen</li>
-        <li>Nebengebiete — alle examensrelevanten Themen</li>
-        <li>NRW-Pflichtfachstoff vollständig abgedeckt</li>
+        <li>Alle fünf Pflichtfachgebiete vollständig — Zivilrecht, Öffentliches Recht, Strafrecht, Prozessrecht und Nebengebiete</li>
+        <li>Ausführliche Karteikarten für Spaced Repetition in jedem Gebiet</li>
+        <li>Gezielt auf den NRW-Pflichtfachstoff zugeschnitten</li>
         <li>Klausur-Checkliste NRW als PDF</li>
-        <li>Sofortiger Zugang per Notion-Link</li>
+        <li>Sofortiger Zugang per Notion-Link — heute kaufen, heute lernen</li>
         <li>Support per E-Mail</li>
       </ul>
       <a href="https://gumroad.com" class="btn-buy">Jetzt kaufen — 99€ →</a>
@@ -467,7 +604,7 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
 <!-- FAQ -->
 <section class="section" id="faq">
   <div style="text-align:center">
-    <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 06</span><div class="eyebrow-line"></div><span class="eyebrow-text">Häufige Fragen</span></div>
+    <div class="eyebrow reveal" style="justify-content:center"><span class="eyebrow-num">§ 07</span><div class="eyebrow-line"></div><span class="eyebrow-text">Häufige Fragen</span></div>
     <h2 class="section-title reveal">Alles <span class="accent">geklärt.</span></h2>
   </div>
   <div class="faq-list">
@@ -500,12 +637,13 @@ if(sessionStorage.getItem('lp_auth')==='1'){document.getElementById('pw-overlay'
 
 <!-- CTA — FIX #6: stronger, more personal -->
 <div class="cta">
-  <h2 class="section-title reveal">Weniger suchen.<br><span class="accent">Mehr verstehen.</span></h2>
-  <p class="cta-sub reveal">Das System aus echter Examensvorbereitung — strukturiert, vollständig und sofort in deinem Notion.</p>
+  <h2 class="section-title reveal">Das Examen wartet.<br><span class="accent">Dein System auch.</span></h2>
+  <p class="cta-sub reveal">Du wirst das Examen sowieso schreiben. Die Frage ist nur, ob du es mit einem System tust — oder ohne.</p>
   <a href="https://gumroad.com" class="btn-cta reveal">Lex Prima jetzt holen <span>→</span></a>
 </div>
 
 <!-- FOOTER -->
+</main>
 <footer>
   <span class="f-logo">Lex <span>Prima</span></span>
   <div class="f-links">
