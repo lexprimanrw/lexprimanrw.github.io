@@ -41,6 +41,18 @@ footer{border-top:1px solid var(--border);padding:2rem;display:flex;align-items:
 </style>
 </head>
 <body>
+<div id="pw" style="position:fixed;inset:0;background:#080e1a;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem">
+  <p style="font-size:1.1rem;font-weight:700;color:#fff;font-family:Inter,sans-serif">LEX PRIMA<sup style="color:#c4992a;font-size:.5em;vertical-align:super">1</sup></p>
+  <p style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);font-family:Inter,sans-serif">Passwort eingeben</p>
+  <input id="pw-in" type="password" placeholder="••••••••••••" autocomplete="off" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:Inter,sans-serif;font-size:.95rem;padding:.8rem 1.5rem;width:260px;outline:none;text-align:center;border-radius:8px">
+  <p id="pw-err" style="font-size:.7rem;color:#f87171;min-height:1rem;opacity:0;transition:opacity .25s;font-family:Inter,sans-serif"></p>
+  <button onclick="checkPw()" style="font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;background:#c4992a;color:#fff;border:none;padding:.85rem 2rem;cursor:pointer;border-radius:8px;width:260px;font-family:Inter,sans-serif">Zugang</button>
+</div>
+<script>
+function checkPw(){var v=document.getElementById('pw-in').value,e=document.getElementById('pw-err');if(v==='victorchris1'){document.getElementById('pw').style.display='none';sessionStorage.setItem('lp_ok','1')}else{e.style.opacity='1';e.textContent='Falsches Passwort';setTimeout(()=>{e.style.opacity='0'},2200)}}
+document.getElementById('pw-in').addEventListener('keydown',function(ev){if(ev.key==='Enter')checkPw()});
+if(sessionStorage.getItem('lp_ok')==='1')document.getElementById('pw').style.display='none';
+</script>
 <nav>
   <a href="index.html" class="nav-brand">LEX PRIMA<sup>1</sup></a>
   <a href="index.html" class="nav-back">Zurück zur Website</a>
