@@ -16,8 +16,8 @@
       --text-primary: #0f1f3d; --text-secondary: #4a5568; --text-muted: #718096;
       --border: #e2e8f0;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--text-primary); background: var(--cream); min-height: 100vh; display: flex; flex-direction: column; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text-primary); background: var(--cream); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
 
     /* NAV */
     .nav {
@@ -66,9 +66,52 @@
     .footer__links a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .18s; }
     .footer__links a:hover { color: rgba(255,255,255,.8); }
     .footer__copy { font-size: 12px; color: rgba(255,255,255,.25); }
+
+    @media (max-width: 640px) {
+      html, body { overflow-x: hidden; }
+      .footer__links { flex-direction: column; gap: 12px; align-items: flex-start; }
+      .footer__copy { text-align: left; }
+      .page { margin-top: 40px; margin-bottom: 64px; }
+    }
   </style>
 </head>
 <body>
+  <!-- PASSWORD PROTECTION -->
+  <div id="pw-overlay" style="position:fixed;inset:0;z-index:9999;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:48px 40px;width:100%;max-width:380px;margin:24px;text-align:center;">
+      <div style="font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.2px;">Lex Prima<sup style="font-size:11px;color:#3d64f5;vertical-align:super;line-height:0;">1</sup></div>
+      <p style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:32px;">Bitte gib das Passwort ein, um fortzufahren.</p>
+      <input id="pw-input" type="password" placeholder="Passwort" autocomplete="current-password" style="width:100%;padding:13px 16px;border-radius:8px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);color:#fff;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;box-sizing:border-box;margin-bottom:12px;transition:border-color .18s;" onkeydown="if(event.key==='Enter')checkPw()" onfocus="this.style.borderColor='rgba(61,100,245,.8)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'"/>
+      <div id="pw-error" style="font-size:13px;color:#f87171;margin-bottom:10px;min-height:18px;"></div>
+      <button onclick="checkPw()" style="width:100%;padding:14px;border-radius:8px;border:none;background:#2a4fd6;color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .18s;" onmouseover="this.style.background='#3d64f5'" onmouseout="this.style.background='#2a4fd6'">Weiter →</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      if(sessionStorage.getItem('lp_auth')==='1'){
+        document.getElementById('pw-overlay').style.display='none';
+      }
+    })();
+    function checkPw(){
+      var val=document.getElementById('pw-input').value;
+      if(val==='victorchris1'){
+        sessionStorage.setItem('lp_auth','1');
+        var o=document.getElementById('pw-overlay');
+        o.style.transition='opacity .35s ease';
+        o.style.opacity='0';
+        setTimeout(function(){o.style.display='none';},360);
+      } else {
+        var e=document.getElementById('pw-error');
+        e.textContent='Falsches Passwort. Bitte erneut versuchen.';
+        var i=document.getElementById('pw-input');
+        i.style.borderColor='rgba(248,113,113,.7)';
+        i.value='';
+        i.focus();
+        setTimeout(function(){e.textContent='';i.style.borderColor='rgba(255,255,255,.15)';},2500);
+      }
+    }
+  </script>
+
   <nav class="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">Lex Prima<sup>1</sup></a>

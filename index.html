@@ -109,7 +109,7 @@
       --radius-sm: 8px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -614,6 +614,40 @@
     .footer__legal a { font-size: 13px; color: rgba(255,255,255,.4); text-decoration: none; }
     .footer__legal a:hover { color: rgba(255,255,255,.7); }
 
+    /* ── COMPARISON: desktop/mobile toggle ── */
+    .comparison-mobile { display: none; }
+    .comparison-desktop { display: block; }
+
+    /* Mobile comparison card styles (always defined, toggled by media query) */
+    .cmp-row {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .cmp-row:last-of-type { border-bottom: none; }
+    .cmp-row--price { padding-top: 16px; }
+    .cmp-row__label {
+      font-size: 13px; font-weight: 700; color: var(--navy);
+      margin-bottom: 10px; text-transform: uppercase; letter-spacing: .5px;
+    }
+    .cmp-row__cols {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+    }
+    .cmp-cell {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 4px; padding: 10px 6px; border-radius: 8px;
+      background: var(--white); border: 1px solid var(--border);
+      text-align: center;
+    }
+    .cmp-cell--winner {
+      background: var(--indigo-pale);
+      border: 1.5px solid rgba(42,79,214,.3);
+    }
+    .cmp-name {
+      font-size: 10px; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: .3px; line-height: 1.2;
+    }
+    .cmp-cell--winner .cmp-name { color: var(--indigo); }
+
     /* ── MOBILE NAV ── */
     /* Always hidden by default – only shown on mobile when .open */
     .mobile-nav { display: none; }
@@ -661,13 +695,30 @@
       .process__steps::before { display: none; }
       .testimonials__grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
+      /* Comparison: swap to card layout */
+      .comparison-desktop { display: none; }
+      .comparison-mobile { display: block; }
+
+      /* Features */
       .features__grid { grid-template-columns: 1fr; }
-      .comparison-table thead th:nth-child(2), .comparison-table tbody td:nth-child(2) { display: none; }
-      .comparison-table thead th:nth-child(4), .comparison-table tbody td:nth-child(4) { display: none; }
+
+      /* Hero */
       .hero__stat-grid { grid-template-columns: 1fr 1fr; }
       .hero__actions { flex-direction: column; align-items: flex-start; }
       .proof__inner { gap: 20px; justify-content: flex-start; }
+
+      /* FAQ: proper side padding */
+      .faq { padding: 72px 0; }
+      .faq__inner { padding: 0 20px; }
+
+      /* Footer: stack everything vertically */
+      .footer__top { flex-direction: column; gap: 32px; }
+      .footer__bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .footer__legal { flex-wrap: wrap; gap: 16px; }
+
+      /* CTA note: stack items */
+      .cta-section__note { line-height: 2; }
     }
 
     /* Fade-in animation */
@@ -1036,7 +1087,9 @@
         <h2 class="section-title" id="comparison-title">Lex Prima¹ vs. die Alternativen.</h2>
         <p class="section-sub">Kein Repetitorium kommt an dieses Preis-Leistungs-Verhältnis heran.</p>
       </div>
-      <div style="overflow-x: auto;" class="fade-in">
+
+      <!-- DESKTOP: table -->
+      <div class="comparison-desktop fade-in">
         <table class="comparison-table" aria-label="Vergleich von Lex Prima mit Alternativen">
           <thead>
             <tr>
@@ -1101,6 +1154,75 @@
         </table>
         <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">* Uni-Skripte oft unvollständig, ohne Karteikarten und ohne NRW-Fokus.</p>
       </div>
+
+      <!-- MOBILE: feature rows -->
+      <div class="comparison-mobile fade-in" aria-label="Vergleich von Lex Prima mit Alternativen">
+        <div class="cmp-row">
+          <div class="cmp-row__label">NRW-Pflichtfachstoff</div>
+          <div class="cmp-row__cols">
+            <div class="cmp-cell cmp-cell--winner"><span class="cmp-name">Lex Prima¹</span><span class="check">✓</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Repetitorium</span><span class="partial">Tlw.</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Abo</span><span class="partial">Tlw.</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Uni-Skript</span><span class="partial">Tlw.</span></div>
+          </div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row__label">Karteikarten integriert</div>
+          <div class="cmp-row__cols">
+            <div class="cmp-cell cmp-cell--winner"><span class="cmp-name">Lex Prima¹</span><span class="check">✓</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Repetitorium</span><span class="cross">✗</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Abo</span><span class="partial">Tlw.</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Uni-Skript</span><span class="cross">✗</span></div>
+          </div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row__label">Spaced Repetition</div>
+          <div class="cmp-row__cols">
+            <div class="cmp-cell cmp-cell--winner"><span class="cmp-name">Lex Prima¹</span><span class="check">✓</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Repetitorium</span><span class="cross">✗</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Abo</span><span class="partial">Tlw.</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Uni-Skript</span><span class="cross">✗</span></div>
+          </div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row__label">Bearbeitbar & anpassbar</div>
+          <div class="cmp-row__cols">
+            <div class="cmp-cell cmp-cell--winner"><span class="cmp-name">Lex Prima¹</span><span class="check">✓</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Repetitorium</span><span class="cross">✗</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Abo</span><span class="cross">✗</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Uni-Skript</span><span class="partial">Tlw.</span></div>
+          </div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row__label">Dauerhafter Zugang</div>
+          <div class="cmp-row__cols">
+            <div class="cmp-cell cmp-cell--winner"><span class="cmp-name">Lex Prima¹</span><span class="check">✓</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Repetitorium</span><span class="check" style="color:#16a34a">✓</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Abo</span><span class="cross">✗</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Uni-Skript</span><span class="check" style="color:#16a34a">✓</span></div>
+          </div>
+        </div>
+        <div class="cmp-row">
+          <div class="cmp-row__label">Offline nutzbar</div>
+          <div class="cmp-row__cols">
+            <div class="cmp-cell cmp-cell--winner"><span class="cmp-name">Lex Prima¹</span><span class="check">✓</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Repetitorium</span><span class="cross">✗</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Abo</span><span class="partial">Tlw.</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Uni-Skript</span><span class="cross">✗</span></div>
+          </div>
+        </div>
+        <div class="cmp-row cmp-row--price">
+          <div class="cmp-row__label">Preis</div>
+          <div class="cmp-row__cols">
+            <div class="cmp-cell cmp-cell--winner"><span class="cmp-name">Lex Prima¹</span><span style="color:#16a34a;font-weight:700;font-size:15px;">99 €</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Repetitorium</span><span style="color:#dc2626;font-size:12px;">2–4k €</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Abo</span><span style="color:#dc2626;font-size:12px;">270–540 €</span></div>
+            <div class="cmp-cell"><span class="cmp-name">Uni-Skript</span><span style="color:var(--text-muted);font-size:12px;">gratis*</span></div>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px; padding: 0 4px;">* Uni-Skripte oft unvollständig, ohne Karteikarten und ohne NRW-Fokus.</p>
+      </div>
+
     </div>
   </section>
 
