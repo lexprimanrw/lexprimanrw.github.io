@@ -1,242 +1,107 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AGB – Lex Prima¹</title>
-  <meta name="robots" content="noindex, follow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0f1f3d; --indigo: #2a4fd6; --indigo-light: #3d64f5;
-      --indigo-pale: #e8edfb; --cream: #fafaf7; --white: #ffffff;
-      --text-primary: #0f1f3d; --text-secondary: #4a5568; --text-muted: #718096;
-      --border: #e2e8f0;
-    }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--text-primary); background: var(--cream); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
-
-    .nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(250,250,247,.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav__inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
-    }
-    .nav__logo { font-size: 20px; font-weight: 700; color: var(--navy); text-decoration: none; }
-    .nav__logo sup { font-size: 11px; color: var(--indigo); vertical-align: super; line-height: 0; margin-left: 1px; }
-    .nav__links { display: flex; align-items: center; gap: 24px; }
-    .nav__links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color .18s; }
-    .nav__links a:hover { color: var(--indigo); }
-    .nav__links .btn-cta {
-      background: #fff; color: var(--indigo);
-      border: 1.5px solid var(--indigo);
-      padding: 8px 18px; border-radius: 7px; font-weight: 600; font-size: 14px;
-      transition: all .18s;
-    }
-    .nav__links .btn-cta:hover { background: var(--indigo); color: #fff; }
-    @media (max-width: 640px) { .nav__links a:not(.btn-cta) { display: none; } }
-
-    .page { flex: 1; max-width: 720px; margin: 60px auto 96px; padding: 0 24px; width: 100%; }
-    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); margin-bottom: 40px; }
-    .breadcrumb a { color: var(--indigo); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb__sep { color: var(--border); }
-    .page__label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--indigo); margin-bottom: 12px; display: block; }
-    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 5vw, 44px); color: var(--navy); margin-bottom: 48px; letter-spacing: -.3px; line-height: 1.1; }
-    h2 { font-size: 17px; font-weight: 700; color: var(--navy); margin: 40px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-    p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 12px; }
-    ul { margin: 8px 0 16px 20px; }
-    ul li { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2px; }
-    a { color: var(--indigo); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    strong { color: var(--text-primary); }
-    .placeholder { display: inline-block; background: #fef9c3; color: #92400e; border-radius: 4px; padding: 1px 6px; font-size: 13px; font-style: italic; }
-
-    .highlight-box {
-      background: var(--indigo-pale); border-left: 3px solid var(--indigo);
-      border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0 28px;
-    }
-    .highlight-box p { margin: 0; font-size: 14px; color: var(--text-secondary); }
-
-    .footer { background: #080f20; color: rgba(255,255,255,.4); padding: 32px 24px; text-align: center; font-size: 13px; }
-    .footer__links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 12px; }
-    .footer__links a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .18s; }
-    .footer__links a:hover { color: rgba(255,255,255,.8); }
-    .footer__copy { font-size: 12px; color: rgba(255,255,255,.25); }
-
-    @media (max-width: 640px) {
-      html, body { overflow-x: hidden; }
-      .footer__links { flex-direction: column; gap: 12px; align-items: flex-start; }
-      .footer__copy { text-align: left; }
-      .page { margin-top: 40px; margin-bottom: 64px; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGB | Lex Prima</title>
+  <meta name="description" content="AGB der Lex Prima GbR.">
+  <link rel="canonical" href="https://www.lexprima.de/agb.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AGB | Lex Prima">
+  <meta property="og:description" content="AGB der Lex Prima GbR.">
+  <meta property="og:url" content="https://www.lexprima.de/agb.html">
+  <meta property="og:site_name" content="Lex Prima">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111b33">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.lexprima.de/"}, {"@type": "ListItem", "position": 2, "name": "AGB", "item": "https://www.lexprima.de/agb.html"}]}</script>
 </head>
 <body>
-  <!-- PASSWORD PROTECTION -->
-  <div id="pw-overlay" style="position:fixed;inset:0;z-index:9999;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;">
-    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:48px 40px;width:100%;max-width:380px;margin:24px;text-align:center;">
-      <div style="font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.2px;">Lex Prima<sup style="font-size:11px;color:#3d64f5;vertical-align:super;line-height:0;">1</sup></div>
-      <p style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:32px;">Bitte gib das Passwort ein, um fortzufahren.</p>
-      <input id="pw-input" type="password" placeholder="Passwort" autocomplete="current-password" style="width:100%;padding:13px 16px;border-radius:8px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);color:#fff;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;box-sizing:border-box;margin-bottom:12px;transition:border-color .18s;" onkeydown="if(event.key==='Enter')checkPw()" onfocus="this.style.borderColor='rgba(61,100,245,.8)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'"/>
-      <div id="pw-error" style="font-size:13px;color:#f87171;margin-bottom:10px;min-height:18px;"></div>
-      <button onclick="checkPw()" style="width:100%;padding:14px;border-radius:8px;border:none;background:#2a4fd6;color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .18s;" onmouseover="this.style.background='#3d64f5'" onmouseout="this.style.background='#2a4fd6'">Weiter →</button>
-    </div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Lex Prima – Startseite">Lex&nbsp;Prima<sup>1</sup></a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="zivilrecht.html">Zivilrecht</a></li>
+      <li><a href="strafrecht.html">Strafrecht</a></li>
+      <li><a href="oeffentliches-recht.html">Öffentliches Recht NRW</a></li>
+      <li><a href="index.html#preise">Preise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a class="btn btn-primary btn-small" href="index.html#preise">Module sichern</a></li>
+    </ul>
   </div>
-  <script>
-    (function(){
-      if(sessionStorage.getItem('lp_auth')==='1'){
-        document.getElementById('pw-overlay').style.display='none';
-      }
-    })();
-    function checkPw(){
-      var val=document.getElementById('pw-input').value;
-      if(val==='victorchris1'){
-        sessionStorage.setItem('lp_auth','1');
-        var o=document.getElementById('pw-overlay');
-        o.style.transition='opacity .35s ease';
-        o.style.opacity='0';
-        setTimeout(function(){o.style.display='none';},360);
-      } else {
-        var e=document.getElementById('pw-error');
-        e.textContent='Falsches Passwort. Bitte erneut versuchen.';
-        var i=document.getElementById('pw-input');
-        i.style.borderColor='rgba(248,113,113,.7)';
-        i.value='';
-        i.focus();
-        setTimeout(function(){e.textContent='';i.style.borderColor='rgba(255,255,255,.15)';},2500);
-      }
-    }
-  </script>
+</header>
+<main>
+  <section class="section" style="padding-top:60px;">
+    <div class="wrap prose">
+      <span class="eyebrow">Rechtliches</span>
+      <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);">Allgemeine Geschäftsbedingungen</h1>
+      
+      <p class="placeholder">PLATZHALTER – vor Veröffentlichung durch geprüften Text ersetzen.</p>
+      <h2>§ 1 Geltungsbereich und Anbieter</h2>
+      <p>Diese AGB gelten für den Erwerb digitaler Lerninhalte („Module“) der Lex Prima GbR. Der Vertrieb erfolgt über die CopeCart GmbH als Wiederverkäufer (Reseller); für den Kaufvertrag gelten vorrangig die im Bestellprozess angezeigten Bedingungen von CopeCart. [Verhältnis final abstimmen.]</p>
+      <h2>§ 2 Vertragsgegenstand</h2>
+      <p>Vertragsgegenstand ist die Bereitstellung digitaler Lernmaterialien als Notion-Vorlage. Der Käufer erhält einen Link, über den er die Vorlage einmalig in seinen eigenen Notion-Account dupliziert.</p>
+      <h2>§ 3 Zugriff und Nutzungsrechte</h2>
+      <p>„Dauerhafter Zugriff“ bezieht sich auf die vom Käufer duplizierte Kopie in dessen eigenem Notion-Account, nicht auf eine dauerhaft öffentliche URL. Der Käufer erhält ein einfaches, nicht übertragbares Nutzungsrecht zum persönlichen Gebrauch. Weitergabe, Veröffentlichung und Vervielfältigung über den Eigengebrauch hinaus sind untersagt.</p>
+      <h2>§ 4 Widerrufsrecht</h2>
+      <p>Verbrauchern steht ein gesetzliches Widerrufsrecht zu. Einzelheiten (einschließlich des Erlöschens bei digitalen Inhalten nach § 356 Abs. 5 BGB) ergeben sich aus der Widerrufsbelehrung im Bestellprozess von CopeCart.</p>
+      <h2>§ 5 Aktualisierungen</h2>
+      <p>[Umfang und Dauer der inhaltlichen Updates definieren – z.B. Aktualisierungen der erworbenen Modulversion.]</p>
+      <h2>§ 6 Haftung</h2>
+      <p>Die Materialien sind Lernhilfen und stellen keine Rechtsberatung dar. [Haftungsklausel juristisch prüfen lassen.]</p>
+      <h2>§ 7 Schlussbestimmungen</h2>
+      <p>Es gilt deutsches Recht. [Gerichtsstand, salvatorische Klausel ergänzen und prüfen lassen.]</p>
 
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Lex Prima<sup>1</sup></a>
-      <div class="nav__links">
-        <a href="index.html#funktionen">Funktionen</a>
-        <a href="index.html#inhalte">Inhalte</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#kaufen" class="btn-cta">Jetzt kaufen – 99&nbsp;€</a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html">Lex&nbsp;Prima<sup>1</sup></a>
+        <p style="margin-top:14px; max-width:280px;">Strukturierte Zusammenfassungen, Schemata und Karteikarten für das Erste Staatsexamen – mit Fokus auf NRW.</p>
+      </div>
+      <div>
+        <h4>Module</h4>
+        <ul>
+          <li><a href="zivilrecht.html">Zivilrecht</a></li>
+          <li><a href="strafrecht.html">Strafrecht</a></li>
+          <li><a href="oeffentliches-recht.html">Öffentliches Recht NRW</a></li>
+          <li><a href="index.html#preise">Preise &amp; Bundle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Lex Prima</h4>
+        <ul>
+          <li><a href="index.html#methode">So funktioniert's</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+        </ul>
       </div>
     </div>
-  </nav>
-
-  <main class="page">
-    <div class="breadcrumb">
-      <a href="index.html">Startseite</a>
-      <span class="breadcrumb__sep">›</span>
-      <span>AGB</span>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Lex Prima GbR. Alle Rechte vorbehalten.</span>
+      <span>Kein Rechtsrat. Lernmaterial für die Examensvorbereitung.</span>
     </div>
-    <span class="page__label">Rechtliches</span>
-    <h1>Allgemeine Geschäftsbedingungen</h1>
-
-    <div class="highlight-box">
-      <p>Diese AGB gelten für den Kauf digitaler Lernprodukte über lexprima.de. Bitte lies sie vor dem Kauf sorgfältig durch.</p>
-    </div>
-
-    <h2>§ 1 Geltungsbereich</h2>
-    <p>
-      Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen <span class="placeholder">[Vorname Nachname]</span> (nachfolgend „Anbieter"), erreichbar unter <a href="mailto:hallo@lexprima.de">hallo@lexprima.de</a>, und dem Käufer (nachfolgend „Kunde"), die über die Website lexprima.de geschlossen werden. Entgegenstehende oder abweichende Bedingungen des Kunden werden nicht anerkannt.
-    </p>
-
-    <h2>§ 2 Vertragsschluss</h2>
-    <p>
-      Die Darstellung der Produkte auf der Website stellt kein rechtlich bindendes Angebot dar, sondern eine Aufforderung zur Bestellung (invitatio ad offerendum).
-    </p>
-    <p>
-      Durch Abschluss des Bestellvorgangs gibt der Kunde ein verbindliches Angebot zum Kauf ab. Der Vertrag kommt zustande, wenn der Anbieter die Bestellung per E-Mail bestätigt und den Notion-Zugangslink übermittelt.
-    </p>
-
-    <h2>§ 3 Produktbeschreibung</h2>
-    <p>Lex Prima¹ ist ein digitales Lernprodukt bestehend aus:</p>
-    <ul>
-      <li>Zugang zu einer Notion-Vorlage mit 400+ Zusammenfassungen</li>
-      <li>Über 5.000 Karteikarten für Spaced Repetition</li>
-      <li>Schemata, Definitionen und NRW-Klausurcheckliste</li>
-      <li>Allen Pflichtfachgebieten für das Erste Juristische Examen NRW</li>
-    </ul>
-    <p>
-      Zur Nutzung ist ein kostenloses Notion-Konto erforderlich. Der Anbieter übernimmt keine Garantie dafür, dass Notion als Drittanbieterplattform dauerhaft in der beschriebenen Form verfügbar bleibt.
-    </p>
-
-    <h2>§ 4 Preise und Zahlung</h2>
-    <p>
-      Alle Preise sind Endpreise. Der Anbieter ist Kleinunternehmer gemäß § 19 UStG; es wird keine Umsatzsteuer ausgewiesen und berechnet.
-    </p>
-    <p>
-      Der Kaufpreis beträgt einmalig <strong>99,00 EUR</strong>. Die Zahlung erfolgt über den jeweils angebotenen Zahlungsdienstleister. Es fallen keine wiederkehrenden Kosten oder Abonnementgebühren an.
-    </p>
-
-    <h2>§ 5 Lieferung / Zugangsverschaffung</h2>
-    <p>
-      Nach erfolgreicher Zahlung erhält der Kunde den Notion-Zugangslink per E-Mail an die bei der Bestellung angegebene Adresse. Die Übermittlung erfolgt in der Regel innerhalb weniger Minuten, spätestens innerhalb von 24 Stunden.
-    </p>
-    <p>
-      Der Kunde ist für die Angabe einer gültigen und zugänglichen E-Mail-Adresse verantwortlich. Zustellungsprobleme aufgrund einer fehlerhaften Adresse liegen im Verantwortungsbereich des Kunden.
-    </p>
-
-    <h2>§ 6 Widerrufsrecht und Erlöschen</h2>
-    <p>
-      Verbrauchern steht grundsätzlich ein gesetzliches Widerrufsrecht von 14 Tagen zu. Das Widerrufsrecht erlischt gemäß <strong>§ 356 Abs. 5 BGB</strong> bei digitalen Inhalten vorzeitig, wenn:
-    </p>
-    <ul>
-      <li>der Anbieter mit der Vertragserfüllung (Bereitstellung des Notion-Links) begonnen hat,</li>
-      <li>der Kunde ausdrücklich zugestimmt hat, dass der Anbieter vor Ablauf der Widerrufsfrist mit der Ausführung beginnt, <strong>und</strong></li>
-      <li>der Kunde seine Kenntnis davon bestätigt hat, dass er durch die Zustimmung sein Widerrufsrecht verliert.</li>
-    </ul>
-    <p>
-      Der Kunde wird im Bestellprozess entsprechend informiert und erteilt diese Zustimmung durch Abschluss der Bestellung. <strong>Nach Übermittlung des Notion-Links ist ein Widerruf daher ausgeschlossen.</strong>
-    </p>
-
-    <h2>§ 7 Nutzungsrechte</h2>
-    <p>
-      Mit dem Kauf erhält der Kunde ein einfaches, nicht übertragbares Nutzungsrecht an den erworbenen Inhalten für den ausschließlich persönlichen Lernzweck. Eine Weitergabe, Vervielfältigung, Veröffentlichung, Verbreitung oder sonstige kommerzielle Nutzung der Inhalte – ganz oder in Teilen – ist ohne ausdrückliche schriftliche Genehmigung des Anbieters nicht gestattet.
-    </p>
-
-    <h2>§ 8 Mängelgewährleistung</h2>
-    <p>
-      Der Anbieter haftet für Sachmängel nach den gesetzlichen Vorschriften. Eine Garantie auf das Erreichen einer bestimmten Prüfungsleistung oder Examensnote wird ausdrücklich nicht übernommen. Die Inhalte wurden von Examenskandidaten erstellt, die das Erste Juristische Examen NRW mit der Note „Vollbefriedigend" bestanden haben.
-    </p>
-
-    <h2>§ 9 Haftungsbeschränkung</h2>
-    <p>
-      Der Anbieter haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Vorsatz und grobe Fahrlässigkeit. Im Übrigen ist die Haftung des Anbieters auf vorhersehbare, vertragstypische Schäden beschränkt.
-    </p>
-    <p>
-      Der Anbieter übernimmt keine Haftung für die dauerhafte Verfügbarkeit der Notion-Plattform als Drittanbieter-Service sowie für etwaige durch Notion verursachte Datenverluste.
-    </p>
-
-    <h2>§ 10 Anwendbares Recht und Gerichtsstand</h2>
-    <p>
-      Es gilt das Recht der Bundesrepublik Deutschland. Für Verbraucher innerhalb der EU gilt dies nur, soweit hierdurch keine zwingenden verbraucherschützenden Bestimmungen des Aufenthaltsstaates des Kunden eingeschränkt werden.
-    </p>
-    <p>
-      Gerichtsstand ist, soweit gesetzlich zulässig, der Sitz des Anbieters.
-    </p>
-
-    <h2>§ 11 Salvatorische Klausel</h2>
-    <p>
-      Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, so berührt dies die Wirksamkeit der übrigen Bestimmungen nicht. Anstelle der unwirksamen Klausel gilt die gesetzliche Regelung.
-    </p>
-
-    <p style="margin-top: 48px; font-size: 13px; color: var(--text-muted);">Stand: <span class="placeholder">[Monat Jahr]</span></p>
-  </main>
-
-  <footer class="footer">
-    <div class="footer__links">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="agb.html">AGB</a>
-      <a href="kontakt.html">Kontakt</a>
-    </div>
-    <p class="footer__copy">&copy; 2025 Lex Prima. Alle Rechte vorbehalten.</p>
-  </footer>
+  </div>
+</footer>
+<script src="assets/main.js" defer></script>
 </body>
 </html>

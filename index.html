@@ -1,1504 +1,310 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lex Prima¹ – Lernunterlagen für das 1. Juristische Staatsexamen NRW</title>
-  <meta name="description" content="400+ Zusammenfassungen, 5.000+ Karteikarten und alle Pflichtfächer für das Erste Juristische Examen in NRW. Einmalig 99 € – kein Abo, kein Repetitorium." />
-  <meta name="keywords" content="Erstes Juristisches Examen NRW, Jura Lernunterlagen, Staatsexamen Vorbereitung, Karteikarten Jura, Spaced Repetition Jura, Repetitorium Alternative, Notion Jura" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://lexprima.de/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Lex Prima¹ – Lernunterlagen 1. Staatsexamen NRW" />
-  <meta property="og:description" content="Das komplette Lernsystem für das Erste Juristische Examen in NRW. 400+ Zusammenfassungen, 5.000+ Karteikarten, einmalig 99 €." />
-  <meta property="og:url" content="https://lexprima.de/" />
-  <meta property="og:locale" content="de_DE" />
-
-  <!-- Schema.org: Product + Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Product",
-        "name": "Lex Prima¹",
-        "description": "Digitales Lernsystem für das Erste Juristische Staatsexamen in Nordrhein-Westfalen. Enthält 400+ Zusammenfassungen, über 5.000 Karteikarten und alle fünf Pflichtfachgebiete.",
-        "offers": {
-          "@type": "Offer",
-          "price": "99.00",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock",
-          "priceValidUntil": "2026-12-31"
-        },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Jurastudierende NRW, Examenskandidaten"
-        },
-        "brand": {
-          "@type": "Brand",
-          "name": "Lex Prima"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Brauche ich ein Notion-Konto?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja. Ein kostenloses Notion-Konto reicht vollständig aus."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wann erhalte ich Zugang nach dem Kauf?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Unmittelbar nach dem Kauf erhältst du per E-Mail deinen persönlichen Notion-Link."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Ist der Inhalt wirklich NRW-spezifisch?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja. Die Unterlagen decken den NRW-Pflichtfachstoff vollständig ab – inklusive POLG NRW, OBG NRW und allen landesrechtlichen Besonderheiten."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Gibt es ein Abo oder laufende Kosten?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nein. Du zahlst einmalig 99 € und behältst dauerhaft Zugang zu allen Inhalten."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy: #0f1f3d;
-      --navy-mid: #1a3260;
-      --indigo: #2a4fd6;
-      --indigo-light: #3d64f5;
-      --indigo-pale: #e8edfb;
-      --gold: #c8a96e;
-      --cream: #fafaf7;
-      --white: #ffffff;
-      --text-primary: #0f1f3d;
-      --text-secondary: #4a5568;
-      --text-muted: #718096;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(15,31,61,.06), 0 1px 2px rgba(15,31,61,.04);
-      --shadow-md: 0 4px 16px rgba(15,31,61,.08), 0 2px 6px rgba(15,31,61,.05);
-      --shadow-lg: 0 12px 40px rgba(15,31,61,.12), 0 4px 12px rgba(15,31,61,.07);
-      --radius: 12px;
-      --radius-sm: 8px;
-    }
-
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--text-primary);
-      background: var(--cream);
-      overflow-x: hidden;
-    }
-
-    /* ── UTILITY ── */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .container--narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-    .sr-only { position: absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
-
-    /* ── NAV ── */
-    .nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(250,250,247,.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav__inner {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 24px; max-width: 1100px; margin: 0 auto;
-    }
-    .nav__logo {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 20px; font-weight: 700;
-      color: var(--navy); text-decoration: none;
-      letter-spacing: -0.3px;
-    }
-    .nav__logo sup {
-      font-size: 11px; font-weight: 600;
-      color: var(--indigo); vertical-align: super;
-      line-height: 0; margin-left: 1px;
-    }
-    .nav__links { display: flex; align-items: center; gap: 28px; }
-    .nav__links a {
-      font-size: 14px; font-weight: 500; color: var(--text-secondary);
-      text-decoration: none; transition: color .18s;
-    }
-    .nav__links a:hover { color: var(--indigo); }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px; font-weight: 600;
-      padding: 12px 28px; border-radius: 8px;
-      text-decoration: none; transition: all .2s; cursor: pointer; border: none;
-      white-space: nowrap;
-    }
-    .btn--primary {
-      background: var(--indigo); color: var(--white);
-      box-shadow: 0 2px 8px rgba(42,79,214,.3);
-    }
-    .btn--primary:hover {
-      background: var(--indigo-light);
-      box-shadow: 0 4px 16px rgba(42,79,214,.4);
-      transform: translateY(-1px);
-    }
-    .btn--primary:active { transform: translateY(0); }
-    .btn--outline {
-      background: transparent; color: var(--indigo);
-      border: 1.5px solid var(--indigo);
-    }
-    .btn--outline:hover { background: var(--indigo-pale); }
-    .btn--large { font-size: 17px; padding: 16px 36px; border-radius: 10px; }
-    .btn--ghost {
-      background: transparent; color: var(--text-secondary);
-      padding: 0; font-weight: 500;
-      text-decoration: underline; text-underline-offset: 3px;
-    }
-    .btn--ghost:hover { color: var(--indigo); }
-    .nav__cta { display: block; }
-    .nav__menu-btn { display: none; }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      padding: 100px 0 80px;
-      background: var(--navy);
-      overflow: hidden;
-    }
-    .hero__bg {
-      position: absolute; inset: 0; pointer-events: none;
-    }
-    .hero__bg::before {
-      content: '';
-      position: absolute; top: -200px; right: -200px;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(42,79,214,.22) 0%, transparent 65%);
-      border-radius: 50%;
-    }
-    .hero__bg::after {
-      content: '';
-      position: absolute; bottom: -100px; left: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(200,169,110,.08) 0%, transparent 60%);
-      border-radius: 50%;
-    }
-    .hero__grid {
-      position: absolute; inset: 0; opacity: .04;
-      background-image:
-        linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
-      background-size: 48px 48px;
-    }
-    .hero__inner {
-      position: relative; z-index: 1;
-      max-width: 1100px; margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-    }
-    .hero__badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(42,79,214,.2); border: 1px solid rgba(42,79,214,.4);
-      border-radius: 100px; padding: 6px 16px;
-      font-size: 13px; font-weight: 600; color: #93aaf7;
-      letter-spacing: .3px; margin-bottom: 24px;
-    }
-    .hero__badge::before {
-      content: '';
-      width: 6px; height: 6px; border-radius: 50%;
-      background: #93aaf7;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: .4; }
-    }
-    .hero__title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1.08; letter-spacing: -1px;
-      color: var(--white); margin-bottom: 20px;
-    }
-    .hero__title em {
-      font-style: italic; color: var(--gold);
-    }
-    .hero__sub {
-      font-size: 17px; line-height: 1.65;
-      color: rgba(255,255,255,.68); margin-bottom: 36px;
-      font-weight: 300;
-    }
-    .hero__actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .hero__trust {
-      margin-top: 40px;
-      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
-    }
-    .hero__trust-item {
-      display: flex; align-items: center; gap: 7px;
-      font-size: 13px; color: rgba(255,255,255,.5); font-weight: 400;
-    }
-    .hero__trust-item svg { color: var(--gold); flex-shrink: 0; }
-
-    /* Hero card */
-    .hero__card {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 16px; padding: 32px;
-      backdrop-filter: blur(8px);
-    }
-    .hero__card-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      color: rgba(255,255,255,.4); text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    .hero__stat-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-    }
-    .hero__stat {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 10px; padding: 18px;
-    }
-    .hero__stat-val {
-      font-family: 'DM Serif Display', serif;
-      font-size: 32px; color: var(--white); line-height: 1;
-      margin-bottom: 4px;
-    }
-    .hero__stat-val .accent { color: var(--gold); }
-    .hero__stat-desc { font-size: 12px; color: rgba(255,255,255,.5); font-weight: 400; }
-    .hero__price-row {
-      margin-top: 24px;
-      background: rgba(42,79,214,.25);
-      border: 1px solid rgba(42,79,214,.4);
-      border-radius: 10px; padding: 18px 20px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .hero__price-left { font-size: 13px; color: rgba(255,255,255,.6); }
-    .hero__price-left strong { display: block; font-size: 28px; color: var(--white); font-weight: 700; line-height: 1.1; }
-    .hero__price-left small { font-size: 12px; color: rgba(255,255,255,.45); }
-    .hero__price-badge {
-      background: var(--gold); color: var(--navy);
-      border-radius: 6px; padding: 4px 10px;
-      font-size: 12px; font-weight: 700; letter-spacing: .3px;
-    }
-
-    /* ── SOCIAL PROOF ── */
-    .proof {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-    }
-    .proof__inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; justify-content: center;
-      gap: 48px; flex-wrap: wrap;
-    }
-    .proof__item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 14px; color: var(--text-secondary); font-weight: 500;
-    }
-    .proof__item-icon { color: var(--indigo); font-size: 18px; }
-
-    /* ── SECTION HEADING ── */
-    .section-label {
-      display: inline-block;
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--indigo);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.12; letter-spacing: -.5px;
-      color: var(--navy); margin-bottom: 16px;
-    }
-    .section-sub {
-      font-size: 17px; color: var(--text-secondary);
-      line-height: 1.65; font-weight: 300;
-    }
-
-    /* ── PROBLEM ── */
-    .problem { padding: 96px 0; background: var(--cream); }
-    .problem__grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
-      margin-top: 56px;
-    }
-    .problem__list { list-style: none; }
-    .problem__list li {
-      display: flex; gap: 14px; align-items: flex-start;
-      padding: 16px 0; border-bottom: 1px solid var(--border);
-      font-size: 15px; color: var(--text-secondary); line-height: 1.5;
-    }
-    .problem__list li:last-child { border-bottom: none; }
-    .problem__list-icon {
-      width: 22px; height: 22px; border-radius: 50%;
-      background: #fee2e2; color: #dc2626;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; flex-shrink: 0; margin-top: 1px;
-    }
-    .problem__solution {
-      background: var(--indigo-pale);
-      border: 1px solid rgba(42,79,214,.15);
-      border-radius: var(--radius); padding: 36px;
-    }
-    .problem__solution h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 24px; color: var(--navy); margin-bottom: 20px;
-    }
-    .solution__check { list-style: none; }
-    .solution__check li {
-      display: flex; gap: 12px; align-items: flex-start;
-      padding: 10px 0; font-size: 15px; color: var(--text-secondary);
-    }
-    .solution__check li::before {
-      content: '✓'; color: var(--indigo); font-weight: 700;
-      flex-shrink: 0; margin-top: 1px;
-    }
-
-    /* ── FEATURES ── */
-    .features { padding: 96px 0; background: var(--white); }
-    .features__intro { text-align: center; max-width: 620px; margin: 0 auto 64px; }
-    .features__grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    }
-    .feature-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 32px;
-      transition: all .22s; background: var(--cream);
-      position: relative; overflow: hidden;
-    }
-    .feature-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--indigo), var(--indigo-light));
-      opacity: 0; transition: opacity .22s;
-    }
-    .feature-card:hover { border-color: rgba(42,79,214,.3); box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .feature-card:hover::before { opacity: 1; }
-    .feature-card__icon {
-      width: 48px; height: 48px; border-radius: 10px;
-      background: var(--indigo-pale); color: var(--indigo);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; margin-bottom: 20px;
-    }
-    .feature-card__title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .feature-card__desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-
-    /* ── CONTENT ── */
-    .content { padding: 96px 0; background: var(--navy); }
-    .content__intro { text-align: center; max-width: 620px; margin: 0 auto 64px; }
-    .content__intro .section-title { color: var(--white); }
-    .content__intro .section-sub { color: rgba(255,255,255,.6); }
-    .content__intro .section-label { color: rgba(147,170,247,.9); }
-    .tabs {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--radius); overflow: hidden;
-    }
-    .tabs__nav {
-      display: flex; overflow-x: auto; scrollbar-width: none;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-    .tabs__nav::-webkit-scrollbar { display: none; }
-    .tabs__btn {
-      flex-shrink: 0;
-      padding: 16px 24px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px; font-weight: 600;
-      color: rgba(255,255,255,.5);
-      background: transparent; border: none; cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: all .18s; white-space: nowrap;
-    }
-    .tabs__btn:hover { color: rgba(255,255,255,.85); }
-    .tabs__btn.active { color: var(--white); border-bottom-color: #3d64f5; }
-    .tabs__panel { display: none; padding: 36px; }
-    .tabs__panel.active { display: block; }
-    .tabs__topics {
-      display: flex; flex-wrap: wrap; gap: 10px;
-    }
-    .topic-pill {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 100px; padding: 6px 16px;
-      font-size: 13px; color: rgba(255,255,255,.75); font-weight: 400;
-    }
-    .topic-pill--highlight {
-      background: rgba(42,79,214,.3);
-      border-color: rgba(42,79,214,.5);
-      color: #93aaf7;
-    }
-
-    /* ── COMPARISON ── */
-    .comparison { padding: 96px 0; background: var(--cream); }
-    .comparison__intro { text-align: center; max-width: 620px; margin: 0 auto 56px; }
-    .comparison-table { width: 100%; border-collapse: collapse; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
-    .comparison-table thead tr { background: var(--navy); }
-    .comparison-table thead th {
-      padding: 18px 20px; text-align: center; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.7);
-    }
-    .comparison-table thead th:first-child { text-align: left; }
-    .comparison-table thead th.highlight { color: var(--white); position: relative; }
-    .comparison-table thead th.highlight::after {
-      content: ''; position: absolute; left: 0; right: 0; bottom: 0;
-      height: 3px; background: var(--indigo-light);
-    }
-    .comparison-table tbody tr { background: var(--white); border-bottom: 1px solid var(--border); }
-    .comparison-table tbody tr:last-child { border-bottom: none; }
-    .comparison-table tbody td {
-      padding: 15px 20px; font-size: 14px; color: var(--text-secondary); text-align: center;
-    }
-    .comparison-table tbody td:first-child { text-align: left; font-weight: 500; color: var(--text-primary); }
-    .comparison-table tbody td.highlight { background: var(--indigo-pale); color: var(--indigo); font-weight: 600; }
-    .check { color: #16a34a; font-size: 18px; font-weight: 700; }
-    .cross { color: #dc2626; font-size: 18px; }
-    .partial { color: var(--gold); font-size: 13px; font-weight: 500; }
-
-    /* ── PROCESS ── */
-    .process { padding: 96px 0; background: var(--white); }
-    .process__intro { text-align: center; max-width: 600px; margin: 0 auto 64px; }
-    .process__steps {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-      position: relative; margin-top: 40px;
-    }
-    .process__steps::before {
-      content: '';
-      position: absolute; top: 28px; left: calc(16.66% + 28px); right: calc(16.66% + 28px);
-      height: 2px; background: linear-gradient(90deg, var(--indigo), var(--indigo-light), var(--indigo));
-      z-index: 0;
-    }
-    .process__step { text-align: center; padding: 0 24px; position: relative; z-index: 1; }
-    .process__step-num {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--indigo); color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'DM Serif Display', serif; font-size: 22px;
-      margin: 0 auto 24px;
-      box-shadow: 0 0 0 6px var(--white), 0 0 0 7px var(--indigo-pale);
-    }
-    .process__step-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .process__step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials { padding: 96px 0; background: var(--indigo-pale); }
-    .testimonials__intro { text-align: center; max-width: 540px; margin: 0 auto 56px; }
-    .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .testimonial-card {
-      background: var(--white); border: 1px solid rgba(42,79,214,.1);
-      border-radius: var(--radius); padding: 28px;
-      box-shadow: var(--shadow-sm);
-    }
-    .testimonial-card__stars { color: var(--gold); font-size: 14px; margin-bottom: 14px; letter-spacing: 1px; }
-    .testimonial-card__text { font-size: 15px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px; font-style: italic; }
-    .testimonial-card__author { font-size: 14px; font-weight: 600; color: var(--navy); }
-    .testimonial-card__role { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-
-    /* ── FAQ ── */
-    .faq { padding: 96px 0; background: var(--white); }
-    .faq__inner { max-width: 720px; margin: 0 auto; }
-    .faq__intro { margin-bottom: 48px; }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-    .faq-item__btn {
-      width: 100%; background: none; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 0; gap: 16px;
-      text-align: left;
-    }
-    .faq-item__q { font-size: 16px; font-weight: 600; color: var(--navy); }
-    .faq-item__icon {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--indigo-pale); color: var(--indigo);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0; transition: transform .2s;
-    }
-    .faq-item.open .faq-item__icon { transform: rotate(45deg); }
-    .faq-item__a {
-      max-height: 0; overflow: hidden;
-      transition: max-height .3s ease, padding .3s ease;
-    }
-    .faq-item.open .faq-item__a { max-height: 200px; padding-bottom: 20px; }
-    .faq-item__a p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
-
-    /* ── CTA ── */
-    .cta-section {
-      padding: 100px 0;
-      background: var(--navy);
-      text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 800px; height: 400px;
-      background: radial-gradient(ellipse, rgba(42,79,214,.25) 0%, transparent 65%);
-    }
-    .cta-section__inner { position: relative; z-index: 1; }
-    .cta-section__title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(32px, 5vw, 52px);
-      color: var(--white); margin-bottom: 16px;
-      letter-spacing: -.5px; line-height: 1.1;
-    }
-    .cta-section__sub { font-size: 18px; color: rgba(255,255,255,.6); margin-bottom: 40px; font-weight: 300; }
-    .cta-section__price {
-      margin: 0 auto 36px;
-      display: inline-flex; align-items: baseline; gap: 8px;
-    }
-    .cta-section__amount {
-      font-family: 'DM Serif Display', serif;
-      font-size: 56px; color: var(--white); line-height: 1;
-    }
-    .cta-section__once { font-size: 16px; color: rgba(255,255,255,.5); }
-    .cta-section__note { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.4); }
-
-    /* ── FOOTER ── */
-    .footer {
-      background: #080f20; color: rgba(255,255,255,.5);
-      padding: 48px 0 32px;
-    }
-    .footer__inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 24px;
-    }
-    .footer__top {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: 40px; margin-bottom: 40px; flex-wrap: wrap;
-    }
-    .footer__brand a {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 20px; font-weight: 700; color: var(--white);
-      text-decoration: none;
-    }
-    .footer__brand a sup { font-size: 11px; color: var(--indigo-light); vertical-align: super; line-height: 0; }
-    .footer__brand p { font-size: 13px; color: rgba(255,255,255,.4); margin-top: 8px; max-width: 240px; line-height: 1.5; }
-    .footer__links h4 { font-size: 13px; font-weight: 700; color: rgba(255,255,255,.7); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
-    .footer__links ul { list-style: none; }
-    .footer__links ul li { margin-bottom: 10px; }
-    .footer__links ul li a { font-size: 14px; color: rgba(255,255,255,.4); text-decoration: none; transition: color .18s; }
-    .footer__links ul li a:hover { color: var(--white); }
-    .footer__bottom {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 24px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px;
-    }
-    .footer__copy { font-size: 13px; }
-    .footer__legal { display: flex; gap: 20px; }
-    .footer__legal a { font-size: 13px; color: rgba(255,255,255,.4); text-decoration: none; }
-    .footer__legal a:hover { color: rgba(255,255,255,.7); }
-
-    /* ── COMPARISON: desktop/mobile toggle ── */
-    .comparison-mobile { display: none; }
-    .comparison-desktop { display: block; }
-
-    /* Mobile comparison: clean vertical rows */
-    .cmp-row {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 18px;
-      margin-bottom: 10px;
-    }
-    .cmp-row__label {
-      font-size: 12px; font-weight: 700; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: .8px;
-      margin-bottom: 12px;
-    }
-    .cmp-row__entries {
-      display: flex; flex-direction: column; gap: 7px;
-    }
-    .cmp-entry {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 8px 12px; border-radius: 7px;
-      background: var(--cream); min-width: 0;
-    }
-    .cmp-entry--winner {
-      background: var(--indigo-pale);
-      border: 1.5px solid rgba(42,79,214,.25);
-    }
-    .cmp-entry__name {
-      font-size: 14px; font-weight: 600; color: var(--text-secondary);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
-    .cmp-entry--winner .cmp-entry__name { color: var(--indigo); font-weight: 700; }
-    .cmp-entry__val {
-      font-size: 14px; font-weight: 600; flex-shrink: 0; margin-left: 8px;
-    }
-
-    /* ── MOBILE NAV ── */
-    /* Always hidden by default – only shown on mobile when .open */
-    .mobile-nav { display: none; }
-    .nav__menu-btn { display: none; }
-
-    @media (max-width: 768px) {
-      .nav__links { display: none; }
-      .nav__cta { display: none; }
-      .nav__menu-btn {
-        display: flex; align-items: center; justify-content: center;
-        width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 0;
-      }
-      .nav__menu-btn span {
-        display: block; width: 22px; height: 2px; background: var(--navy);
-        position: relative; transition: background .2s;
-      }
-      .nav__menu-btn span::before, .nav__menu-btn span::after {
-        content: ''; position: absolute; width: 22px; height: 2px; background: var(--navy); left: 0;
-        transition: transform .2s;
-      }
-      .nav__menu-btn span::before { top: -6px; }
-      .nav__menu-btn span::after { top: 6px; }
-      .mobile-nav.open {
-        display: block; position: fixed; top: 57px; left: 0; right: 0;
-        background: var(--cream); border-bottom: 1px solid var(--border);
-        padding: 20px 24px 28px; z-index: 99; box-shadow: var(--shadow-md);
-      }
-      .mobile-nav a {
-        display: block; padding: 12px 0;
-        font-size: 16px; font-weight: 500; color: var(--text-primary);
-        text-decoration: none; border-bottom: 1px solid var(--border);
-      }
-      .mobile-nav a:last-child { border-bottom: none; }
-      .mobile-nav .btn--primary { margin-top: 16px; width: 100%; text-align: center; display: block; }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero__inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero__card { display: none; }
-      .hero { padding: 72px 0 64px; }
-      .problem__grid { grid-template-columns: 1fr; }
-      .features__grid { grid-template-columns: 1fr 1fr; }
-      .process__steps { grid-template-columns: 1fr; gap: 32px; }
-      .process__steps::before { display: none; }
-      .testimonials__grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      /* Comparison: swap to card layout, contain width */
-      .comparison-desktop { display: none; }
-      .comparison-mobile { display: block; }
-      .comparison { overflow: hidden; }
-      .cmp-row, .cmp-entry { max-width: 100%; box-sizing: border-box; }
-
-      /* Features */
-      .features__grid { grid-template-columns: 1fr; }
-
-      /* Hero */
-      .hero__stat-grid { grid-template-columns: 1fr 1fr; }
-      .hero__actions { flex-direction: column; align-items: flex-start; }
-      .proof__inner { gap: 20px; justify-content: flex-start; }
-
-      /* FAQ: proper side padding */
-      .faq { padding: 72px 0; }
-      .faq__inner { padding: 0 20px; }
-
-      /* Footer: stack everything vertically */
-      .footer__top { flex-direction: column; gap: 32px; }
-      .footer__bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .footer__legal { flex-wrap: wrap; gap: 16px; }
-
-      /* CTA note: stack items */
-      .cta-section__note { line-height: 2; }
-    }
-
-    /* Fade-in animation */
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lex Prima – Zusammenfassungen, Schemata &amp; Karteikarten fürs 1. Staatsexamen (NRW)</title>
+  <meta name="description" content="Strukturierte Examensvorbereitung für Jura: über 385 Kapitel mit Zusammenfassungen, Schemata und Karteikarten für Zivilrecht, Strafrecht und Öffentliches Recht NRW – als Notion-Vorlage.">
+  <link rel="canonical" href="https://www.lexprima.de/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lex Prima – Zusammenfassungen, Schemata &amp; Karteikarten fürs 1. Staatsexamen (NRW)">
+  <meta property="og:description" content="Strukturierte Examensvorbereitung für Jura: über 385 Kapitel mit Zusammenfassungen, Schemata und Karteikarten für Zivilrecht, Strafrecht und Öffentliches Recht NRW – als Notion-Vorlage.">
+  <meta property="og:url" content="https://www.lexprima.de/">
+  <meta property="og:site_name" content="Lex Prima">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111b33">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Lex Prima", "url": "https://www.lexprima.de", "logo": "https://www.lexprima.de/assets/logo.png", "description": "Strukturierte Zusammenfassungen, Schemata und Karteikarten für das Erste Juristische Staatsexamen mit Fokus auf NRW.", "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "kontakt@lexprima.de", "availableLanguage": "German"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Für wen ist Lex Prima gedacht?", "acceptedAnswer": {"@type": "Answer", "text": "Für Jurastudierende in der Vorbereitung auf das Erste Staatsexamen – vom ersten Semester bis zur heißen Phase. Das Modul Öffentliches Recht ist speziell auf NRW zugeschnitten; Zivilrecht und Strafrecht gelten bundesweit."}}, {"@type": "Question", "name": "Wie bekomme ich Zugriff auf die Materialien?", "acceptedAnswer": {"@type": "Answer", "text": "Nach dem Kauf erhältst du einen Link, über den du das Modul als Notion-Vorlage in deinen eigenen Notion-Account duplizierst. Deine Kopie gehört dir dauerhaft – du kannst sie markieren, ergänzen und an deinen Lernplan anpassen."}}, {"@type": "Question", "name": "Brauche ich einen bezahlten Notion-Account?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Der kostenlose Notion-Plan reicht vollständig aus, um deine Kopie zu nutzen und zu bearbeiten."}}, {"@type": "Question", "name": "Was unterscheidet Lex Prima von Lehrbüchern und Skripten?", "acceptedAnswer": {"@type": "Answer", "text": "Wir ersetzen kein Lehrbuch – wir ersetzen das Chaos danach. Jedes Kapitel ist als prüfbare Struktur aufgebaut: Schema, Definitionen, Streitstände, Klausurhinweise. Du lernst so, wie in der Klausur geprüft wird."}}, {"@type": "Question", "name": "Gilt das Widerrufsrecht bei digitalen Inhalten?", "acceptedAnswer": {"@type": "Answer", "text": "Der Kauf läuft über unseren Vertriebspartner CopeCart, der Rechnungsstellung, Umsatzsteuer und das gesetzliche Widerrufsrecht abwickelt. Details findest du im Bestellprozess und in den AGB."}}, {"@type": "Question", "name": "Werden die Inhalte aktualisiert?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Wir pflegen die Module fortlaufend – bei Gesetzesänderungen und wichtiger neuer Rechtsprechung aktualisieren wir die betroffenen Kapitel."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Lex Prima", "url": "https://www.lexprima.de"}</script>
 </head>
 <body>
-
-  <!-- PASSWORD PROTECTION -->
-  <div id="pw-overlay" style="
-    position:fixed;inset:0;z-index:9999;
-    background:var(--navy);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'DM Sans',sans-serif;
-  ">
-    <div style="
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;padding:48px 40px;
-      width:100%;max-width:380px;margin:24px;
-      text-align:center;
-    ">
-      <div style="font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.2px;">
-        Lex Prima<sup style="font-size:11px;color:#3d64f5;vertical-align:super;line-height:0;">1</sup>
-      </div>
-      <p style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:32px;">Bitte gib das Passwort ein, um fortzufahren.</p>
-      <input
-        id="pw-input"
-        type="password"
-        placeholder="Passwort"
-        autocomplete="current-password"
-        style="
-          width:100%;padding:13px 16px;border-radius:8px;
-          background:rgba(255,255,255,.08);
-          border:1.5px solid rgba(255,255,255,.15);
-          color:#fff;font-size:15px;font-family:'DM Sans',sans-serif;
-          outline:none;box-sizing:border-box;margin-bottom:12px;
-          transition:border-color .18s;
-        "
-        onkeydown="if(event.key==='Enter')checkPw()"
-        onfocus="this.style.borderColor='rgba(61,100,245,.8)'"
-        onblur="this.style.borderColor='rgba(255,255,255,.15)'"
-      />
-      <div id="pw-error" style="font-size:13px;color:#f87171;margin-bottom:10px;min-height:18px;"></div>
-      <button
-        onclick="checkPw()"
-        style="
-          width:100%;padding:14px;border-radius:8px;border:none;
-          background:#2a4fd6;color:#fff;font-size:15px;font-weight:600;
-          cursor:pointer;font-family:'DM Sans',sans-serif;
-          transition:background .18s;
-        "
-        onmouseover="this.style.background='#3d64f5'"
-        onmouseout="this.style.background='#2a4fd6'"
-      >Weiter →</button>
-    </div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Lex Prima – Startseite">Lex&nbsp;Prima<sup>1</sup></a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="zivilrecht.html">Zivilrecht</a></li>
+      <li><a href="strafrecht.html">Strafrecht</a></li>
+      <li><a href="oeffentliches-recht.html">Öffentliches Recht NRW</a></li>
+      <li><a href="index.html#preise">Preise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a class="btn btn-primary btn-small" href="index.html#preise">Module sichern</a></li>
+    </ul>
   </div>
-  <script>
-    (function(){
-      // Check if already authenticated this session
-      if(sessionStorage.getItem('lp_auth')==='1'){
-        document.getElementById('pw-overlay').style.display='none';
-      }
-    })();
-    function checkPw(){
-      var val=document.getElementById('pw-input').value;
-      if(val==='victorchris1'){
-        sessionStorage.setItem('lp_auth','1');
-        var overlay=document.getElementById('pw-overlay');
-        overlay.style.transition='opacity .35s ease';
-        overlay.style.opacity='0';
-        setTimeout(function(){overlay.style.display='none';},360);
-      } else {
-        var err=document.getElementById('pw-error');
-        err.textContent='Falsches Passwort. Bitte erneut versuchen.';
-        var input=document.getElementById('pw-input');
-        input.style.borderColor='rgba(248,113,113,.7)';
-        input.value='';
-        input.focus();
-        setTimeout(function(){
-          err.textContent='';
-          input.style.borderColor='rgba(255,255,255,.15)';
-        },2500);
-      }
-    }
-  </script>
-  <nav class="nav" aria-label="Hauptnavigation">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="Lex Prima Startseite">Lex Prima<sup>1</sup></a>
-      <div class="nav__links">
-        <a href="#funktionen">Funktionen</a>
-        <a href="#inhalte">Inhalte</a>
-        <a href="#vergleich">Vergleich</a>
-        <a href="#faq">FAQ</a>
-        <a href="#kaufen" class="btn btn--primary" style="padding: 10px 22px; font-size: 14px; background: #fff; color: var(--indigo); box-shadow: 0 2px 8px rgba(0,0,0,.12);">Jetzt kaufen – 99&nbsp;€</a>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Examensvorbereitung · Erstes Staatsexamen · NRW</span>
+        <h1>Prädikat ist planbar.<sup class="fn">1</sup></h1>
+        <p class="lead">Über 385 Kapitel mit Zusammenfassungen, Prüfungsschemata und Karteikarten – strukturiert wie eine Klausurlösung, nicht wie ein Lehrbuch. Direkt in Notion, sofort einsatzbereit.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#module">Module ansehen</a>
+          <a class="btn btn-ghost" href="#methode">So funktioniert's</a>
+        </div>
+        <div class="footnote"><span class="mark">1</span><span>Nicht mit mehr Lehrbüchern – mit den richtigen Strukturen. Lex Prima bringt jeden examensrelevanten Stoff in die Form, in der er geprüft wird.</span></div>
       </div>
-      <button class="nav__menu-btn" id="menuBtn" aria-label="Menü öffnen">
-        <span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#funktionen" onclick="closeMobileNav()">Funktionen</a>
-    <a href="#inhalte" onclick="closeMobileNav()">Inhalte</a>
-    <a href="#vergleich" onclick="closeMobileNav()">Vergleich</a>
-    <a href="#faq" onclick="closeMobileNav()">FAQ</a>
-    <a href="#kaufen" class="btn btn--primary" onclick="closeMobileNav()">Jetzt kaufen – 99&nbsp;€</a>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__bg">
-      <div class="hero__grid"></div>
-    </div>
-    <div class="hero__inner">
-      <div class="hero__content">
-        <div class="hero__badge">Entwickelt von NRW-Examenskandidaten</div>
-        <h1 class="hero__title" id="hero-title">Das Lernsystem für das <em>Erste Juristische</em> Examen in NRW.</h1>
-        <p class="hero__sub">400+ Zusammenfassungen, über 5.000 Karteikarten und alle fünf Pflichtfächer – strukturiert, NRW-spezifisch, sofort einsatzbereit. Kein Repetitorium. Kein Abo.</p>
-        <div class="hero__actions">
-          <a href="#kaufen" class="btn btn--primary btn--large">Jetzt kaufen – 99&nbsp;€</a>
-          <a href="#inhalte" class="btn btn--ghost" style="color: rgba(255,255,255,.65); text-decoration: none; font-size: 15px;">↓ Inhalte ansehen</a>
-        </div>
-        <div class="hero__trust">
-          <div class="hero__trust-item">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
-            Einmalige Zahlung
-          </div>
-          <div class="hero__trust-item">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
-            Sofortiger Zugang
-          </div>
-        </div>
-      </div>
-      <div class="hero__card" aria-hidden="true">
-        <div class="hero__card-label">Enthaltene Leistungen</div>
-        <div class="hero__stat-grid">
-          <div class="hero__stat">
-            <div class="hero__stat-val">400<span class="accent">+</span></div>
-            <div class="hero__stat-desc">Zusammenfassungen</div>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-val">5k<span class="accent">+</span></div>
-            <div class="hero__stat-desc">Karteikarten</div>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-val">Alle</div>
-            <div class="hero__stat-desc">Pflichtfächer</div>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-val"><span class="accent">NRW</span></div>
-            <div class="hero__stat-desc">Spezifisch</div>
-          </div>
-        </div>
-        <div class="hero__price-row">
-          <div class="hero__price-left">
-            <strong>99 €</strong>
-            <small>Einmalig · kein Abo</small>
-          </div>
-          <div class="hero__price-badge">vs. 2.000–4.000 € Rep.</div>
+      <div class="reveal">
+        <div class="schema-card" role="img" aria-label="Beispiel eines Prüfungsschemas">
+          <div class="sc-head">Schema · Anfechtungsklage, § 42 I Alt. 1 VwGO</div>
+          <ol>
+            <li class="done"><b>A.</b> Eröffnung des Verwaltungsrechtswegs</li>
+            <li class="done"><b>B.</b> Zulässigkeit der Klage</li>
+            <li class="done"><b>I.</b> Statthafte Klageart</li>
+            <li><b>II.</b> Klagebefugnis, § 42 II VwGO</li>
+            <li><b>C.</b> Begründetheit, § 113 I 1 VwGO</li>
+          </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SOCIAL PROOF BAR -->
-  <div class="proof" aria-hidden="true">
-    <div class="proof__inner">
-      <div class="proof__item">
-        <span class="proof__item-icon">📘</span>
-        Notion-basiert
+  <section class="stats" aria-label="Kennzahlen">
+    <div class="wrap">
+      <div class="stat reveal"><b data-count="385" data-suffix="+">385+</b><span>Kapitel &amp; Schemata</span></div>
+      <div class="stat reveal"><b>3</b><span>Rechtsgebiete, einzeln buchbar</span></div>
+      <div class="stat reveal"><b>NRW</b><span>Öffentliches Recht landesspezifisch</span></div>
+      <div class="stat reveal"><b>∞</b><span>Dauerhafter Zugriff auf deine Kopie</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="warum">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Das Problem</span>
+        <h2>Das Examen prüft Struktur.<br>Die meisten lernen Text.</h2>
+        <p>Lehrbücher erklären – aber in der Klausur zählt, ob du in Sekunden das richtige Schema, die Definition und den Streitstand abrufst. Genau dafür ist Lex Prima gebaut.</p>
       </div>
-      <div class="proof__item">
-        <span class="proof__item-icon">🔁</span>
-        Spaced Repetition
-      </div>
-      <div class="proof__item">
-        <span class="proof__item-icon">📍</span>
-        NRW-Fokus
-      </div>
-      <div class="proof__item">
-        <span class="proof__item-icon">✏️</span>
-        Vollständig bearbeitbar
-      </div>
-      <div class="proof__item">
-        <span class="proof__item-icon">📱</span>
-        Offline verfügbar
+      <div class="cards-3">
+        <div class="card reveal">
+          <span class="tag">Zusammenfassungen</span>
+          <h3>Der Stoff, ohne Umwege</h3>
+          <p>Jedes examensrelevante Thema komprimiert auf das, was in der Klausur zählt – mit Klausurhinweisen, typischen Fehlerquellen und Vertiefungen, wo sie sich lohnen.</p>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Schemata</span>
+          <h3>Prüfen wie der Korrektor</h3>
+          <p>Vollständige Prüfungsschemata mit Definitionen und Streitständen an genau der Stelle, an der sie in der Klausur auftauchen – vom Gutachtenstil her gedacht.</p>
+        </div>
+        <div class="card reveal">
+          <span class="tag">Karteikarten</span>
+          <h3>Wiederholen mit System</h3>
+          <p>Karteikarten zu jedem Kapitel, direkt in Notion. Definitionen und Meinungsstreits so oft abfragen, bis sie sitzen – auf dem Laptop und unterwegs am Handy.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- PROBLEM / SOLUTION -->
-  <section class="problem" id="problem" aria-labelledby="problem-title">
-    <div class="container">
-      <span class="section-label">Das Problem</span>
-      <h2 class="section-title" id="problem-title">Die Examensvorbereitung ist unnötig kompliziert.</h2>
-      <p class="section-sub" style="max-width: 560px;">Zu viel Stoff, zu viele Baustellen, zu wenig Orientierung. Das kennen alle – und das lässt sich lösen.</p>
-      <div class="problem__grid fade-in">
-        <ul class="problem__list" aria-label="Typische Probleme bei der Examensvorbereitung">
-          <li>
-            <div class="problem__list-icon" aria-hidden="true">✗</div>
-            <span><strong>Unüberschaubare Stoffmenge</strong> – kein klarer Rahmen, was wirklich relevant ist</span>
-          </li>
-          <li>
-            <div class="problem__list-icon" aria-hidden="true">✗</div>
-            <span><strong>Verstreute Materialien</strong> – Skripte hier, Karteikarten da, Schemata anderswo</span>
-          </li>
-          <li>
-            <div class="problem__list-icon" aria-hidden="true">✗</div>
-            <span><strong>Hohe Kosten klassischer Repetitorien</strong> – oft 2.000 bis 4.000 € ohne NRW-Fokus</span>
-          </li>
-          <li>
-            <div class="problem__list-icon" aria-hidden="true">✗</div>
-            <span><strong>Generische Uni-Skripte</strong> – ohne Karteikarten, ohne Wiederholungssystem</span>
-          </li>
-          <li>
-            <div class="problem__list-icon" aria-hidden="true">✗</div>
-            <span><strong>Unsicherheit über NRW-Besonderheiten</strong> – POLG, OBG und Landesrecht fehlen oft</span>
-          </li>
-        </ul>
-        <div class="problem__solution">
-          <h3>Lex Prima¹ löst genau das.</h3>
-          <ul class="solution__check">
-            <li>Alle examensrelevanten Inhalte gebündelt an einem Ort</li>
-            <li>NRW-Pflichtfachstoff vollständig abgedeckt</li>
-            <li>Integrierte Karteikarten mit Spaced-Repetition-System</li>
-            <li>Editierbar – anpassbar an deine eigene Lernweise</li>
-            <li>Einmalig 99 € – kein Abo, keine laufenden Kosten</li>
+  <section class="section alt" id="module">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Die Module</span>
+        <h2>Drei Rechtsgebiete. Ein System.</h2>
+        <p>Jedes Modul deckt sein Rechtsgebiet vollständig ab – inklusive Nebengebieten und Prozessrecht. Einzeln buchbar oder als Bundle.</p>
+      </div>
+      <div class="cards-3">
+        <a class="card reveal" href="zivilrecht.html">
+          <span class="tag">169 Kapitel</span>
+          <h3>Zivilrecht</h3>
+          <ul class="mini">
+            <li>BGB AT, Schuldrecht AT &amp; BT</li>
+            <li>Sachenrecht &amp; Kreditsicherung</li>
+            <li>ZPO, HGB/GesR, ArbR, FamR/ErbR</li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features" id="funktionen" aria-labelledby="features-title">
-    <div class="container">
-      <div class="features__intro fade-in">
-        <span class="section-label">Funktionen</span>
-        <h2 class="section-title" id="features-title">Alles, was du brauchst – nichts, was du nicht brauchst.</h2>
-        <p class="section-sub">Ein vollständiges Lernsystem, das sich deinem Tempo anpasst.</p>
-      </div>
-      <div class="features__grid">
-        <article class="feature-card fade-in">
-          <div class="feature-card__icon" aria-hidden="true">📋</div>
-          <h3 class="feature-card__title">400+ Zusammenfassungen</h3>
-          <p class="feature-card__desc">Kompakte, examensorientierte Zusammenfassungen aller Pflichtfachthemen – klar strukturiert, direkt klausurrelevant.</p>
-        </article>
-        <article class="feature-card fade-in">
-          <div class="feature-card__icon" aria-hidden="true">🃏</div>
-          <h3 class="feature-card__title">5.000+ Karteikarten</h3>
-          <p class="feature-card__desc">Über 5.000 Karteikarten für nachhaltige Wissenssicherung durch optimierte Wiederholungsintervalle – direkt in Notion integriert.</p>
-        </article>
-        <article class="feature-card fade-in">
-          <div class="feature-card__icon" aria-hidden="true">📍</div>
-          <h3 class="feature-card__title">NRW-Fokus</h3>
-          <p class="feature-card__desc">Alle landesrechtlichen Besonderheiten inklusive – POLG NRW, OBG NRW und der gesamte NRW-spezifische Pflichtfachstoff.</p>
-        </article>
-        <article class="feature-card fade-in">
-          <div class="feature-card__icon" aria-hidden="true">🔗</div>
-          <h3 class="feature-card__title">Vollständig bearbeitbar</h3>
-          <p class="feature-card__desc">Ergänze, verlinke und markiere Inhalte direkt in Notion. Passe alles an deine eigene Lernsystematik an.</p>
-        </article>
-        <article class="feature-card fade-in">
-          <div class="feature-card__icon" aria-hidden="true">📐</div>
-          <h3 class="feature-card__title">Schemata & Definitionen</h3>
-          <p class="feature-card__desc">Klausurtaugliche Prüfungsschemata und examensrelevante Definitionen – sofort anwendbar in der Klausur.</p>
-        </article>
-        <article class="feature-card fade-in">
-          <div class="feature-card__icon" aria-hidden="true">📱</div>
-          <h3 class="feature-card__title">Geräteunabhängig & offline</h3>
-          <p class="feature-card__desc">Nutzbar auf Mac, Windows, iPhone und Android. Auch offline – so kannst du überall lernen.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTENT TABS -->
-  <section class="content" id="inhalte" aria-labelledby="content-title">
-    <div class="container">
-      <div class="content__intro fade-in">
-        <span class="section-label">Inhalt</span>
-        <h2 class="section-title" id="content-title">Alle fünf Pflichtfächer. Vollständig.</h2>
-        <p class="section-sub">Von BGB AT bis Strafprozessordnung – der gesamte Examenskanon NRW in einem System.</p>
-      </div>
-      <div class="tabs fade-in">
-        <div class="tabs__nav" role="tablist" aria-label="Fachgebiete">
-          <button class="tabs__btn active" role="tab" aria-selected="true" aria-controls="tab-zivil" id="btn-zivil" onclick="switchTab('zivil')">Zivilrecht</button>
-          <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-oeff" id="btn-oeff" onclick="switchTab('oeff')">Öffentliches Recht</button>
-          <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-straf" id="btn-straf" onclick="switchTab('straf')">Strafrecht</button>
-          <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-prozess" id="btn-prozess" onclick="switchTab('prozess')">Prozessrecht</button>
-          <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-neben" id="btn-neben" onclick="switchTab('neben')">Nebengebiete</button>
-        </div>
-        <div id="tab-zivil" class="tabs__panel active" role="tabpanel" aria-labelledby="btn-zivil">
-          <div class="tabs__topics">
-            <span class="topic-pill">BGB Allgemeiner Teil</span>
-            <span class="topic-pill">Schuldrecht AT</span>
-            <span class="topic-pill">Schuldrecht BT</span>
-            <span class="topic-pill">Deliktsrecht</span>
-            <span class="topic-pill">Bereicherungsrecht</span>
-            <span class="topic-pill">Sachenrecht</span>
-            <span class="topic-pill">Kreditsicherungsrecht</span>
-            <span class="topic-pill">Familienrecht</span>
-            <span class="topic-pill">Erbrecht</span>
-            <span class="topic-pill">Internationales Privatrecht</span>
-            <span class="topic-pill">Handelsrecht</span>
-            <span class="topic-pill">Gesellschaftsrecht</span>
-          </div>
-        </div>
-        <div id="tab-oeff" class="tabs__panel" role="tabpanel" aria-labelledby="btn-oeff">
-          <div class="tabs__topics">
-            <span class="topic-pill">Verwaltungsrecht AT</span>
-            <span class="topic-pill">Besonderes Verwaltungsrecht</span>
-            <span class="topic-pill">Verwaltungsgerichtsordnung</span>
-            <span class="topic-pill">Grundrechte</span>
-            <span class="topic-pill">Staatsorganisationsrecht</span>
-            <span class="topic-pill">Staatshaftungsrecht</span>
-            <span class="topic-pill">Europarecht</span>
-            <span class="topic-pill topic-pill--highlight">Polizeigesetz NRW</span>
-            <span class="topic-pill topic-pill--highlight">Ordnungsbehördengesetz NRW</span>
-          </div>
-        </div>
-        <div id="tab-straf" class="tabs__panel" role="tabpanel" aria-labelledby="btn-straf">
-          <div class="tabs__topics">
-            <span class="topic-pill">Strafrecht AT</span>
-            <span class="topic-pill">Strafrecht BT I</span>
-            <span class="topic-pill">Strafrecht BT II</span>
-            <span class="topic-pill">Strafrecht BT III</span>
-            <span class="topic-pill">Täterschaft & Teilnahme</span>
-            <span class="topic-pill">Konkurrenzen</span>
-            <span class="topic-pill">Examensrelevante Delikte</span>
-          </div>
-        </div>
-        <div id="tab-prozess" class="tabs__panel" role="tabpanel" aria-labelledby="btn-prozess">
-          <div class="tabs__topics">
-            <span class="topic-pill">Verwaltungsgerichtsordnung</span>
-            <span class="topic-pill">Strafprozessordnung</span>
-            <span class="topic-pill">Zivilprozessordnung</span>
-            <span class="topic-pill">Klagearten</span>
-            <span class="topic-pill">Einstweiliger Rechtsschutz</span>
-            <span class="topic-pill">Zwangsvollstreckung</span>
-          </div>
-        </div>
-        <div id="tab-neben" class="tabs__panel" role="tabpanel" aria-labelledby="btn-neben">
-          <div class="tabs__topics">
-            <span class="topic-pill">Familienrecht</span>
-            <span class="topic-pill">Erbrecht</span>
-            <span class="topic-pill">IPR / EGBGB</span>
-            <span class="topic-pill">Handelsgesetzbuch</span>
-            <span class="topic-pill">GmbH-Recht</span>
-            <span class="topic-pill">Aktienrecht</span>
-            <span class="topic-pill">Kündigungsschutzrecht</span>
-            <span class="topic-pill">Betriebsverfassungsrecht</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARISON -->
-  <section class="comparison" id="vergleich" aria-labelledby="comparison-title">
-    <div class="container">
-      <div class="comparison__intro fade-in">
-        <span class="section-label">Vergleich</span>
-        <h2 class="section-title" id="comparison-title">Lex Prima¹ vs. die Alternativen.</h2>
-        <p class="section-sub">Kein Repetitorium kommt an dieses Preis-Leistungs-Verhältnis heran.</p>
-      </div>
-
-      <!-- DESKTOP: table -->
-      <div class="comparison-desktop fade-in">
-        <table class="comparison-table" aria-label="Vergleich von Lex Prima mit Alternativen">
-          <thead>
-            <tr>
-              <th scope="col">Kriterium</th>
-              <th scope="col" class="highlight">Lex Prima¹</th>
-              <th scope="col">Repetitorium</th>
-              <th scope="col">Abo-Plattform</th>
-              <th scope="col">Uni-Skript</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>NRW-Pflichtfachstoff</td>
-              <td class="highlight"><span class="check">✓</span></td>
-              <td><span class="partial">Teilweise</span></td>
-              <td><span class="partial">Teilweise</span></td>
-              <td><span class="partial">Teilweise</span></td>
-            </tr>
-            <tr>
-              <td>Integrierte Karteikarten</td>
-              <td class="highlight"><span class="check">✓</span></td>
-              <td><span class="cross">✗</span></td>
-              <td><span class="partial">Teilweise</span></td>
-              <td><span class="cross">✗</span></td>
-            </tr>
-            <tr>
-              <td>Spaced Repetition</td>
-              <td class="highlight"><span class="check">✓</span></td>
-              <td><span class="cross">✗</span></td>
-              <td><span class="partial">Teilweise</span></td>
-              <td><span class="cross">✗</span></td>
-            </tr>
-            <tr>
-              <td>Bearbeitbar & anpassbar</td>
-              <td class="highlight"><span class="check">✓</span></td>
-              <td><span class="cross">✗</span></td>
-              <td><span class="cross">✗</span></td>
-              <td><span class="partial">Teilweise</span></td>
-            </tr>
-            <tr>
-              <td>Dauerhafter Zugang</td>
-              <td class="highlight"><span class="check">✓</span></td>
-              <td><span class="check">✓</span></td>
-              <td><span class="cross">✗</span></td>
-              <td><span class="check">✓</span></td>
-            </tr>
-            <tr>
-              <td>Offline nutzbar</td>
-              <td class="highlight"><span class="check">✓</span></td>
-              <td><span class="cross">✗</span></td>
-              <td><span class="partial">Teilweise</span></td>
-              <td><span class="cross">✗</span></td>
-            </tr>
-            <tr>
-              <td>Preis (Gesamtkosten)</td>
-              <td class="highlight" style="font-size: 16px; font-weight: 700; color: #16a34a;">99 €</td>
-              <td style="color: #dc2626;">2.000–4.000 €</td>
-              <td style="color: #dc2626;">270–540 € / 18 Mo.</td>
-              <td>kostenlos*</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">* Uni-Skripte oft unvollständig, ohne Karteikarten und ohne NRW-Fokus.</p>
-      </div>
-
-      <!-- MOBILE: clean vertical rows -->
-      <div class="comparison-mobile fade-in" aria-label="Vergleich von Lex Prima mit Alternativen">
-
-        <div class="cmp-row">
-          <div class="cmp-row__label">NRW-Pflichtfachstoff</div>
-          <div class="cmp-row__entries">
-            <div class="cmp-entry cmp-entry--winner"><span class="cmp-entry__name">Lex Prima¹</span><span class="cmp-entry__val check">✓</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Repetitorium</span><span class="cmp-entry__val partial">Teilweise</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Abo-Plattform</span><span class="cmp-entry__val partial">Teilweise</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Uni-Skript</span><span class="cmp-entry__val partial">Teilweise</span></div>
-          </div>
-        </div>
-
-        <div class="cmp-row">
-          <div class="cmp-row__label">Karteikarten integriert</div>
-          <div class="cmp-row__entries">
-            <div class="cmp-entry cmp-entry--winner"><span class="cmp-entry__name">Lex Prima¹</span><span class="cmp-entry__val check">✓</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Repetitorium</span><span class="cmp-entry__val cross">✗</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Abo-Plattform</span><span class="cmp-entry__val partial">Teilweise</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Uni-Skript</span><span class="cmp-entry__val cross">✗</span></div>
-          </div>
-        </div>
-
-        <div class="cmp-row">
-          <div class="cmp-row__label">Spaced Repetition</div>
-          <div class="cmp-row__entries">
-            <div class="cmp-entry cmp-entry--winner"><span class="cmp-entry__name">Lex Prima¹</span><span class="cmp-entry__val check">✓</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Repetitorium</span><span class="cmp-entry__val cross">✗</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Abo-Plattform</span><span class="cmp-entry__val partial">Teilweise</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Uni-Skript</span><span class="cmp-entry__val cross">✗</span></div>
-          </div>
-        </div>
-
-        <div class="cmp-row">
-          <div class="cmp-row__label">Bearbeitbar & anpassbar</div>
-          <div class="cmp-row__entries">
-            <div class="cmp-entry cmp-entry--winner"><span class="cmp-entry__name">Lex Prima¹</span><span class="cmp-entry__val check">✓</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Repetitorium</span><span class="cmp-entry__val cross">✗</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Abo-Plattform</span><span class="cmp-entry__val cross">✗</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Uni-Skript</span><span class="cmp-entry__val partial">Teilweise</span></div>
-          </div>
-        </div>
-
-        <div class="cmp-row">
-          <div class="cmp-row__label">Dauerhafter Zugang</div>
-          <div class="cmp-row__entries">
-            <div class="cmp-entry cmp-entry--winner"><span class="cmp-entry__name">Lex Prima¹</span><span class="cmp-entry__val check">✓</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Repetitorium</span><span class="cmp-entry__val check" style="color:#16a34a">✓</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Abo-Plattform</span><span class="cmp-entry__val cross">✗</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Uni-Skript</span><span class="cmp-entry__val check" style="color:#16a34a">✓</span></div>
-          </div>
-        </div>
-
-        <div class="cmp-row">
-          <div class="cmp-row__label">Offline nutzbar</div>
-          <div class="cmp-row__entries">
-            <div class="cmp-entry cmp-entry--winner"><span class="cmp-entry__name">Lex Prima¹</span><span class="cmp-entry__val check">✓</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Repetitorium</span><span class="cmp-entry__val cross">✗</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Abo-Plattform</span><span class="cmp-entry__val partial">Teilweise</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Uni-Skript</span><span class="cmp-entry__val cross">✗</span></div>
-          </div>
-        </div>
-
-        <div class="cmp-row">
-          <div class="cmp-row__label">Preis (Gesamtkosten)</div>
-          <div class="cmp-row__entries">
-            <div class="cmp-entry cmp-entry--winner"><span class="cmp-entry__name">Lex Prima¹</span><span class="cmp-entry__val" style="color:#16a34a;font-size:16px;">99 €</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Repetitorium</span><span class="cmp-entry__val" style="color:#dc2626;">2.000–4.000 €</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Abo-Plattform</span><span class="cmp-entry__val" style="color:#dc2626;">270–540 €</span></div>
-            <div class="cmp-entry"><span class="cmp-entry__name">Uni-Skript</span><span class="cmp-entry__val" style="color:var(--text-muted);">gratis*</span></div>
-          </div>
-        </div>
-
-        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px; padding: 0 2px;">* Uni-Skripte oft unvollständig, ohne Karteikarten und ohne NRW-Fokus.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process" id="ablauf" aria-labelledby="process-title">
-    <div class="container">
-      <div class="process__intro fade-in">
-        <span class="section-label">So einfach geht's</span>
-        <h2 class="section-title" id="process-title">In drei Schritten startklar.</h2>
-        <p class="section-sub">Vom Kauf bis zum Lernen in wenigen Minuten.</p>
-      </div>
-      <div class="process__steps fade-in">
-        <div class="process__step">
-          <div class="process__step-num" aria-hidden="true">1</div>
-          <h3 class="process__step-title">Kaufen</h3>
-          <p class="process__step-desc">Einmalige Zahlung von 99 €. Keine Abofalle, keine versteckten Kosten.</p>
-        </div>
-        <div class="process__step">
-          <div class="process__step-num" aria-hidden="true">2</div>
-          <h3 class="process__step-title">Zugang erhalten</h3>
-          <p class="process__step-desc">Du erhältst sofort deinen persönlichen Notion-Link per E-Mail. Ein kostenloses Notion-Konto genügt.</p>
-        </div>
-        <div class="process__step">
-          <div class="process__step-num" aria-hidden="true">3</div>
-          <h3 class="process__step-title">Direkt loslegen</h3>
-          <p class="process__step-desc">Alle Inhalte sind sofort verfügbar – anpassen, ergänzen, lernen. Auf jedem Gerät, auch offline.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="erfahrungen" aria-labelledby="testimonials-title">
-    <div class="container">
-      <div class="testimonials__intro fade-in">
-        <span class="section-label">Stimmen</span>
-        <h2 class="section-title" id="testimonials-title">Von Examenskandidaten für Examenskandidaten.</h2>
-      </div>
-      <div class="testimonials__grid">
-        <article class="testimonial-card fade-in">
-          <div class="testimonial-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-          <p class="testimonial-card__text">„Endlich alles an einem Ort. Die NRW-spezifischen Inhalte sind Gold wert – gerade das POLG hat mir in der Klausur wirklich geholfen."</p>
-          <div class="testimonial-card__author">Victor</div>
-          <div class="testimonial-card__role">Examen NRW, Note „Vollbefriedigend" · Köln</div>
-        </article>
-        <article class="testimonial-card fade-in">
-          <div class="testimonial-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-          <p class="testimonial-card__text">„Für 99 € unschlagbar. Das Repetitorium meiner Kommilitonen hat das Dreißigfache gekostet – und die hatten keine Karteikarten dabei."</p>
-          <div class="testimonial-card__author">Chris</div>
-          <div class="testimonial-card__role">Examen NRW, Note „Vollbefriedigend" · Köln</div>
-        </article>
-        <article class="testimonial-card fade-in">
-          <div class="testimonial-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-          <p class="testimonial-card__text">„Die Möglichkeit, alles direkt in Notion zu bearbeiten und eigene Notizen hinzuzufügen, hat mein Lernen komplett strukturiert."</p>
-          <div class="testimonial-card__author">David</div>
-          <div class="testimonial-card__role">Examen NRW, Note „Vollbefriedigend" · Köln</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq" id="faq" aria-labelledby="faq-title">
-    <div class="faq__inner">
-      <div class="faq__intro fade-in">
-        <span class="section-label">FAQ</span>
-        <h2 class="section-title" id="faq-title">Häufige Fragen.</h2>
-        <p class="section-sub">Alles Wichtige auf einen Blick.</p>
-      </div>
-      <dl>
-        <div class="faq-item" id="faq1">
-          <dt>
-            <button class="faq-item__btn" onclick="toggleFaq('faq1')" aria-expanded="false" aria-controls="faq1-answer">
-              <span class="faq-item__q">Brauche ich ein kostenpflichtiges Notion-Konto?</span>
-              <div class="faq-item__icon" aria-hidden="true">+</div>
-            </button>
-          </dt>
-          <dd class="faq-item__a" id="faq1-answer">
-            <p>Nein. Ein kostenloses Notion-Konto reicht vollständig aus. Du erhältst nach dem Kauf einen Link, mit dem du die Inhalte direkt in deinen eigenen Notion-Workspace duplizierst.</p>
-          </dd>
-        </div>
-        <div class="faq-item" id="faq2">
-          <dt>
-            <button class="faq-item__btn" onclick="toggleFaq('faq2')" aria-expanded="false" aria-controls="faq2-answer">
-              <span class="faq-item__q">Wann erhalte ich Zugang nach dem Kauf?</span>
-              <div class="faq-item__icon" aria-hidden="true">+</div>
-            </button>
-          </dt>
-          <dd class="faq-item__a" id="faq2-answer">
-            <p>Unmittelbar nach dem Kauf erhältst du deinen persönlichen Notion-Link per E-Mail. Der Zugang ist sofort aktiv – du kannst direkt loslegen.</p>
-          </dd>
-        </div>
-        <div class="faq-item" id="faq3">
-          <dt>
-            <button class="faq-item__btn" onclick="toggleFaq('faq3')" aria-expanded="false" aria-controls="faq3-answer">
-              <span class="faq-item__q">Ist der Inhalt wirklich NRW-spezifisch?</span>
-              <div class="faq-item__icon" aria-hidden="true">+</div>
-            </button>
-          </dt>
-          <dd class="faq-item__a" id="faq3-answer">
-            <p>Ja. Die Unterlagen sind explizit auf den Pflichtfachkatalog des ersten juristischen Staatsexamens in Nordrhein-Westfalen zugeschnitten – inklusive POLG NRW, OBG NRW und allen relevanten landesrechtlichen Besonderheiten.</p>
-          </dd>
-        </div>
-        <div class="faq-item" id="faq4">
-          <dt>
-            <button class="faq-item__btn" onclick="toggleFaq('faq4')" aria-expanded="false" aria-controls="faq4-answer">
-              <span class="faq-item__q">Gibt es ein Abo oder laufende Kosten?</span>
-              <div class="faq-item__icon" aria-hidden="true">+</div>
-            </button>
-          </dt>
-          <dd class="faq-item__a" id="faq4-answer">
-            <p>Nein. Du zahlst einmalig 99 € und behältst dauerhaft Zugang zu allen Inhalten. Keine Abo-Falle, keine monatlichen Kosten, keine Überraschungen.</p>
-          </dd>
-        </div>
-        <div class="faq-item" id="faq5">
-          <dt>
-            <button class="faq-item__btn" onclick="toggleFaq('faq5')" aria-expanded="false" aria-controls="faq5-answer">
-              <span class="faq-item__q">Für welche Vorbereitungsphase ist Lex Prima¹ geeignet?</span>
-              <div class="faq-item__icon" aria-hidden="true">+</div>
-            </button>
-          </dt>
-          <dd class="faq-item__a" id="faq5-answer">
-            <p>Für alle. Ob du gerade mit der Examensvorbereitung beginnst oder dich in der Intensivphase befindest – ein früher Einstieg maximiert den Nutzen des Spaced-Repetition-Systems, weil Wiederholungsintervalle über Zeit wirken.</p>
-          </dd>
-        </div>
-        <div class="faq-item" id="faq6">
-          <dt>
-            <button class="faq-item__btn" onclick="toggleFaq('faq6')" aria-expanded="false" aria-controls="faq6-answer">
-              <span class="faq-item__q">Kann ich die Inhalte bearbeiten und anpassen?</span>
-              <div class="faq-item__icon" aria-hidden="true">+</div>
-            </button>
-          </dt>
-          <dd class="faq-item__a" id="faq6-answer">
-            <p>Ja, vollständig. Du duplizierst die Vorlage in deinen eigenen Workspace und kannst anschließend alles ergänzen, markieren und verlinken. Die Unterlagen sind als Grundlage gedacht, die du zu deinem persönlichen Lernsystem ausbauen kannst.</p>
-          </dd>
-        </div>
-        <div class="faq-item" id="faq7">
-          <dt>
-            <button class="faq-item__btn" onclick="toggleFaq('faq7')" aria-expanded="false" aria-controls="faq7-answer">
-              <span class="faq-item__q">Gibt es eine Rückgabemöglichkeit?</span>
-              <div class="faq-item__icon" aria-hidden="true">+</div>
-            </button>
-          </dt>
-          <dd class="faq-item__a" id="faq7-answer">
-            <p>Aufgrund des digitalen Charakters des Produkts ist nach Freischaltung des Notion-Links keine Rückgabe möglich. Bei technischen Problemen oder Fragen helfen wir gerne per E-Mail.</p>
-          </dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" id="kaufen" aria-labelledby="cta-title">
-    <div class="container cta-section__inner">
-      <span class="section-label" style="color: rgba(147,170,247,.9);">Jetzt starten</span>
-      <h2 class="cta-section__title" id="cta-title">Dein Examen beginnt mit<br>der richtigen Vorbereitung.</h2>
-      <p class="cta-section__sub">Einmalig. Vollständig. NRW-spezifisch.</p>
-      <div class="cta-section__price" aria-label="Preis: 99 Euro, einmalig">
-        <span class="cta-section__amount">99 €</span>
-        <span class="cta-section__once">einmalig</span>
-      </div>
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
-        <!-- REPLACE href WITH YOUR ACTUAL CHECKOUT LINK -->
-        <a href="https://kaufen.lexprima.de" class="btn btn--primary btn--large" rel="noopener" style="font-size: 18px; padding: 18px 48px;">
-          Jetzt kaufen &rarr;
+          <p>Vom Vertragsschluss bis zur Zwangsvollstreckung – das komplette Zivilrecht in Prüfungsstruktur.</p>
+          <span class="card-cta">Modul entdecken →</span>
         </a>
-        <p style="font-size: 14px; color: rgba(255,255,255,.4);">Fragen? <a href="kontakt.html" style="color: rgba(255,255,255,.55); text-underline-offset: 3px;">Schreib uns</a></p>
+        <a class="card reveal" href="strafrecht.html">
+          <span class="tag">71 Kapitel</span>
+          <h3>Strafrecht</h3>
+          <ul class="mini">
+            <li>AT: Vorsatz bis Konkurrenzen</li>
+            <li>BT: alle examensrelevanten Delikte</li>
+            <li>Strafprozessrecht (StPO)</li>
+          </ul>
+          <p>Jedes Delikt als Schema mit Definitionen und Streitständen – vom Diebstahl bis zur Wahlfeststellung.</p>
+          <span class="card-cta">Modul entdecken →</span>
+        </a>
+        <a class="card reveal" href="oeffentliches-recht.html">
+          <span class="tag">145 Kapitel · NRW</span>
+          <h3>Öffentliches Recht NRW</h3>
+          <ul class="mini">
+            <li>Staatsrecht &amp; Grundrechte</li>
+            <li>VerwR AT &amp; Verwaltungsprozessrecht</li>
+            <li>PolG, Kommunal- &amp; BauR NRW</li>
+          </ul>
+          <p>Das einzige Modul, das du landesspezifisch brauchst – konsequent auf die NRW-Gesetze zugeschnitten.</p>
+          <span class="card-cta">Modul entdecken →</span>
+        </a>
       </div>
-      <p class="cta-section__note">✓ Sofortiger Zugang &nbsp;·&nbsp; ✓ Kein Abo &nbsp;·&nbsp; ✓ Dauerhafter Zugang &nbsp;·&nbsp; ✓ Offline nutzbar</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="/">Lex Prima<sup>1</sup></a>
-          <p>Digitale Lernunterlagen für das Erste Juristische Staatsexamen in NRW.</p>
-        </div>
-        <div class="footer__links">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="#funktionen">Funktionen</a></li>
-            <li><a href="#inhalte">Inhalte</a></li>
-            <li><a href="#vergleich">Vergleich</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer__links">
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="agb.html">AGB</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-        </div>
+  <section class="section" id="methode">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">So funktioniert's</span>
+        <h2>In drei Schritten zu deinem Lernsystem</h2>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2025 Lex Prima. Alle Rechte vorbehalten.</p>
-        <nav class="footer__legal" aria-label="Rechtliche Links">
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
-          <a href="agb.html">AGB</a>
-        </nav>
+      <div class="steps">
+        <div class="step reveal">
+          <h3>Modul wählen &amp; kaufen</h3>
+          <p>Sicherer Checkout über unseren Vertriebspartner CopeCart – mit Rechnung, allen gängigen Zahlungsarten und gesetzlichem Widerrufsrecht.</p>
+        </div>
+        <div class="step reveal">
+          <h3>In Notion duplizieren</h3>
+          <p>Du erhältst einen Vorlagen-Link und duplizierst das Modul mit einem Klick in deinen eigenen Notion-Account. Der kostenlose Plan reicht aus.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Lernen &amp; anpassen</h3>
+          <p>Deine Kopie gehört dir dauerhaft: markieren, ergänzen, mit deinem Lernplan verknüpfen – am Laptop und mobil in der Notion-App.</p>
+        </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Mobile nav
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    menuBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('open');
-    });
-    function closeMobileNav() {
-      mobileNav.classList.remove('open');
-    }
+  <section class="section alt" id="preise">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Preise</span>
+        <h2>Einmal zahlen. Bis zum Examen nutzen.</h2>
+        <p>Kein Abo, keine versteckten Kosten. Dauerhafter Zugriff auf deine duplizierte Notion-Kopie inklusive.</p>
+      </div>
+      <div class="pricing">
+        <div class="price-card reveal">
+          <h3>Einzelmodul</h3>
+          <div class="amount">89&nbsp;€</div>
+          <div class="per">einmalig · pro Rechtsgebiet</div>
+          <ul>
+            <li>Zivilrecht, Strafrecht <em>oder</em> ÖffR NRW</li>
+            <li>Zusammenfassungen, Schemata &amp; Karteikarten</li>
+            <li>Dauerhafter Zugriff auf deine Kopie</li>
+            <li>Inhaltliche Updates des Moduls</li>
+          </ul>
+          <a class="btn btn-ghost" href="kontakt.html">Modul wählen</a>
+        </div>
+        <div class="price-card featured reveal">
+          <span class="badge">Beliebteste Wahl</span>
+          <h3>Komplett-Bundle</h3>
+          <div class="amount">199&nbsp;€ <small>statt 267&nbsp;€</small></div>
+          <div class="per">einmalig · alle drei Rechtsgebiete</div>
+          <ul>
+            <li>Zivilrecht + Strafrecht + ÖffR NRW</li>
+            <li>Über 385 Kapitel &amp; Schemata</li>
+            <li>Du sparst 68&nbsp;€ gegenüber Einzelkauf</li>
+            <li>Dauerhafter Zugriff &amp; Updates</li>
+          </ul>
+          <a class="btn btn-primary" href="kontakt.html">Bundle sichern</a>
+        </div>
+        <div class="price-card reveal">
+          <h3>Zweier-Paket</h3>
+          <div class="amount">149&nbsp;€ <small>statt 178&nbsp;€</small></div>
+          <div class="per">einmalig · zwei Rechtsgebiete deiner Wahl</div>
+          <ul>
+            <li>Freie Kombination aus zwei Modulen</li>
+            <li>Zusammenfassungen, Schemata &amp; Karteikarten</li>
+            <li>Dauerhafter Zugriff auf deine Kopien</li>
+            <li>Inhaltliche Updates beider Module</li>
+          </ul>
+          <a class="btn btn-ghost" href="kontakt.html">Paket wählen</a>
+        </div>
+      </div>
+      <p class="footnote" style="max-width:none;"><span class="mark">*</span><span>Alle Preise inkl. USt. Abwicklung, Rechnungsstellung und Widerrufsrecht über unseren Vertriebspartner CopeCart. Die Kauf-Buttons werden mit dem Launch der Zahlungsabwicklung freigeschaltet – bis dahin erreichst du uns über die Kontaktseite.</span></p>
+    </div>
+  </section>
 
-    // Tabs
-    function switchTab(id) {
-      document.querySelectorAll('.tabs__panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.tabs__btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-      document.getElementById('tab-' + id).classList.add('active');
-      const btn = document.getElementById('btn-' + id);
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-    }
+  <section class="section faq" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Häufige Fragen</h2>
+      </div>
+      <div class="reveal">
+      <details class="acc">
+        <summary>Für wen ist Lex Prima gedacht?</summary>
+        <div class="acc-body"><p>Für Jurastudierende in der Vorbereitung auf das Erste Staatsexamen – vom ersten Semester bis zur heißen Phase. Das Modul Öffentliches Recht ist speziell auf NRW zugeschnitten; Zivilrecht und Strafrecht gelten bundesweit.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Wie bekomme ich Zugriff auf die Materialien?</summary>
+        <div class="acc-body"><p>Nach dem Kauf erhältst du einen Link, über den du das Modul als Notion-Vorlage in deinen eigenen Notion-Account duplizierst. Deine Kopie gehört dir dauerhaft – du kannst sie markieren, ergänzen und an deinen Lernplan anpassen.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Brauche ich einen bezahlten Notion-Account?</summary>
+        <div class="acc-body"><p>Nein. Der kostenlose Notion-Plan reicht vollständig aus, um deine Kopie zu nutzen und zu bearbeiten.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Was unterscheidet Lex Prima von Lehrbüchern und Skripten?</summary>
+        <div class="acc-body"><p>Wir ersetzen kein Lehrbuch – wir ersetzen das Chaos danach. Jedes Kapitel ist als prüfbare Struktur aufgebaut: Schema, Definitionen, Streitstände, Klausurhinweise. Du lernst so, wie in der Klausur geprüft wird.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Gilt das Widerrufsrecht bei digitalen Inhalten?</summary>
+        <div class="acc-body"><p>Der Kauf läuft über unseren Vertriebspartner CopeCart, der Rechnungsstellung, Umsatzsteuer und das gesetzliche Widerrufsrecht abwickelt. Details findest du im Bestellprozess und in den AGB.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Werden die Inhalte aktualisiert?</summary>
+        <div class="acc-body"><p>Ja. Wir pflegen die Module fortlaufend – bei Gesetzesänderungen und wichtiger neuer Rechtsprechung aktualisieren wir die betroffenen Kapitel.</p></div>
+      </details>
+      </div>
+    </div>
+  </section>
 
-    // FAQ
-    function toggleFaq(id) {
-      const item = document.getElementById(id);
-      const btn = item.querySelector('.faq-item__btn');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-item__btn').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    }
-
-    // Scroll fade-in
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          // stagger children
-          e.target.querySelectorAll('.feature-card, .testimonial-card, .process__step').forEach((el, i) => {
-            el.style.transitionDelay = (i * 80) + 'ms';
-            el.classList.add('fade-in');
-            setTimeout(() => el.classList.add('visible'), 50 + i * 80);
-          });
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
+  <section class="section" aria-label="Handlungsaufruf">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Dein Examen beginnt mit der ersten guten Struktur.</h2>
+        <p>Sichere dir dein Modul und lerne ab heute so, wie das Examen prüft – klar, vollständig und wiederholbar.</p>
+        <a class="btn btn-primary" href="index.html#preise">Jetzt Module sichern</a>
+      </div>
+    </div>
+  </section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html">Lex&nbsp;Prima<sup>1</sup></a>
+        <p style="margin-top:14px; max-width:280px;">Strukturierte Zusammenfassungen, Schemata und Karteikarten für das Erste Staatsexamen – mit Fokus auf NRW.</p>
+      </div>
+      <div>
+        <h4>Module</h4>
+        <ul>
+          <li><a href="zivilrecht.html">Zivilrecht</a></li>
+          <li><a href="strafrecht.html">Strafrecht</a></li>
+          <li><a href="oeffentliches-recht.html">Öffentliches Recht NRW</a></li>
+          <li><a href="index.html#preise">Preise &amp; Bundle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Lex Prima</h4>
+        <ul>
+          <li><a href="index.html#methode">So funktioniert's</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Lex Prima GbR. Alle Rechte vorbehalten.</span>
+      <span>Kein Rechtsrat. Lernmaterial für die Examensvorbereitung.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/main.js" defer></script>
 </body>
 </html>

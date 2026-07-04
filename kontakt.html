@@ -1,237 +1,127 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt – Lex Prima¹</title>
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="Hast du Fragen zu Lex Prima¹? Schreib uns – wir antworten in der Regel innerhalb von 24 Stunden." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0f1f3d; --indigo: #2a4fd6; --indigo-light: #3d64f5;
-      --indigo-pale: #e8edfb; --cream: #fafaf7; --white: #ffffff;
-      --gold: #c8a96e;
-      --text-primary: #0f1f3d; --text-secondary: #4a5568; --text-muted: #718096;
-      --border: #e2e8f0;
-      --radius: 12px;
-      --shadow-md: 0 4px 16px rgba(15,31,61,.08), 0 2px 6px rgba(15,31,61,.05);
-    }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--text-primary); background: var(--cream); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
-
-    .nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(250,250,247,.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav__inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
-    }
-    .nav__logo { font-size: 20px; font-weight: 700; color: var(--navy); text-decoration: none; }
-    .nav__logo sup { font-size: 11px; color: var(--indigo); vertical-align: super; line-height: 0; margin-left: 1px; }
-    .nav__links { display: flex; align-items: center; gap: 24px; }
-    .nav__links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color .18s; }
-    .nav__links a:hover { color: var(--indigo); }
-    .nav__links .btn-cta {
-      background: #fff; color: var(--indigo);
-      border: 1.5px solid var(--indigo);
-      padding: 8px 18px; border-radius: 7px; font-weight: 600; font-size: 14px;
-      transition: all .18s;
-    }
-    .nav__links .btn-cta:hover { background: var(--indigo); color: #fff; }
-    @media (max-width: 640px) { .nav__links a:not(.btn-cta) { display: none; } }
-
-    .page { flex: 1; max-width: 640px; margin: 60px auto 96px; padding: 0 24px; width: 100%; }
-    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); margin-bottom: 40px; }
-    .breadcrumb a { color: var(--indigo); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb__sep { color: var(--border); }
-    .page__label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--indigo); margin-bottom: 12px; display: block; }
-    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 5vw, 44px); color: var(--navy); margin-bottom: 12px; letter-spacing: -.3px; line-height: 1.1; }
-    .page__intro { font-size: 17px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 48px; font-weight: 300; }
-
-    /* Contact cards */
-    .contact-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
-    .contact-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 28px 32px;
-      display: flex; align-items: flex-start; gap: 20px;
-      box-shadow: var(--shadow-md);
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .contact-card:hover { border-color: rgba(42,79,214,.25); box-shadow: 0 6px 24px rgba(15,31,61,.1); }
-    .contact-card__icon {
-      width: 48px; height: 48px; border-radius: 10px;
-      background: var(--indigo-pale); color: var(--indigo);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; flex-shrink: 0; margin-top: 2px;
-    }
-    .contact-card__body { flex: 1; }
-    .contact-card__title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
-    .contact-card__desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
-    .contact-card__action {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 15px; font-weight: 600; color: var(--indigo);
-      text-decoration: none; transition: gap .18s;
-    }
-    .contact-card__action:hover { gap: 9px; text-decoration: none; }
-    .contact-card__action::after { content: '→'; }
-
-    /* Buy card */
-    .buy-card {
-      background: var(--navy); border-radius: var(--radius); padding: 32px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 24px; flex-wrap: wrap; margin-bottom: 32px;
-    }
-    .buy-card__left {}
-    .buy-card__label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 6px; }
-    .buy-card__title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--white); margin-bottom: 4px; }
-    .buy-card__price { font-size: 28px; font-weight: 700; color: var(--white); line-height: 1.1; }
-    .buy-card__price span { font-size: 14px; font-weight: 400; color: rgba(255,255,255,.45); margin-left: 6px; }
-    .buy-card__btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--indigo-light); color: var(--white);
-      padding: 14px 28px; border-radius: 9px; font-size: 15px; font-weight: 600;
-      text-decoration: none; white-space: nowrap;
-      transition: background .18s, transform .18s;
-      box-shadow: 0 2px 10px rgba(42,79,214,.35);
-    }
-    .buy-card__btn:hover { background: #5578ff; transform: translateY(-1px); text-decoration: none; }
-
-    /* FAQ teaser */
-    .faq-teaser {
-      background: var(--indigo-pale); border: 1px solid rgba(42,79,214,.12);
-      border-radius: var(--radius); padding: 22px 28px;
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    }
-    .faq-teaser__text h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
-    .faq-teaser__text p { font-size: 14px; color: var(--text-secondary); }
-    .faq-teaser__link {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: var(--indigo); color: var(--white);
-      font-size: 14px; font-weight: 600; padding: 10px 20px;
-      border-radius: 7px; text-decoration: none; white-space: nowrap;
-      transition: background .18s;
-    }
-    .faq-teaser__link:hover { background: var(--indigo-light); text-decoration: none; }
-
-    .footer { background: #080f20; color: rgba(255,255,255,.4); padding: 32px 24px; text-align: center; font-size: 13px; }
-    .footer__links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 12px; }
-    .footer__links a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .18s; }
-    .footer__links a:hover { color: rgba(255,255,255,.8); }
-    .footer__copy { font-size: 12px; color: rgba(255,255,255,.25); }
-
-    @media (max-width: 640px) {
-      html, body { overflow-x: hidden; }
-      .footer__links { flex-direction: column; gap: 12px; align-items: flex-start; }
-      .footer__copy { text-align: left; }
-      .page { margin-top: 40px; margin-bottom: 64px; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | Lex Prima</title>
+  <meta name="description" content="Fragen zu den Lex-Prima-Modulen, zum Kauf oder zur Notion-Vorlage? Schreib uns – wir antworten in der Regel innerhalb von 24 Stunden.">
+  <link rel="canonical" href="https://www.lexprima.de/kontakt.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kontakt | Lex Prima">
+  <meta property="og:description" content="Fragen zu den Lex-Prima-Modulen, zum Kauf oder zur Notion-Vorlage? Schreib uns – wir antworten in der Regel innerhalb von 24 Stunden.">
+  <meta property="og:url" content="https://www.lexprima.de/kontakt.html">
+  <meta property="og:site_name" content="Lex Prima">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111b33">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Lex Prima", "url": "https://www.lexprima.de", "logo": "https://www.lexprima.de/assets/logo.png", "description": "Strukturierte Zusammenfassungen, Schemata und Karteikarten für das Erste Juristische Staatsexamen mit Fokus auf NRW.", "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "kontakt@lexprima.de", "availableLanguage": "German"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.lexprima.de/"}, {"@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://www.lexprima.de/kontakt.html"}]}</script>
 </head>
 <body>
-  <!-- PASSWORD PROTECTION -->
-  <div id="pw-overlay" style="position:fixed;inset:0;z-index:9999;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;">
-    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:48px 40px;width:100%;max-width:380px;margin:24px;text-align:center;">
-      <div style="font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.2px;">Lex Prima<sup style="font-size:11px;color:#3d64f5;vertical-align:super;line-height:0;">1</sup></div>
-      <p style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:32px;">Bitte gib das Passwort ein, um fortzufahren.</p>
-      <input id="pw-input" type="password" placeholder="Passwort" autocomplete="current-password" style="width:100%;padding:13px 16px;border-radius:8px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);color:#fff;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;box-sizing:border-box;margin-bottom:12px;transition:border-color .18s;" onkeydown="if(event.key==='Enter')checkPw()" onfocus="this.style.borderColor='rgba(61,100,245,.8)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'"/>
-      <div id="pw-error" style="font-size:13px;color:#f87171;margin-bottom:10px;min-height:18px;"></div>
-      <button onclick="checkPw()" style="width:100%;padding:14px;border-radius:8px;border:none;background:#2a4fd6;color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .18s;" onmouseover="this.style.background='#3d64f5'" onmouseout="this.style.background='#2a4fd6'">Weiter →</button>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Lex Prima – Startseite">Lex&nbsp;Prima<sup>1</sup></a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="zivilrecht.html">Zivilrecht</a></li>
+      <li><a href="strafrecht.html">Strafrecht</a></li>
+      <li><a href="oeffentliches-recht.html">Öffentliches Recht NRW</a></li>
+      <li><a href="index.html#preise">Preise</a></li>
+      <li><a href="kontakt.html" class="active">Kontakt</a></li>
+      <li><a class="btn btn-primary btn-small" href="index.html#preise">Module sichern</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+  <section class="hero" style="padding-bottom:40px;">
+    <div class="wrap">
+      <span class="eyebrow">Kontakt</span>
+      <h1>Wir lesen alles.<sup class="fn">1</sup></h1>
+      <p class="lead">Fragen zu den Modulen, Feedback zu Inhalten oder ein Problem beim Zugriff? Schreib uns – wir antworten in der Regel innerhalb von 24 Stunden.</p>
+      <div class="footnote"><span class="mark">1</span><span>Wirklich alles. Auch Hinweise auf Tippfehler in § 985-Schemata.</span></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:30px;">
+    <div class="wrap">
+      <form id="kontakt-form" class="form-grid" novalidate>
+        <div class="field">
+          <label for="kf-name">Name</label>
+          <input type="text" id="kf-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="kf-email">E-Mail-Adresse</label>
+          <input type="email" id="kf-email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="kf-thema">Thema</label>
+          <select id="kf-thema" name="thema">
+            <option>Allgemeine Anfrage</option>
+            <option>Frage zu einem Modul</option>
+            <option>Problem beim Zugriff / Notion</option>
+            <option>Kauf &amp; Rechnung</option>
+            <option>Feedback &amp; Korrekturen</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="kf-nachricht">Deine Nachricht</label>
+          <textarea id="kf-nachricht" name="nachricht" rows="6" required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Nachricht senden</button>
+          <p id="kf-note" hidden style="margin-top:14px;" class="placeholder">Dein E-Mail-Programm öffnet sich mit der vorbereiteten Nachricht. Falls nicht, schreib uns direkt an kontakt@lexprima.de.</p>
+        </div>
+      </form>
+      <div class="footnote" style="margin-top:36px;"><span class="mark">@</span><span>Direkt per Mail: <a href="mailto:kontakt@lexprima.de">kontakt@lexprima.de</a> <em>(Platzhalter-Adresse – vor Launch anpassen)</em></span></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html">Lex&nbsp;Prima<sup>1</sup></a>
+        <p style="margin-top:14px; max-width:280px;">Strukturierte Zusammenfassungen, Schemata und Karteikarten für das Erste Staatsexamen – mit Fokus auf NRW.</p>
+      </div>
+      <div>
+        <h4>Module</h4>
+        <ul>
+          <li><a href="zivilrecht.html">Zivilrecht</a></li>
+          <li><a href="strafrecht.html">Strafrecht</a></li>
+          <li><a href="oeffentliches-recht.html">Öffentliches Recht NRW</a></li>
+          <li><a href="index.html#preise">Preise &amp; Bundle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Lex Prima</h4>
+        <ul>
+          <li><a href="index.html#methode">So funktioniert's</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Lex Prima GbR. Alle Rechte vorbehalten.</span>
+      <span>Kein Rechtsrat. Lernmaterial für die Examensvorbereitung.</span>
     </div>
   </div>
-  <script>
-    (function(){
-      if(sessionStorage.getItem('lp_auth')==='1'){
-        document.getElementById('pw-overlay').style.display='none';
-      }
-    })();
-    function checkPw(){
-      var val=document.getElementById('pw-input').value;
-      if(val==='victorchris1'){
-        sessionStorage.setItem('lp_auth','1');
-        var o=document.getElementById('pw-overlay');
-        o.style.transition='opacity .35s ease';
-        o.style.opacity='0';
-        setTimeout(function(){o.style.display='none';},360);
-      } else {
-        var e=document.getElementById('pw-error');
-        e.textContent='Falsches Passwort. Bitte erneut versuchen.';
-        var i=document.getElementById('pw-input');
-        i.style.borderColor='rgba(248,113,113,.7)';
-        i.value='';
-        i.focus();
-        setTimeout(function(){e.textContent='';i.style.borderColor='rgba(255,255,255,.15)';},2500);
-      }
-    }
-  </script>
-
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Lex Prima<sup>1</sup></a>
-      <div class="nav__links">
-        <a href="index.html#funktionen">Funktionen</a>
-        <a href="index.html#inhalte">Inhalte</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#kaufen" class="btn-cta">Jetzt kaufen – 99&nbsp;€</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="page">
-    <div class="breadcrumb">
-      <a href="index.html">Startseite</a>
-      <span class="breadcrumb__sep">›</span>
-      <span>Kontakt</span>
-    </div>
-    <span class="page__label">Support & Kontakt</span>
-    <h1>Wie können wir helfen?</h1>
-    <p class="page__intro">Fragen zum Produkt, technische Probleme oder Zugangsschwierigkeiten? Meld dich – wir antworten in der Regel innerhalb von 24 Stunden.</p>
-
-    <div class="contact-cards">
-      <div class="contact-card">
-        <div class="contact-card__icon" aria-hidden="true">✉️</div>
-        <div class="contact-card__body">
-          <div class="contact-card__title">E-Mail</div>
-          <p class="contact-card__desc">Für alle Anfragen – Produktfragen, Zugangsprobleme, allgemeiner Support. Antwort werktags innerhalb von 24 Stunden.</p>
-          <a href="mailto:hallo@lexprima.de" class="contact-card__action">hallo@lexprima.de</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- REPLACE href WITH ACTUAL CHECKOUT LINK -->
-    <div class="buy-card">
-      <div class="buy-card__left">
-        <div class="buy-card__label">Bereit zum Start?</div>
-        <div class="buy-card__title">Lex Prima¹</div>
-        <div class="buy-card__price">99 € <span>einmalig · sofortiger Zugang</span></div>
-      </div>
-      <a href="https://kaufen.lexprima.de" class="buy-card__btn" rel="noopener">Jetzt kaufen →</a>
-    </div>
-
-    <div class="faq-teaser">
-      <div class="faq-teaser__text">
-        <h3>Häufige Fragen</h3>
-        <p>Viele Antworten findest du direkt im FAQ-Bereich der Startseite.</p>
-      </div>
-      <a href="index.html#faq" class="faq-teaser__link">FAQ ansehen →</a>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer__links">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="agb.html">AGB</a>
-      <a href="kontakt.html">Kontakt</a>
-    </div>
-    <p class="footer__copy">&copy; 2025 Lex Prima. Alle Rechte vorbehalten.</p>
-  </footer>
+</footer>
+<script src="assets/main.js" defer></script>
 </body>
 </html>
