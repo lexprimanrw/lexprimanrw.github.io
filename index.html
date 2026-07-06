@@ -112,6 +112,52 @@
     </div>
   </section>
 
+
+  <section class="section" id="blick-hinein" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ein Blick hinein</span>
+        <h2>Keine Katze im Sack.</h2>
+        <p>Echte Screenshots aus den Originalkapiteln – so arbeitest du mit den Modulen: erst verstehen, dann festigen.</p>
+      </div>
+
+      <div class="peek-row reveal">
+        <div class="peek-text">
+          <div class="peek-step">Zuerst · Verstehen</div>
+          <h3>Zusammenfassung durcharbeiten</h3>
+          <p>Jedes Kapitel öffnet mit einem klickbaren Inhaltsverzeichnis und führt dich durch den Stoff: Grundlagen, (P)-Problemmarker, ausformulierte Streitstände und Formulierungshilfen im Gutachtenstil – wie hier beim Eigentümer-Besitzer-Verhältnis.</p>
+        </div>
+        <figure class="peek-shot" style="margin:0;">
+          <img src="assets/img/modul-zusammenfassung.jpg" alt="Notion-Kapitel Eigentümer-Besitzer-Verhältnis (EBV) mit Inhaltsverzeichnis und strukturierter Zusammenfassung" width="1200" height="984" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="peek-row flip reveal">
+        <div class="peek-text">
+          <div class="peek-step">Danach · Wiederholen</div>
+          <h3>Mit Toggle-Karteikarten wiederholen</h3>
+          <p>Sitzt der Stoff, beginnt das eigentliche Lernen: Im Karteikarten-Bereich fragst du dich selbst ab – Frage lesen, laut beantworten, Toggle öffnen, abgleichen. Definitionen, Obersätze und Theorien wiederholen, bis sie in der Klausur automatisch kommen.</p>
+        </div>
+        <figure class="peek-shot" style="margin:0;">
+          <img src="assets/img/modul-karteikarten.jpg" alt="Karteikarten-Seite mit Toggle-Fragen zum Prüfungsaufbau der Anfechtungsklage" width="1200" height="1014" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="peek-row reveal">
+        <div class="peek-text">
+          <div class="peek-step">Danach · Überprüfen</div>
+          <h3>Mit den Schemata-Seiten den Aufbau drillen</h3>
+          <p>Zu jedem Rechtsgebiet gehören eigens angefertigte Schemata- und Übersichtsseiten – von der beschränkten Geschäftsfähigkeit bis zur Anfechtung. Prüfungsaufbau aus dem Kopf reproduzieren, mit dem Schema abgleichen, Lücken schließen. Sitzt der Aufbau, sitzt die Klausur.</p>
+        </div>
+        <figure class="peek-shot" style="margin:0;">
+          <img src="assets/img/modul-schemata-seite.jpg" alt="Eigens angefertigte Schemata-Seite: Prüfungsschemata und Übersichten zu beschränkter Geschäftsfähigkeit und Anfechtung" width="1200" height="1014" loading="lazy">
+        </figure>
+      </div>
+
+      <p class="peek-note reveal">Alle Screenshots: Originalinhalte aus den Modulen, Stand heute.</p>
+    </div>
+  </section>
+
   <section class="section alt" id="module">
     <div class="wrap">
       <div class="section-head reveal">
@@ -153,6 +199,35 @@
           <p>Das einzige Modul, das du landesspezifisch brauchst – konsequent auf die NRW-Gesetze zugeschnitten.</p>
           <span class="card-cta">Modul entdecken →</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="themen-check">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align:center; margin-left:auto; margin-right:auto;">
+        <span class="eyebrow">Themen-Check</span>
+        <h2>Ist dein Thema drin? Prüf's nach.</h2>
+        <p>Durchsuche alle 385 Kapitel in Echtzeit – von „Abtretung" bis „Zwangsvollstreckung".</p>
+      </div>
+      <div class="palette reveal" role="search">
+        <div class="palette-input">
+          <span class="pi-icon" aria-hidden="true">§</span>
+          <input type="search" id="tc-input" placeholder="Thema eingeben, z.B. Anfechtung, Raub, Ermessen …" aria-label="Kapitel durchsuchen" autocomplete="off">
+          <span class="pi-count" id="tc-count">385 Kapitel</span>
+        </div>
+        <div class="palette-results" id="tc-results" aria-live="polite"></div>
+      </div>
+      <div class="palette-chips reveal" id="tc-chips" aria-label="Suchvorschläge">
+        <button type="button">Anfechtung</button>
+        <button type="button">EBV</button>
+        <button type="button">Raub</button>
+        <button type="button">Mord</button>
+        <button type="button">Ermessen</button>
+        <button type="button">Gefahr</button>
+        <button type="button">Verfassungsbeschwerde</button>
+        <button type="button">Kündigung</button>
       </div>
     </div>
   </section>
@@ -313,6 +388,7 @@
     </div>
   </div>
 </footer>
+<script src="assets/kapitel.js" defer></script>
 <script src="assets/main.js" defer></script>
 </body>
 </html>

@@ -92,6 +92,70 @@
     });
   }
 
+  /* Themen-Check: Live-Suche über alle Kapitel */
+  var tcInput = document.getElementById("tc-input");
+  if (tcInput && window.LEXPRIMA_KAPITEL) {
+    var K = window.LEXPRIMA_KAPITEL;
+    var results = document.getElementById("tc-results");
+    var countEl = document.getElementById("tc-count");
+    var MOD = {
+      "ZR": { label: "ZR", cls: "badge-zr", url: "zivilrecht.html", name: "Zivilrecht" },
+      "SR": { label: "SR", cls: "badge-sr", url: "strafrecht.html", name: "Strafrecht" },
+      "ÖR": { label: "ÖR", cls: "badge-or", url: "oeffentliches-recht.html", name: "Öffentliches Recht NRW" }
+    };
+    function norm(s) {
+      return s.toLowerCase()
+        .replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ß/g, "ss");
+    }
+    var normed = K.map(function (k) { return norm(k.t); });
+
+    function esc(s) {
+      return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    function highlight(title, q) {
+      var i = norm(title).indexOf(q);
+      if (i < 0) return esc(title);
+      return esc(title.slice(0, i)) + "<mark>" + esc(title.slice(i, i + q.length)) + "</mark>" + esc(title.slice(i + q.length));
+    }
+    function search() {
+      var q = norm(tcInput.value.trim());
+      if (q.length < 2) {
+        results.innerHTML = "";
+        countEl.textContent = K.length + " Kapitel";
+        return;
+      }
+      var hits = [];
+      for (var i = 0; i < K.length && hits.length < 30; i++) {
+        if (normed[i].indexOf(q) !== -1) hits.push(K[i]);
+      }
+      countEl.textContent = hits.length + " Treffer";
+      if (!hits.length) {
+        results.innerHTML = '<div class="pr-empty">Kein Treffer für „' + esc(tcInput.value.trim()) + '“ – <a href="kontakt.html">frag uns direkt</a>, ob dein Thema abgedeckt ist.</div>';
+        return;
+      }
+      results.innerHTML = hits.slice(0, 8).map(function (k) {
+        var m = MOD[k.m];
+        return '<a class="pr-row" href="' + m.url + '#inhalt">' +
+          '<span class="badge-mod ' + m.cls + '">' + m.label + '</span>' +
+          '<span>' + highlight(k.t, q) + '</span></a>';
+      }).join("") + (hits.length > 8
+        ? '<div class="pr-empty">+ ' + (hits.length - 8) + ' weitere Treffer in den Modulen</div>'
+        : "");
+    }
+    tcInput.addEventListener("input", search);
+
+    var chips = document.getElementById("tc-chips");
+    if (chips) {
+      chips.addEventListener("click", function (ev) {
+        var b = ev.target.closest("button");
+        if (!b) return;
+        tcInput.value = b.textContent;
+        tcInput.focus();
+        search();
+      });
+    }
+  }
+
   /* Aktuelles Jahr im Footer */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
